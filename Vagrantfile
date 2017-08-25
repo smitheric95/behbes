@@ -1,7 +1,7 @@
 $script = <<SCRIPT
 #!/usr/bin/env bash
 
-shareroot="/vagrant/behbes"
+shareroot="/vagrant/myApp/www"
 webroot="/var/www/public"
 password="pass"
 
@@ -78,6 +78,6 @@ Vagrant.configure("2") do |config|
 
   # Set up private networking
   config.vm.network "private_network", ip: "192.168.50.1"
-  config.vm.network "forwarded_port", guest: 80, host: 5000
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
 end
