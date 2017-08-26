@@ -3,8 +3,10 @@
 ### Build and Run
 1. Install [Vagrant](https://www.vagrantup.com)
 2. Navigate to this repo in terminal and run "vagrant up"
-3. Navigate to myApp and run "ionic serve"
-4. Open "http://192.168.50.1:8080" in browser
+3. Run npm install -g cordova ionic(maybe sudo)
+4. Run ionic start myApp
+5. Navigate to myApp and run "ionic serve"
+6. Open "http://192.168.50.1:8080" in browser
 
 
 Some useful vagrant commands:
