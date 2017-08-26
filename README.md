@@ -8,6 +8,10 @@
 5. Navigate to myApp and run "ionic serve"
 6. Open "http://192.168.50.1:8080" in browser
 
+Web App(after Vagrant up)
+1. CD into webApp directory
+2. run php -S localhost:8088 -t public public/index.php
+3. open http://localhost:8088
 
 Some useful vagrant commands:
 
