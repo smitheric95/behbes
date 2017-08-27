@@ -16,7 +16,8 @@ export class HomePage {
   formTest;
 
   getTest() {
-    this.formService.getForm().then(data => this.formTest = data);
+
+    this.formTest = this.formService.getForm();
   }
 
 }
