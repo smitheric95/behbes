@@ -6,7 +6,7 @@ return [
 
         // Renderer settings
         'renderer' => [
-            'template_path' => __DIR__ . '/myApp/www/',
+            'template_path' => __DIR__ . '/../public/myApp/www/',
         ],
 
         // Monolog settings
