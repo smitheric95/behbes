@@ -15,9 +15,9 @@ export class HomePage {
 
   formTest;
 
-  getTest() {
+  async getTest() {
 
-    this.formTest = this.formService.getForm();
+    this.formTest = await this.formService.getForm();
   }
 
 }
