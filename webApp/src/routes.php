@@ -11,7 +11,7 @@ $app->get('/Home[/{name}]', function ($request, $response, $args) {
 
 $app->get('/getData', function ($request, $response, $args) {
     // Sample log message
-   $arr = array ('a'=>"eseghrrnehreh",'b'=>2,'c'=>3,'d'=>4,'e'=>5);
+    $arr = array ('a'=>"eseghrrnehreh",'b'=>2,'c'=>3,'d'=>4,'e'=>5);
 
     return json_encode($arr);
 });

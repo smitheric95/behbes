@@ -9,7 +9,7 @@ export class FormService {
     constructor(private http: Http) {}
 
     getForm(){
-		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/getData`)
+		return this.http.get(`/getData`)
         .toPromise().then(function(res) {
             console.log(res);
             return JSON.stringify(res.json());

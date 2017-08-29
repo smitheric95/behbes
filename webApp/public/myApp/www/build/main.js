@@ -148,7 +148,7 @@ var FormService = (function () {
         this.http = http;
     }
     FormService.prototype.getForm = function () {
-        return this.http.get("http://private-7be936-behbes.apiary-mock.com/getData")
+        return this.http.get("/getData")
             .toPromise().then(function (res) {
             console.log(res);
             return JSON.stringify(res.json());
@@ -158,9 +158,10 @@ var FormService = (function () {
 }());
 FormService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
 ], FormService);
 
+var _a;
 //# sourceMappingURL=form.service.js.map
 
 /***/ }),
