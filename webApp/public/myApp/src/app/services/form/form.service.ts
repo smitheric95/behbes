@@ -11,12 +11,17 @@ export class FormService {
     getForm(){
 		return this.http.get(`/getData`)
         .toPromise().then(function(res) {
-            console.log(res);
             return JSON.stringify(res.json());
         });
     }
 
-    
+
+    postForm(selected: String){
+        return this.http.post(`http://private-7be936-behbes.apiary-mock.com/postForm`,selected)
+        .toPromise().then(function(res) {
+            return JSON.stringify(res.json());
+        });
+    }
 
 
 }
