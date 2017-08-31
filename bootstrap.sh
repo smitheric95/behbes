@@ -148,7 +148,7 @@ yes | ionic
 # Start PHP server
 cwd=`pwd`
 cd $working_dir 
-nohup php -S localhost:8100 -t public public/index.php > /var/log/phpd.log 2>&1 &
+nohup php -S 0.0.0.0:8100 -t public public/index.php > /var/log/phpd.log 2>&1 &
 cd $cwd
 
 # Start Ionic server
