@@ -16,4 +16,13 @@
   <p>Eric wuz here</p>
   <p>Test? => {{formTest}} <button ion-button secondary (click)="getTest()">Get Test</button></p>
   <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  <div *ngFor="let item of symptoms">
+    
+        <div class="checkbox">
+          check
+            <label><input type="checkbox" value={{item}}> {{item}}</label>
+        </div>
+    
+    </div>
 </ion-content>

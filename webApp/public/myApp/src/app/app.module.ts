@@ -16,7 +16,8 @@ import { FormService } from './services/form/form.service';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    FormPage
   ],
   imports: [
     BrowserModule,
@@ -27,8 +28,7 @@ import { FormService } from './services/form/form.service';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
-    FormPage
+    ListPage
   ],
   providers: [
     StatusBar,
