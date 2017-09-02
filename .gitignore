@@ -1,2 +1,4 @@
 .vagrant/*
 .DS_Store
+.myApp/node_modules
+.webApp/public
