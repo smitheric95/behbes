@@ -5,10 +5,11 @@ import { FormService } from '../../app/services/form/form.service';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'form.html',
 })
 export class FormPage {
 
+  
   symptoms: [
     "Coughing",
     "Crying",
@@ -26,7 +27,7 @@ export class FormPage {
     "Vomiting",
     "White patches (lips, tongue, inside cheeks)",
     "Yellow/Orange skin"
-  ]
+  ];
 
   constructor(public navCtrl: NavController, private formService: FormService) {
 
