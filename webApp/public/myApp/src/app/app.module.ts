@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { FormPage } from '../pages/form/form';
+import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +18,8 @@ import { FormService } from './services/form/form.service';
     MyApp,
     HomePage,
     ListPage,
-    FormPage
+    FormPage,
+    InfantHealthPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { FormService } from './services/form/form.service';
     MyApp,
     HomePage,
     ListPage,
-    FormPage
+    FormPage,
+    InfantHealthPage
   ],
   providers: [
     StatusBar,
