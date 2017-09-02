@@ -17,18 +17,6 @@
   <p>Test? => {{formTest}} <button ion-button secondary (click)="getTest()">Get Test</button></p>
   <button ion-button secondary menuToggle>Toggle Menu</button>
 
-  <form>
-    <div class = "form-group">
-          <template ngFor #symptom [ngForOf]="symptoms">
-          <div class = "form-control">
-            <label for="symptom" >{{symptom.name}}</label>
-              <input
-                type = "checkbox"
-                ngControl="symptom"
-                [(ngModel)]="symptom['checked']"/>
-          </div>
-          </template>
-    </div>
-    </form>
 
+  
 </ion-content>

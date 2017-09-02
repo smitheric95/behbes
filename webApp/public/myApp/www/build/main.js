@@ -113,7 +113,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Home</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h3>Ionic Menu Starter</h3>\n\n\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.\n\n  </p>\n\n  <p>Eric wuz here</p>\n\n  <p>Test? => {{formTest}} <button ion-button secondary (click)="getTest()">Get Test</button></p>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n\n\n\n  <form>\n\n    <div class = "form-group">\n\n          <template ngFor #symptom [ngForOf]="symptoms">\n\n          <div class = "form-control">\n\n            <label for="symptom" >{{symptom.name}}</label>\n\n              <input\n\n                type = "checkbox"\n\n                ngControl="symptom"\n\n                [(ngModel)]="symptom[\'checked\']"/>\n\n          </div>\n\n          </template>\n\n    </div>\n\n    </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Home</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h3>Ionic Menu Starter</h3>\n\n\n\n  <p>\n\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.\n\n  </p>\n\n  <p>Eric wuz here</p>\n\n  <p>Test? => {{formTest}} <button ion-button secondary (click)="getTest()">Get Test</button></p>\n\n  <button ion-button secondary menuToggle>Toggle Menu</button>\n\n\n\n\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_services_form_form_service__["a" /* FormService */]])
 ], HomePage);
@@ -182,159 +182,6 @@ var ListPage_1;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(214);
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
-
-/***/ }),
-
-/***/ 214:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_form_form__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_form_form_service__ = __webpack_require__(98);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-var AppModule = (function () {
-    function AppModule() {
-    }
-    return AppModule;
-}());
-AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_6__pages_list_list__["a" /* ListPage */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_form_form__["a" /* FormPage */]
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */])
-        ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
-        entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_6__pages_list_list__["a" /* ListPage */]
-        ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_10__services_form_form_service__["a" /* FormService */],
-            { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
-        ]
-    })
-], AppModule);
-
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 255:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(194);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen) {
-        this.platform = platform;
-        this.statusBar = statusBar;
-        this.splashScreen = splashScreen;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
-        this.initializeApp();
-        // used for an example of ngFor and navigation
-        this.pages = [
-            { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            { title: 'List', component: __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */] }
-        ];
-    }
-    MyApp.prototype.initializeApp = function () {
-        var _this = this;
-        this.platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            _this.statusBar.styleDefault();
-            _this.splashScreen.hide();
-        });
-    };
-    MyApp.prototype.openPage = function (page) {
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(page.component);
-    };
-    return MyApp;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */])
-], MyApp.prototype, "nav", void 0);
-MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\app\app.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
-], MyApp);
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 266:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
@@ -390,11 +237,35 @@ var FormPage = (function () {
     function FormPage(navCtrl, formService) {
         this.navCtrl = navCtrl;
         this.formService = formService;
+        this.symptoms = [
+            { name: "Coughing", value: false },
+            { name: "Exsessive Crying", value: false },
+            { name: "Decreased Appetite", value: false },
+            { name: "Diarrhea", value: false },
+            { name: "Dry Flaky Scalp", value: false },
+            { name: "Excess Tearing", value: false },
+            { name: "Fever", value: false },
+            { name: "Irritibility", value: false },
+            { name: "Not Peed for > 6 Hours", value: false },
+            { name: "Not Pooping", value: false },
+            { name: "Nasal Congestion", value: false },
+            { name: "Pulling on Ears", value: false },
+            { name: "Rash (body)", value: false },
+            { name: "Rash (diaper area)", value: false },
+            { name: "Runny nose", value: false },
+            { name: "Sneezing", value: false },
+            { name: "Small/tiny red or white bumps on nose, cheeks, or forehead", value: false },
+            { name: "Twitching", value: false },
+            { name: "Vomiting", value: false },
+            { name: "White patches on lips, tongue, inside cheeks", value: false },
+            { name: "Yellow/orange looking skin", value: false }
+        ];
+        this.selected = [];
     }
-    FormPage.prototype.postForm = function (selected) {
+    FormPage.prototype.postForm = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.formService.postForm(selected);
+                this.formService.postForm(this.symptoms.filter(function (val) { return val.value; }));
                 return [2 /*return*/];
             });
         });
@@ -403,12 +274,169 @@ var FormPage = (function () {
 }());
 FormPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\form\form.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Home</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n\n\n<ion-content padding>\n\n    <h3>Symptoms Evaluation</h3>\n\n\n\n\n\n    <form>\n\n        <div class = "form-group">\n\n              <template ngFor #symptom [ngForOf]="symptoms">\n\n              <div class = "form-control">\n\n                <label for="symptom" >{{symptom.name}}</label>\n\n                  <input\n\n                    type = "checkbox"\n\n                    ngControl="symptom"\n\n                    [(ngModel)]="symptom[\'checked\']"/>\n\n              </div>\n\n              </template>\n\n        </div>\n\n        </form>\n\n\n\n<!--\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Coughing">Coughing</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Crying">Crying</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Diarrhea">Diarrhea</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Difficulty Sleeping">Difficulty Sleeping</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Excess Tearing">Excess Tearing</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Fever">Fever</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Irrititablity">Irrititability</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Nasal Congestion">Nasal Congestion</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Rash (body)">Rash (body)</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Rash (diaper area)">Rash (diaper area)</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Runny Nose">Runny Nose</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Sneezing">Sneezing</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Small/Tiny white bumps (nose, cheek, forehead)">Small/Tiny white bumps (nose, cheek, forehead)</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Vomiting">Vomiting</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="White patches (lips, tongue, inside cheeks)">White patches (lips, tongue, inside cheeks)</label>\n\n    </div>\n\n    <div class="checkbox">\n\n        <label><input type="checkbox" value="Yellow/Orange skin">Yellow/Orange skin</label>\n\n    </div>\n\n-->\n\n\n\n\n\n    <button ion-button secondary (click)="postForm()">Submit</button>\n\n    <button ion-button secondary menuToggle>Toggle Menu</button>\n\n  </ion-content>\n\n  '/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\form\form.html"*/,
+        selector: 'page-list',template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\form\form.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n        <ion-title>Home</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <div>\n\n        <h3>Symptoms Evaluation</h3>\n\n        <div *ngFor="let symptom of symptoms">\n\n            <label>\n\n            <input [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value"/>\n\n            {{symptom.name}}\n\n        </label>\n\n        </div>\n\n    </div>\n\n\n\n\n\n    <button ion-button secondary (click)="postForm()">Submit</button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\form\form.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_services_form_form_service__["a" /* FormService */]])
 ], FormPage);
 
 //# sourceMappingURL=form.js.map
+
+/***/ }),
+
+/***/ 196:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(215);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 215:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_form_form__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_form_form_service__ = __webpack_require__(98);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_6__pages_list_list__["a" /* ListPage */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_form_form__["a" /* FormPage */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */])
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_6__pages_list_list__["a" /* ListPage */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_form_form__["a" /* FormPage */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_10__services_form_form_service__["a" /* FormService */],
+            { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+        ]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 256:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_form_form__ = __webpack_require__(195);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.platform = platform;
+        this.statusBar = statusBar;
+        this.splashScreen = splashScreen;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
+        this.initializeApp();
+        // used for an example of ngFor and navigation
+        this.pages = [
+            { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
+            { title: 'List', component: __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */] },
+            { title: 'Symptoms Evaluation', component: __WEBPACK_IMPORTED_MODULE_6__pages_form_form__["a" /* FormPage */] }
+        ];
+    }
+    MyApp.prototype.initializeApp = function () {
+        var _this = this;
+        this.platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            _this.statusBar.styleDefault();
+            _this.splashScreen.hide();
+        });
+    };
+    MyApp.prototype.openPage = function (page) {
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        this.nav.setRoot(page.component);
+    };
+    return MyApp;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */])
+], MyApp.prototype, "nav", void 0);
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\app\app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+], MyApp);
+
+//# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
@@ -419,7 +447,7 @@ FormPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -460,5 +488,5 @@ FormService = __decorate([
 
 /***/ })
 
-},[195]);
+},[196]);
 //# sourceMappingURL=main.js.map

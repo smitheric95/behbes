@@ -28,7 +28,8 @@ import { FormService } from './services/form/form.service';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    FormPage
   ],
   providers: [
     StatusBar,

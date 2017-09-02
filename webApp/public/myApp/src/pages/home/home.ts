@@ -9,24 +9,6 @@ import { FormService } from '../../app/services/form/form.service';
 })
 export class HomePage {
 
-  symptoms: [
-    "Coughing",
-    "Crying",
-    "Diarrhea",
-    "Difficulty Sleeping",
-    "Excess Tearing",
-    "Fever",
-    "Irritablity",
-    "Nasal Congestion",
-    "Rash (body)",
-    "Rash (diaper area)",
-    "Runny Nose",
-    "Sneezing",
-    "Small/Tiny white bumps (nose, cheek, forehead)",
-    "Vomiting",
-    "White patches (lips, tongue, inside cheeks)",
-    "Yellow/Orange skin"
-  ]
 
   constructor(public navCtrl: NavController, private formService: FormService) {
 

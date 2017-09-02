@@ -16,7 +16,7 @@ export class FormService {
     }
 
 
-    postForm(selected: String){
+    postForm(selected: any[]){
         return this.http.post(`http://private-7be936-behbes.apiary-mock.com/postForm`,selected)
         .toPromise().then(function(res) {
             return JSON.stringify(res.json());
