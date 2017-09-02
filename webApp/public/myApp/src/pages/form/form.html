@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <h3>Symptoms Evaluation</h3>
+
+
+    <form>
+        <div class = "form-group">
+              <template ngFor #symptom [ngForOf]="symptoms">
+              <div class = "form-control">
+                <label for="symptom" >{{symptom.name}}</label>
+                  <input
+                    type = "checkbox"
+                    ngControl="symptom"
+                    [(ngModel)]="symptom['checked']"/>
+              </div>
+              </template>
+        </div>
+        </form>
+
+<!--
+    <div class="checkbox">
+        <label><input type="checkbox" value="Coughing">Coughing</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Crying">Crying</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Diarrhea">Diarrhea</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Difficulty Sleeping">Difficulty Sleeping</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Excess Tearing">Excess Tearing</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Fever">Fever</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Irrititablity">Irrititability</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Nasal Congestion">Nasal Congestion</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Rash (body)">Rash (body)</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Rash (diaper area)">Rash (diaper area)</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Runny Nose">Runny Nose</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Sneezing">Sneezing</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Small/Tiny white bumps (nose, cheek, forehead)">Small/Tiny white bumps (nose, cheek, forehead)</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Vomiting">Vomiting</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="White patches (lips, tongue, inside cheeks)">White patches (lips, tongue, inside cheeks)</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="Yellow/Orange skin">Yellow/Orange skin</label>
+    </div>
+-->
+
+
+    <button ion-button secondary (click)="postForm()">Submit</button>
+    <button ion-button secondary menuToggle>Toggle Menu</button>
+  </ion-content>
+  
