@@ -395,6 +395,8 @@ var CausesPage = (function () {
     function CausesPage(navCtrl, formService) {
         this.navCtrl = navCtrl;
         this.formService = formService;
+        this.ratings = ['4/5', '3/5', '2/5', '1/5'];
+        this.causes = ['Blah', 'Blah2', 'Blah3', 'Blah4'];
     }
     CausesPage.prototype.getTest = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -415,11 +417,12 @@ var CausesPage = (function () {
 }());
 CausesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-causes',template:/*ion-inline-start:"C:\Users\Jing\Desktop\behbes\webApp\public\myApp\src\pages\causes\causes.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>List</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>\n\n    <h1>Possible Causes</h1>\n\n    <button ion-item>\n\n            \n\n            \n\n            <div class="item-note" item-right>\n\n                \n\n            </div>\n\n        </button>\n\n    <ion-list>\n\n        \n\n    </ion-list>\n\n</ion-content>\n\n\n\n<!--\n\n<ion-content>\n\n  <ion-list>\n\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n\n      {{item.title}}\n\n      <div class="item-note" item-right>\n\n        {{item.note}}\n\n      </div>\n\n    </button>\n\n  </ion-list>\n\n  <div *ngIf="selectedItem" padding>\n\n    You navigated here from <b>{{selectedItem.title}}</b>\n\n  </div>\n\n</ion-content>-->'/*ion-inline-end:"C:\Users\Jing\Desktop\behbes\webApp\public\myApp\src\pages\causes\causes.html"*/
+        selector: 'page-causes',template:/*ion-inline-start:"C:\Users\Jing\Desktop\behbes\webApp\public\myApp\src\pages\causes\causes.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>List</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>\n\n    <h1 style="margin:30px">Possible Causes</h1>\n\n    <ion-list>\n\n        <button ion-item *ngFor = "let item of causes; let i = index">\n\n            <p item-left style="margin:30px">{{ratings[i]}}</p>\n\n            <p>{{item}}</p>\n\n            <ion-icon name="text" item-right></ion-icon>\n\n            \n\n        </button>\n\n        \n\n    </ion-list>\n\n</ion-content>\n\n\n\n<!--\n\n<ion-content>\n\n  <ion-list>\n\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n\n      {{item.title}}\n\n      <div class="item-note" item-right>\n\n        {{item.note}}\n\n      </div>\n\n    </button>\n\n  </ion-list>\n\n  <div *ngIf="selectedItem" padding>\n\n    You navigated here from <b>{{selectedItem.title}}</b>\n\n  </div>\n\n</ion-content>-->'/*ion-inline-end:"C:\Users\Jing\Desktop\behbes\webApp\public\myApp\src\pages\causes\causes.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_services_form_form_service__["a" /* FormService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__app_services_form_form_service__["a" /* FormService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__app_services_form_form_service__["a" /* FormService */]) === "function" && _b || Object])
 ], CausesPage);
 
+var _a, _b;
 //# sourceMappingURL=causes.js.map
 
 /***/ }),

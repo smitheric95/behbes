@@ -9,15 +9,14 @@
 
 <ion-content padding>
     <h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>
-    <h1>Possible Causes</h1>
-    <button ion-item>
-            
-            
-            <div class="item-note" item-right>
-                
-            </div>
-        </button>
+    <h1 style="margin:30px">Possible Causes</h1>
     <ion-list>
+        <button ion-item *ngFor = "let item of causes; let i = index">
+            <p item-left style="margin:30px">{{ratings[i]}}</p>
+            <p>{{item}}</p>
+            <ion-icon name="text" item-right></ion-icon>
+            
+        </button>
         
     </ion-list>
 </ion-content>
