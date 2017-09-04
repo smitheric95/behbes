@@ -291,29 +291,30 @@ var FormPage = (function () {
     function FormPage(navCtrl, formService) {
         this.navCtrl = navCtrl;
         this.formService = formService;
-        this.symptoms = [
-            { name: "Coughing", value: false },
-            { name: "Exsessive Crying", value: false },
-            { name: "Decreased Appetite", value: false },
-            { name: "Diarrhea", value: false },
-            { name: "Dry Flaky Scalp", value: false },
-            { name: "Excess Tearing", value: false },
-            { name: "Fever", value: false },
-            { name: "Irritibility", value: false },
-            { name: "Not Peed for > 6 Hours", value: false },
-            { name: "Not Pooping", value: false },
-            { name: "Nasal Congestion", value: false },
-            { name: "Pulling on Ears", value: false },
-            { name: "Rash (body)", value: false },
-            { name: "Rash (diaper area)", value: false },
-            { name: "Runny nose", value: false },
-            { name: "Sneezing", value: false },
-            { name: "Small/tiny red or white bumps on nose, cheeks, or forehead", value: false },
-            { name: "Twitching", value: false },
-            { name: "Vomiting", value: false },
-            { name: "White patches on lips, tongue, inside cheeks", value: false },
-            { name: "Yellow/orange looking skin", value: false }
+        this.symptomsList = [
+            "Coughing",
+            "Exsessive Crying",
+            "Decreased Appetite",
+            "Diarrhea",
+            "Dry Flaky Scalp",
+            "Excess Tearing",
+            "Fever",
+            "Irritibility",
+            "Not Peed for > 6 Hours",
+            "Not Pooping",
+            "Nasal Congestion",
+            "Pulling on Ears",
+            "Rash (body)",
+            "Rash (diaper area)",
+            "Runny nose",
+            "Sneezing",
+            "Small/tiny red or white bumps on nose, cheeks, or forehead",
+            "Twitching",
+            "Vomiting",
+            "White patches on lips, tongue, inside cheeks",
+            "Yellow/orange looking skin"
         ];
+        this.symptoms = [];
         this.selected = [];
     }
     FormPage.prototype.ngOnInit = function () {
@@ -321,8 +322,14 @@ var FormPage = (function () {
     };
     FormPage.prototype.postForm = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var filteredS, _i, filteredS_1, symptom;
             return __generator(this, function (_a) {
-                this.formService.postForm(this.symptoms.filter(function (val) { return val.value; }));
+                filteredS = this.symptoms.filter(function (val) { return val.value; });
+                for (_i = 0, filteredS_1 = filteredS; _i < filteredS_1.length; _i++) {
+                    symptom = filteredS_1[_i];
+                    this.selected.push(symptom.name);
+                }
+                this.formService.postForm(this.selected);
                 return [2 /*return*/];
             });
         });
@@ -336,11 +343,18 @@ var FormPage = (function () {
                         _a = this;
                         return [4 /*yield*/, this.formService.getSymptoms()];
                     case 1:
-                        _a.symptoms = _b.sent();
+                        _a.symptomsList = _b.sent();
+                        this.createSymptomsObj();
                         return [2 /*return*/];
                 }
             });
         });
+    };
+    FormPage.prototype.createSymptomsObj = function () {
+        for (var _i = 0, _a = this.symptomsList; _i < _a.length; _i++) {
+            var symptom = _a[_i];
+            this.symptoms.push({ name: symptom, value: false });
+        }
     };
     return FormPage;
 }());

@@ -9,35 +9,36 @@ import { FormService } from '../../app/services/form/form.service';
 })
 export class FormPage {
 
+  symptomsList: any[];
   symptoms: any[];
   selected: any[];
 
   constructor(public navCtrl: NavController, private formService: FormService) {
-    this.symptoms = [
-      { name: "Coughing", value: false },
-      { name: "Exsessive Crying", value: false },
-      { name: "Decreased Appetite", value: false },
-      { name: "Diarrhea", value: false },
-      { name: "Dry Flaky Scalp", value: false },
-      { name: "Excess Tearing", value: false },
-      { name: "Fever", value: false },
-      { name: "Irritibility", value: false },
-      { name: "Not Peed for > 6 Hours", value: false },
-      { name: "Not Pooping", value: false },
-      { name: "Nasal Congestion", value: false },
-      { name: "Pulling on Ears", value: false },
-      { name: "Rash (body)", value: false },
-      { name: "Rash (diaper area)", value: false },
-      { name: "Runny nose", value: false },
-      { name: "Sneezing", value: false },
-      { name: "Small/tiny red or white bumps on nose, cheeks, or forehead", value: false },
-      { name: "Twitching", value: false },
-      { name: "Vomiting", value: false },
-      { name: "White patches on lips, tongue, inside cheeks", value: false },
-      { name: "Yellow/orange looking skin", value: false }
+    this.symptomsList = [
+      "Coughing",
+      "Exsessive Crying",
+      "Decreased Appetite",
+      "Diarrhea",
+      "Dry Flaky Scalp",
+      "Excess Tearing",
+      "Fever",
+      "Irritibility",
+      "Not Peed for > 6 Hours",
+      "Not Pooping",
+      "Nasal Congestion",
+      "Pulling on Ears",
+      "Rash (body)",
+      "Rash (diaper area)",
+      "Runny nose",
+      "Sneezing",
+      "Small/tiny red or white bumps on nose, cheeks, or forehead",
+      "Twitching",
+      "Vomiting",
+      "White patches on lips, tongue, inside cheeks",
+      "Yellow/orange looking skin"
     ]
 
-
+    this.symptoms = [];
     this.selected = [];
   }
 
@@ -47,12 +48,25 @@ export class FormPage {
 
   async postForm() {
 
-    this.formService.postForm(this.symptoms.filter(val => val.value));
+    var filteredS
+    filteredS = this.symptoms.filter(val => val.value);
+    for (let symptom of filteredS) {
+      this.selected.push(symptom.name);
+    }
+    this.formService.postForm(this.selected);
 
   }
 
   async getSymptoms() {
-    this.symptoms = await this.formService.getSymptoms()
+    this.symptomsList = await this.formService.getSymptoms();
+    this.createSymptomsObj();
+  }
+
+
+  createSymptomsObj() {
+    for (let symptom of this.symptomsList) {
+      this.symptoms.push({name: symptom, value: false});
+    }
   }
 
 }
