@@ -41,10 +41,18 @@ export class FormPage {
     this.selected = [];
   }
 
+  ngOnInit() {
+    this.getSymptoms();
+  }
+
   async postForm() {
 
     this.formService.postForm(this.symptoms.filter(val => val.value));
 
+  }
+
+  async getSymptoms() {
+    this.symptoms = await this.formService.getSymptoms()
   }
 
 }

@@ -23,5 +23,12 @@ export class FormService {
         });
     }
 
+    getSymptoms() {
+        return this.http.get(`http://private-7be936-behbes.apiary-mock.com/getSymptoms`)
+        .toPromise().then(function(res) {
+            return res.json();
+        });
+    }
+
 
 }

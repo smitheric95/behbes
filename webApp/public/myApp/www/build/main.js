@@ -262,11 +262,29 @@ var FormPage = (function () {
         ];
         this.selected = [];
     }
+    FormPage.prototype.ngOnInit = function () {
+        this.getSymptoms();
+    };
     FormPage.prototype.postForm = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 this.formService.postForm(this.symptoms.filter(function (val) { return val.value; }));
                 return [2 /*return*/];
+            });
+        });
+    };
+    FormPage.prototype.getSymptoms = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.formService.getSymptoms()];
+                    case 1:
+                        _a.symptoms = _b.sent();
+                        return [2 /*return*/];
+                }
             });
         });
     };
@@ -517,6 +535,12 @@ var FormService = (function () {
         return this.http.post("http://private-7be936-behbes.apiary-mock.com/postForm", selected)
             .toPromise().then(function (res) {
             return JSON.stringify(res.json());
+        });
+    };
+    FormService.prototype.getSymptoms = function () {
+        return this.http.get("http://private-7be936-behbes.apiary-mock.com/getSymptoms")
+            .toPromise().then(function (res) {
+            return res.json();
         });
     };
     return FormService;
