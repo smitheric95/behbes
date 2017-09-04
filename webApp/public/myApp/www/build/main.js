@@ -84,21 +84,28 @@ var FormPage = (function () {
         ];
         this.symptoms = [];
         this.selected = [];
+        this.response = [];
     }
     FormPage.prototype.ngOnInit = function () {
         this.getSymptoms();
     };
     FormPage.prototype.postForm = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var filteredS, _i, filteredS_1, symptom;
-            return __generator(this, function (_a) {
-                filteredS = this.symptoms.filter(function (val) { return val.value; });
-                for (_i = 0, filteredS_1 = filteredS; _i < filteredS_1.length; _i++) {
-                    symptom = filteredS_1[_i];
-                    this.selected.push(symptom.name);
+            var filteredS, _i, filteredS_1, symptom, _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        filteredS = this.symptoms.filter(function (val) { return val.value; });
+                        for (_i = 0, filteredS_1 = filteredS; _i < filteredS_1.length; _i++) {
+                            symptom = filteredS_1[_i];
+                            this.selected.push(symptom.name);
+                        }
+                        _a = this;
+                        return [4 /*yield*/, this.formService.postForm(this.selected)];
+                    case 1:
+                        _a.response = _b.sent();
+                        return [2 /*return*/];
                 }
-                this.formService.postForm(this.selected);
-                return [2 /*return*/];
             });
         });
     };
@@ -280,7 +287,7 @@ var HomePage = (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__map_map__["a" /* MapPage */]);
     };
     HomePage.prototype.alarmTapped = function (event) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__map_map__["a" /* MapPage */]);
+        /*this.navCtrl.push(MapPage);*/
     };
     HomePage.prototype.basicsTapped = function (event) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__infanthealth_infanthealth__["a" /* InfantHealthPage */]);
@@ -332,7 +339,7 @@ var FormService = (function () {
     FormService.prototype.postForm = function (selected) {
         return this.http.post("http://private-7be936-behbes.apiary-mock.com/postForm", selected)
             .toPromise().then(function (res) {
-            return JSON.stringify(res.json());
+            return res.json();
         });
     };
     FormService.prototype.getSymptoms = function () {

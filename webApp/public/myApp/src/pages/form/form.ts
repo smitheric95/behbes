@@ -12,6 +12,7 @@ export class FormPage {
   symptomsList: any[];
   symptoms: any[];
   selected: any[];
+  response: any[];
 
   constructor(public navCtrl: NavController, private formService: FormService) {
     this.symptomsList = [
@@ -40,6 +41,7 @@ export class FormPage {
 
     this.symptoms = [];
     this.selected = [];
+    this.response = [];
   }
 
   ngOnInit() {
@@ -53,8 +55,12 @@ export class FormPage {
     for (let symptom of filteredS) {
       this.selected.push(symptom.name);
     }
-    this.formService.postForm(this.selected);
+    
+    this.response = await this.formService.postForm(this.selected);
 
+    /*this.navCtrl.push(PossibleCausesPage, {
+      response: this.response
+    });*/
   }
 
   async getSymptoms() {

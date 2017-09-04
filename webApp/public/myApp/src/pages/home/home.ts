@@ -26,7 +26,7 @@ export class HomePage {
   }
 
   alarmTapped(event) {
-    this.navCtrl.push(MapPage);
+    /*this.navCtrl.push(MapPage);*/
   }
 
   basicsTapped(event) {
