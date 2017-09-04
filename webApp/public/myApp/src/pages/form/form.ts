@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 import { FormService } from '../../app/services/form/form.service';
 
 @Component({
-  selector: 'page-list',
+  selector: 'page-form',
   templateUrl: 'form.html',
 })
 export class FormPage {
