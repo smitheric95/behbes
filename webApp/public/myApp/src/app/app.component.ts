@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { FormPage } from '../pages/form/form';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
+import { MapPage } from '../pages/map/map';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Symptoms Evaluation', component: FormPage },
-      { title: 'Infant Health', component: InfantHealthPage }
+      { title: 'Infant Health', component: InfantHealthPage },
+      { title: 'ER Locations Near You', component: MapPage }
     ];
 
   }
