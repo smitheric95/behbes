@@ -1,30 +1,38 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { AgmCoreModule } from '@agm/core';
-
 @Component({
-    selector: 'page-list',
+    selector: 'page-map',
     templateUrl: 'map.html',
     styles: [`
         agm-map {
           height: 300px;
+          width: 300px;
       }
     `],
-    template: `
-    <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
-    `
 })
 
 
 export class MapPage {
 
+    
+    latitude: any;
+    longitude: any;
     constructor(public navCtrl: NavController) {
-
-
+        this.latitude;
+        this.longitude;
     }
 
-    ngOnInit() {
-    }
+    
+
+    ngOnInit(){
+        if(navigator.geolocation){
+           navigator.geolocation.getCurrentPosition(position => {
+             this.latitude = position.coords.latitude;
+             this.longitude = position.coords.longitude;
+             console.log(position.coords); 
+           });
+        }
+      }
 
 }

@@ -165,20 +165,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var MapPage = (function () {
     function MapPage(navCtrl) {
         this.navCtrl = navCtrl;
+        this.latitude;
+        this.longitude;
     }
     MapPage.prototype.ngOnInit = function () {
+        var _this = this;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.latitude = position.coords.latitude;
+                _this.longitude = position.coords.longitude;
+                console.log(position.coords);
+            });
+        }
     };
     return MapPage;
 }());
 MapPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-list',template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\map\map.html"*/'<ion-header>\n\n        <ion-navbar>\n\n            <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n          </button>\n\n            <ion-title>Home</ion-title>\n\n        </ion-navbar>\n\n    </ion-header>\n\n    \n\n    <ion-content padding>\n\n    \n\n    </ion-content>'/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\map\map.html"*/,
-        styles: ["\n        agm-map {\n          height: 300px;\n      }\n    "],
-        template: "\n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\"></agm-map>\n    "
+        selector: 'page-map',template:/*ion-inline-start:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\map\map.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n          </button>\n\n        <ion-title>Home</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <h1>In Development</h1>\n\n    <div>\n\n        <agm-map [latitude]="latitude" [longitude]="longitude"></agm-map>\n\n    </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\aww7.DESKTOP-5O3OS7S\Desktop\SMU\SeniorDesign\behbes\webApp\public\myApp\src\pages\map\map.html"*/,
+        styles: ["\n        agm-map {\n          height: 300px;\n          width: 300px;\n      }\n    "],
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object])
 ], MapPage);
 
+var _a;
 //# sourceMappingURL=map.js.map
 
 /***/ }),
