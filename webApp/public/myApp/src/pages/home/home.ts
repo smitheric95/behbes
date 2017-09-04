@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { FormService } from '../../app/services/form/form.service';
+import { FormPage } from '../form/form';
+import { MapPage } from '../map/map';
+import { InfantHealthPage } from '../infanthealth/infanthealth';
 
 @Component({
   selector: 'page-home',
@@ -10,15 +12,26 @@ import { FormService } from '../../app/services/form/form.service';
 export class HomePage {
 
 
-  constructor(public navCtrl: NavController, private formService: FormService) {
+  constructor(public navCtrl: NavController) {
 
   }
 
-  formTest;
 
-  async getTest() {
-
-    this.formTest = await this.formService.getForm();
+  formTapped(event) {
+    this.navCtrl.push(FormPage);
   }
+
+  erTapped(event) {
+    this.navCtrl.push(MapPage);
+  }
+
+  alarmTapped(event) {
+    this.navCtrl.push(MapPage);
+  }
+
+  basicsTapped(event) {
+    this.navCtrl.push(InfantHealthPage);
+  }
+
 
 }

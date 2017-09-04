@@ -8,14 +8,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>Insert App Name Here</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-  <p>Eric wuz here</p>
-  <p>Test? => {{formTest}} <button ion-button secondary (click)="getTest()">Get Test</button></p>
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+      <button ion-button (click)="formTapped($event)">Symptoms Evaluation</button><br>
+      <button ion-button (click)="erTapped($event)">Emergency Rooms</button><br>
+      <button ion-button (click)="alarmTapped($event)">Medicine Alarms</button><br>
+      <button ion-button (click)="basicsTapped($event)">Basics of Infant Health</button><br>
+  </ion-list>
 
 
   
