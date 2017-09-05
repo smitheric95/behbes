@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{cause_name}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+
+
+  <ion-content>
+    <div>About: {{cause.about}}</div><br>
+    <div>Natural Treatment: {{cause.naturalTreatments}}</div><br>
+    <div>Conventional Treatment: {{cause.conventionalTreatments}}</div><br>
+    <div>Reasources: {{cause.resources}}</div><br>
+
+    <button ion-button (click)="homeTapped($event)">Return Home</button><br>
+  </ion-content>
