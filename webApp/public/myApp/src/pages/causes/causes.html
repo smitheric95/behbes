@@ -11,10 +11,9 @@
     <h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>
     <h1 style="margin:30px">Possible Causes</h1>
     <ion-list>
-        <button ion-item *ngFor = "let item of causes; let i = index">
-            <p item-left style="margin:30px">{{ratings[i]}}</p>
-            <p>{{item}}</p>
-            <ion-icon name="text" item-right></ion-icon>
+        <button (click)="causeTapped($event,causes,cause.name)" ion-item *ngFor = "let cause of causes; let i = index">
+            <p item-left style="margin:30px">{{cause.matchPercentage}}</p>
+            <p>{{cause.name}}</p>
             
         </button>
         

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { FormService } from '../../app/services/form/form.service';
 
@@ -8,22 +8,25 @@ import { FormService } from '../../app/services/form/form.service';
   templateUrl: 'causes.html'
 })
 export class CausesPage {
+  /*
+  cause: Array<{about: string, 
+    naturalTreatments: string, conventionalTreatments: string, resources: string }>;*/
+    causes: Array<{name: string, matchPercentage: string}>;
 
-    ratings: string[];
-    causes: string[];
-  constructor(public navCtrl: NavController, private formService: FormService) {
-        this.ratings = ['4/5','3/5','2/5','1/5'];
-        this.causes = ['Blah', 'Blah2','Blah3','Blah4'];
+  constructor(public navCtrl: NavController, public navParams, private formService: FormService) {
+    this.causes = navParams.get('causes');
   }
 
-  formTest;
 
-  async getTest() {
 
-    this.formTest = await this.formService.getForm();
-  }
-
+  //sends the other possible causes to return to this page
+  causeTapped(event, causes, name) {
+    /*this.navCtrl.push(IllnessPage/name, {
+      causes: causes
+    });*/
 }
+
+
 /*
 import { Component } from '@angular/core';
 

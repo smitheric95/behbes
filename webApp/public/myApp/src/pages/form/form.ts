@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { FormService } from '../../app/services/form/form.service';
 
+import { CausesPage } from '../causes/causes';
+
 @Component({
   selector: 'page-form',
   templateUrl: 'form.html',
@@ -58,9 +60,9 @@ export class FormPage {
     
     this.response = await this.formService.postForm(this.selected);
 
-    /*this.navCtrl.push(PossibleCausesPage, {
+    this.navCtrl.push(CausesPage, {
       response: this.response
-    });*/
+    });
   }
 
   async getSymptoms() {

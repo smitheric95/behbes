@@ -1,2 +1,9 @@
 .vagrant/*
 .DS_Store
+webApp/public/myApp/www/build/main.css
+
+webApp/public/myApp/www/build/main.css.map
+webApp/public/myApp/www/build/main.js
+webApp/public/myApp/www/build/main.js.map
+webApp/public/myApp/www/build/vendor.js
+webApp/public/myApp/www/build/vendor.js.map
