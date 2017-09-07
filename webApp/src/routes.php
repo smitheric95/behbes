@@ -67,7 +67,7 @@ $app->post('/postform',function($requset,$response){
 	$input = json_decode($input,true);
 	$parsed_array = [];
 	foreach ($input as $key => $value){
-		$stmt = $this->db->prepare("SELECT id FROM Symptoms WHERE Description = :Description")
+		$stmt = $this->db->prepare("SELECT SymptomID FROM Symptoms WHERE Description = :Description")
 		$stmt->bindValue(':Description', $value, PDO::PARAM_STR);
 		try{
 				$stmt->execute();
