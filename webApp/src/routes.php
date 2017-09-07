@@ -95,8 +95,8 @@ $app->post('/postform',function($request,$response){
 	return $this->response->withJson($Info);
 });
 
-$app->get('/illness/{id}', function($requeset, $response){
-	$id = $arg["id"];
+$app->get('/illness/{id}', function($requeset, $response, $args){
+	$id = $args["id"];
 	$stmt = $this->db->prepare("SELECT * FROM Illnesses WHERE IllnessID = :id ");
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 	try{
