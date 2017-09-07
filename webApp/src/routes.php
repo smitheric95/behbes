@@ -61,7 +61,7 @@ $app->post('/signup',function($request,$response){
 			return $this->response->withStatus(200);      
 });
 
-$app->post('/postform',function($requset,$response){
+$app->post('/postform',function($request,$response){
 	
 	$input = $request->getBody();
 	$input = json_decode($input,true);
