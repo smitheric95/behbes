@@ -1,22 +1,45 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+  <ion-navbar style="background-color: #545353">
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu" style="color: white"> </ion-icon>
+    </button>-->
+     <ion-title style="color: white">Home</ion-title>
+     <!--<ion-icon style="float:right; size: 100%" ios="ios-settings" md="md-settings"></ion-icon>-->
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Insert App Name Here</h3>
+  <h1 style=" font-family:Georgia; font-size: 40px">hussh</h1>
 
-  <ion-list>
-      <button ion-button (click)="formTapped($event)">Symptoms Evaluation</button><br>
-      <button ion-button (click)="erTapped($event)">Emergency Rooms</button><br>
-      <button ion-button (click)="alarmTapped($event)">Medicine Alarms</button><br>
-      <button ion-button (click)="basicsTapped($event)">Basics of Infant Health</button><br>
+<div >
+  <ion-list >
+      <button ion-button style="background-color: #ee4934; width: 100%; 
+        height: 150px; 
+        border-radius: 25px; 
+        font-family: 'permanent marker'; 
+        font-size: 200%; 
+        font-style: normal;
+        color: #181818" (click)="formTapped($event)" >Symptoms Evaluation</button><br>
+      <button ion-button style="background-color: #ffd21b; width: 100%; 
+        height: 150px; 
+        border-radius: 25px; 
+        font-family: 'permanent marker'; 
+        font-size: 200%; 
+        color: #181818" (click)="erTapped($event)">Emergency Rooms</button><br>
+      <button ion-button style="background-color: #00B2EE; width: 100%; 
+        height: 150px; 
+        border-radius: 25px; 
+        font-family: 'permanent marker'; 
+        font-size: 200%; 
+        color: #181818" (click)="alarmTapped($event)">Medicine Alarms</button><br>
+      <button ion-button style="background-color: #38bd57; width: 100%; 
+        height: 150px; 
+        border-radius: 25px; 
+        font-family: 'permanent marker'; 
+        font-size: 200%; 
+        color: #181818"(click)="basicsTapped($event)">Basics of Infant Health</button><br>
   </ion-list>
-
+</div>
 
   
 </ion-content>
