@@ -67,7 +67,7 @@ $app->post('/postform',function($request,$response){
 	$input = json_decode($input,true);
 	$parsed_array = [];
 	foreach ($input as $key => $value){
-		$stmt = $this->db->prepare("SELECT SymptomID FROM Symptoms WHERE Description = :Description")
+		$stmt = $this->db->prepare("SELECT SymptomID FROM Symptoms WHERE Description = :Description")；
 		$stmt->bindValue(':Description', $value, PDO::PARAM_STR);
 		try{
 				$stmt->execute();
@@ -76,7 +76,7 @@ $app->post('/postform',function($request,$response){
 					return $this->response->withStatus(400);
 			}
 		$idinfo = $stmt->fetchAll();
-		array_push($parsed_array, $idinfo[0]);
+		array_push($parsed_array, $idinfo[0][0]);
 	}
 	$in_values = implode(',', $parsed_arrary);
 	$stmt = $this->db->prepare("SELECT s1.IllnessID, COUNT(s1.SymptomID) AS counted FROM  SymptomIllness as s1 INNER JOIN Symptoms as s2 ON s1.SymptomID=s2.SymptomID INNER JOIN Illnesses as i1 ON s1.IllnessID = i1.IllnessID WHERE s1.SymptomNameID IN (".$in_values.") GROUP BY s1.IllnessID ORDER BY counted DESC");
