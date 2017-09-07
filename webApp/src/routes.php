@@ -79,7 +79,7 @@ $app->post('/postform',function($requset,$response){
 		array_push($parsed_array, $idinfo[0]);
 	}
 	$in_values = implode(',', $parsed_arrary);
-	$stmt = $this->db->prepare("SELECT IllnessesID, COUNT(SymptomsID), IllnessesName AS counted FROM SymptomIllnesses WHERE SymptomsID IN (".$in_value.") GROUP BY IllnessesName ORDER BY counted DESC");
+	$stmt = $this->db->prepare("SELECT s1.IllnessID, COUNT(s1.SymptomID) AS counted FROM  SymptomIllness as s1 INNER JOIN Symptoms as s2 ON s1.SymptomID=s2.SymptomID INNER JOIN Illnesses as i1 ON s1.IllnessID = i1.IllnessID WHERE s1.SymptomNameID IN (".$in_values.") GROUP BY s1.IllnessID ORDER BY counted DESC");
 	try{
 				$stmt->execute();
 			}
