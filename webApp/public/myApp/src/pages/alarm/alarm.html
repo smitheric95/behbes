@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Possible Causes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>
+    <h1 style="margin:30px">Possible Causes</h1>
+    <ion-list>
+        <button ion-item  ion-item *ngFor = "let cause of causes; let i = index" (click)="causeTapped($event,cause.recommendation)">
+            <div item-left style="margin:30px">{{cause.matchPercentage}}</div>
+            {{cause.recommendation}}
+        </button>
+        
+    </ion-list>
+</ion-content>
+
