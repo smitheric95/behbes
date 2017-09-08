@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { FormPage } from '../form/form';
 import { MapPage } from '../map/map';
 import { InfantHealthPage } from '../infanthealth/infanthealth';
+import { AlarmsPage } from '../alarm/alarm';
 
 @Component({
   selector: 'page-home',
@@ -26,7 +27,7 @@ export class HomePage {
   }
 
   alarmTapped(event) {
-    /*this.navCtrl.push(MapPage);*/
+    this.navCtrl.push(AlarmsPage);
   }
 
   basicsTapped(event) {

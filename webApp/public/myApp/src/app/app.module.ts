@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CausesPage } from '../pages/causes/causes';
+import { AlarmsPage } from '../pages/alarm/alarm';
 import { FormPage } from '../pages/form/form';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
@@ -24,6 +25,7 @@ import { FormService } from './services/form/form.service';
     HomePage,
     ListPage,
     CausesPage,
+    AlarmsPage,
     FormPage,
     InfantHealthPage,
     MapPage,
@@ -43,6 +45,7 @@ import { FormService } from './services/form/form.service';
     HomePage,
     ListPage,
     CausesPage,
+    AlarmsPage,
     FormPage,
     InfantHealthPage,
     MapPage,
