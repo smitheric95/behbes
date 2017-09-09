@@ -15,5 +15,11 @@ return [
             'path' => __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
+        "db" => [
+	    "host" => "behbes.club",
+	    "dbname" => "behbes",
+	    "user" => "behbes_api",
+	    "pass" => "behbes"
+		,]
     ],
 ];
