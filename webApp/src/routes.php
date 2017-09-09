@@ -66,6 +66,7 @@ $app->post('/postform',function($request,$response){
 	$input = $request->getBody();
 	$input = json_decode($input,true);
 	$parsed_array = [];
+
 	foreach ($input as $key => $value){
 		$stmt = $this->db->prepare("SELECT SymptomID FROM Symptoms WHERE Description = :Description");
 		$stmt->bindValue(':Description', $value, PDO::PARAM_STR);
@@ -78,6 +79,28 @@ $app->post('/postform',function($request,$response){
 		$idinfo = $stmt->fetchAll();
 		array_push($parsed_array, $idinfo[0]["SymptomID"]);
 	}
+
+	//Add history if user is logged in
+ 	if($request->getAttribute('UserID')!='None'){
+		 //getBabyID by ParentID and namespace
+		 $stmt = $this->db->prepare('SELECT BabyID FROM Baby WHERE ParentID= :ParentID ');// AND Name= :Name ');
+		 $stmt->bindValue(':ParentID', $request->getAttribute('UserID'), PDO::PARAM_INT);
+		 //need to figure out how to bind baby name 
+		 try{
+			 $stmt->execute();
+		 }
+		 catch(PDOException $e){
+			return $this->response->withStatus(400);
+		 }
+		 $babyID = $stmt->fetchAll()[0]["BabyID"];
+		 $createHistoryQuery = $this->db->prepare('INSERT INTO History(BabyID, Date) VALUES (?, NOW())');
+		 $createHistoryQuery->execute(array($babyID));
+
+		 //get ID of that History and add all symptoms in a loop 
+
+
+	}
+
 	$str = "";
 	foreach ($parsed_array as $i){
       $str = $str.(string)$i;
@@ -93,7 +116,7 @@ $app->post('/postform',function($request,$response){
 	}
 	$Info = $stmt->fetchAll();
 	return $this->response->withJson($Info);
-});
+})->add($validateSession);
 
 $app->get('/illness/{id}', function($requeset, $response){
 	$id = $arg["id"];
