@@ -11,17 +11,20 @@ import { IllnessPage } from '../illness/illness';
 })
 export class AlarmsPage {
   
-  causes: any[];
-  cause: any[];
+  medicines: any[];
+  times: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
-    this.causes = navParams.get('response');
-    this.cause = [];
+    //this.causes = navParams.get('response');
+    //this.cause = [];
+    this.medicines = ['Alex\'s cough medicine', 'Jenny\'s advil medicine'];
+    this.times = ['3:54','5:15'];
+    
   }
 
 
   //sends the other possible causes to return to this page
-  async causeTapped(event, cause_name) {
+  /*async causeTapped(event, cause_name) {
 
     Promise.all(this.cause = await this.formService.getIllness(cause_name))
       .then(value => this.pushPage(cause_name));
@@ -32,5 +35,5 @@ export class AlarmsPage {
       cause: this.cause,
       cause_name: cause_name
     });
-  }
+  }*/
 }
