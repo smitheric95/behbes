@@ -28,12 +28,23 @@ $app->post('/signin',function($request,$response){
 
 		$input = $request->getBody();
 		$input = json_decode($input, true); 
-		$pass = md5($input["Password"]);
-		$stmt = $this->db->prepare("SELECT * FROM Users WHERE Username = :Username AND pass = :Password");
+		$get_salt = $this->db->prepare("CALL GetSalt(:Username)");
+		$get_salt->bindValue(":Username", $input["Username"], PDO::PARAM_STR);
+		try{
+			$get_salt->execute();
+		}
+		catch(PDOException $e){
+			return $this->response->withStatus(400);
+		}
+		$salt = $get_salt->fetchAll()[0]["Salt"];
+		unset($get_salt);
+		$pass = hash('sha256', $input["Password"].$salt);
+
+		$stmt = $this->db->prepare("CALL ValidateUser(:Username,:Password)");
 		$stmt->bindValue(':Username',$input["Username"],PDO::PARAM_STR);
 		$stmt->bindValue(':Password',$pass,PDO::PARAM_STR);
 		$stmt->execute();
-		$userInfo = $stmt->fetchAll();
+		$userInfo = $stmt->fetchAll()[0];
 		return $this->response->withJson($userInfo);
 	
 });
@@ -43,13 +54,14 @@ $app->post('/signup',function($request,$response){
 			$input = $request->getBody();
 						//$input = $request->getParsedBody();
 			$input = json_decode($input, true); 
-		    $stmt = $this->db->prepare("INSERT into Users(Username,Password,Email, Salt, FirstName, LastName,) VALUES (:Username, :Password,:Email,:Salt, :FirstName, :LastName)");
+		    $stmt = $this->db->prepare("CALL CreateUser(:Username, :Password,:FirstName, :LastName,:Email,:Salt)");
 			$pass = $input["Password"];
-			$pass = md5($pass);
+			$salt = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
+			$pass = hash('sha256',$pass.$salt);
 			$stmt->bindValue(':Username', $input["Username"],PDO::PARAM_STR);
 			$stmt->bindValue(':Password', $pass, PDO::PARAM_STR);
 			$stmt->bindValue(':Email', $input["Email"], PDO::PARAM_STR);
-			$stmt->bindValue(':Salt', $input["Salt"], PDO::PARAM_STR);
+			$stmt->bindValue(':Salt', $salt, PDO::PARAM_STR);
 			$stmt->bindValue(':FirstName',$input["FirstName"],PDO::PARAM_STR);
 			$stmt->bindValue(':LastName',$input["LastName"],PDO::PARAM_STR);
 			try{
