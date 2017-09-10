@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { FormService } from '../../app/services/form/form.service';
 
+import { CausesPage } from '../causes/causes';
+
 @Component({
   selector: 'page-form',
   templateUrl: 'form.html',
@@ -56,12 +58,15 @@ export class FormPage {
       this.selected.push(symptom.name);
     }
     
-    this.response = await this.formService.postForm(this.selected);
-
-    /*this.navCtrl.push(PossibleCausesPage, {
-      response: this.response
-    });*/
+    Promise.all(this.response = await this.formService.postForm(this.selected))
+      .then(value => this.pushPage())
   }
+
+  pushPage() {
+    this.navCtrl.push(CausesPage, {
+      response: this.response
+    });
+  } 
 
   async getSymptoms() {
     this.symptomsList = await this.formService.getSymptoms();

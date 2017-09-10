@@ -8,9 +8,11 @@ import { AgmCoreModule } from '@agm/core';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { CausesPage } from '../pages/causes/causes';
 import { FormPage } from '../pages/form/form';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
+import { IllnessPage } from '../pages/illness/illness';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,9 +23,11 @@ import { FormService } from './services/form/form.service';
     MyApp,
     HomePage,
     ListPage,
+    CausesPage,
     FormPage,
     InfantHealthPage,
-    MapPage
+    MapPage,
+    IllnessPage
   ],
   imports: [
     BrowserModule,
@@ -38,9 +42,11 @@ import { FormService } from './services/form/form.service';
     MyApp,
     HomePage,
     ListPage,
+    CausesPage,
     FormPage,
     InfantHealthPage,
-    MapPage
+    MapPage,
+    IllnessPage
   ],
   providers: [
     StatusBar,

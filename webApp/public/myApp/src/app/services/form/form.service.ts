@@ -15,6 +15,13 @@ export class FormService {
         });
     }
 
+    getIllness(name: string){
+		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/illness/${name}`)
+        .toPromise().then(function(res) {
+            return res.json();
+        });
+    }
+
 
     postForm(selected: any[]){
         return this.http.post(`http://private-7be936-behbes.apiary-mock.com/postForm`,selected)

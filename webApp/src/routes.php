@@ -78,8 +78,8 @@ $app->post('/postform',function($request,$response){
 	$input = $request->getBody();
 	$input = json_decode($input,true);
 	$parsed_array = [];
-
-	foreach ($input as $key => $value){
+	foreach ($input as  $value){
+		print($value);
 		$stmt = $this->db->prepare("SELECT SymptomID FROM Symptoms WHERE Description = :Description");
 		$stmt->bindValue(':Description', $value, PDO::PARAM_STR);
 		try{
@@ -130,8 +130,8 @@ $app->post('/postform',function($request,$response){
 	return $this->response->withJson($Info);
 })->add($validateSession);
 
-$app->get('/illness/{id}', function($requeset, $response){
-	$id = $arg["id"];
+$app->get('/illness/{id}', function($requeset, $response, $args){
+	$id = $args["id"];
 	$stmt = $this->db->prepare("SELECT * FROM Illnesses WHERE IllnessID = :id ");
 	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 	try{
