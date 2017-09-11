@@ -130,10 +130,10 @@ $app->post('/postform',function($request,$response){
 	return $this->response->withJson($Info);
 })->add($validateSession);
 
-$app->get('/illness/{id}', function($requeset, $response, $args){
-	$id = $args["id"];
-	$stmt = $this->db->prepare("SELECT * FROM Illnesses WHERE IllnessID = :id ");
-	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$app->get('/illness/{name}', function($requeset, $response, $args){
+	$name = $args["name"];
+	$stmt = $this->db->prepare("SELECT * FROM Illnesses WHERE Name = :name ");
+	$stmt->bindValue(':name', $name, PDO::PARAM_INT);
 	try{
 				$stmt->execute();
 			}
