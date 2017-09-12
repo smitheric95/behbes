@@ -148,4 +148,16 @@ $app->get('/reference', function($requeset,$response){
 	
 	return $this->response->WithStatus(200);
 });
-
+$app->get('/remedies/{illnessname}', funciton($request, $response, $args){
+	$illname = $args["illnessname"];
+	$stmt = $this->db->prepare("SELECT * FROM Illnesses as i1 INNER JOIN Remedies as r1 ON i1.IllnessID = r1.IllnessID WHERE i1.Name = :illnessname");
+	$stmt->bindValue(':illnessname', $name, PDO::PARAM_STR);
+	try{
+				$stmt->execute();
+			}
+			catch(PDOException $e){
+					return $this->response->withStatus(400);
+			}
+	$reme = $stmt->fetchAll();
+	return $this->response->withJson($reme);		
+});
