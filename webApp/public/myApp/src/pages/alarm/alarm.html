@@ -11,7 +11,8 @@
     <h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>
     <h1 style="margin:30px">My Alarms</h1>
     <ion-list>
-        <button ion-item  ion-item *ngFor = "let med of medicines; let i = index">
+        
+        <button ion-item  ion-item *ngFor = "let med of medicines; let i = index" (click)="playSound()">
             <div item-left style="margin:30px">{{times[i]}}</div>
             {{med}}
         </button>

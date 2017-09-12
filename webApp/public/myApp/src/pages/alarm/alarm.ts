@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+//import { NavController, NavParams } from 'ionic-angular';
 
-import { FormService } from '../../app/services/form/form.service';
+//import { FormService } from '../../app/services/form/form.service';
 
-import { IllnessPage } from '../illness/illness';
+//import { IllnessPage } from '../illness/illness';
 
 @Component({
   selector: 'page-alarms',
@@ -13,16 +13,28 @@ export class AlarmsPage {
   
   medicines: any[];
   times: any[];
+  a;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
+  constructor() {
     //this.causes = navParams.get('response');
     //this.cause = [];
     this.medicines = ['Alex\'s cough medicine', 'Jenny\'s advil medicine'];
     this.times = ['3:54','5:15'];
+    this.a = new Audio();
+    this.a.src = 'http://jplayer.org/audio/m4a/Miaow-07-Bubble.m4a';
+    this.a.load();
     
   }
 
 
+  playSound(){
+    if (this.a.currentTime == 0)
+      this.a.play();
+    else {
+      this.a.pause();
+      this.a.currentTime = 0;
+    }
+  }
   //sends the other possible causes to return to this page
   /*async causeTapped(event, cause_name) {
 
