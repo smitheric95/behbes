@@ -18,7 +18,7 @@ with open('illnesses.txt') as illnessFile:
 
         natural_remedies = []
         for index in range(0, len(natural_remedy_text)):
-            natural_remedies.append((data[0], natural_remedy_text[index], natural_remedy_links[index]))
+            natural_remedies.append((data[0], natural_remedy_links[index],natural_remedy_text[index]))
         
         cursor.executemany(insert_natural_remedies, natural_remedies)
 
@@ -28,7 +28,7 @@ with open('illnesses.txt') as illnessFile:
         conventional_remedies = []
 
         for index in range(0,len(conventional_remedy_text)):
-            conventional_remedies.append((data[0],conventional_remedy_text[index], conventional_remedy_links[index]))
+            conventional_remedies.append((data[0],conventional_remedy_links[index], conventional_remedy_text[index]))
         insert_conventional_remedies = ("INSERT INTO Remedies(IllnessID, Type, Hyperlink, Description) "
                             "VALUES ((SELECT IllnessID FROM behbes.Illnesses WHERE Name=(%s)), 'Conventional', (%s), (%s))")
         
@@ -40,7 +40,7 @@ with open('illnesses.txt') as illnessFile:
         resources = []
 
         for index in range(0,len(resource_text)):
-            resources.append((data[0],resource_text[index], resource_links[index]))
+            resources.append((data[0],resource_links[index], resource_text[index]))
         
         insert_resources = ("INSERT INTO Remedies(IllnessID, Type, Hyperlink, Description) "
                             "VALUES ((SELECT IllnessID FROM behbes.Illnesses WHERE Name=(%s)), 'Resource', (%s), (%s))")
