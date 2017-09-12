@@ -148,7 +148,7 @@ $app->get('/reference', function($requeset,$response){
 	
 	return $this->response->WithStatus(200);
 });
-$app->get('/remedies/{illnessname}', funciton($request, $response, $args){
+$app->get('/remedies/{illnessname}', function($request, $response, $args){
 	$illname = $args["illnessname"];
 	$stmt = $this->db->prepare("SELECT * FROM Illnesses as i1 INNER JOIN Remedies as r1 ON i1.IllnessID = r1.IllnessID WHERE i1.Name = :illnessname");
 	$stmt->bindValue(':illnessname', $illname, PDO::PARAM_STR);
