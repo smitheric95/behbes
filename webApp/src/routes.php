@@ -79,7 +79,6 @@ $app->post('/postform',function($request,$response){
 	$input = json_decode($input,true);
 	$parsed_array = [];
 	foreach ($input as  $value){
-		print($value);
 		$stmt = $this->db->prepare("SELECT SymptomID FROM Symptoms WHERE Description = :Description");
 		$stmt->bindValue(':Description', $value, PDO::PARAM_STR);
 		try{
@@ -118,22 +117,23 @@ $app->post('/postform',function($request,$response){
       $str = $str.(string)$i;
       $str = $str.',';
 	}
-    print($str);
-	$stmt = $this->db->prepare("SELECT s1.IllnessID, COUNT(s1.SymptomID) AS counted FROM  SymptomIllness as s1 INNER JOIN Symptoms as s2 ON s1.SymptomID=s2.SymptomID INNER JOIN Illnesses as i1 ON s1.IllnessID = i1.IllnessID WHERE s1.SymptomID IN (".$str." 0) GROUP BY s1.IllnessID ORDER BY counted DESC");
+	$stmt = $this->db->prepare("SELECT Name, COUNT(s1.SymptomID),  AS counted FROM  SymptomIllness as s1 INNER JOIN Symptoms as s2 ON s1.SymptomID=s2.SymptomID INNER JOIN Illnesses as i1 ON s1.IllnessID = i1.IllnessID WHERE s1.SymptomID IN (".$str." 0) GROUP BY s1.IllnessID ORDER BY counted DESC");
 	try{
+
 				$stmt->execute();
 			}
 			catch(PDOException $e){
+				print($e.message);
 					return $this->response->withStatus(400);
 	}
 	$Info = $stmt->fetchAll();
 	return $this->response->withJson($Info);
 })->add($validateSession);
 
-$app->get('/illness/{id}', function($requeset, $response, $args){
-	$id = $args["id"];
-	$stmt = $this->db->prepare("SELECT * FROM Illnesses WHERE IllnessID = :id ");
-	$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$app->get('/illness/{name}', function($requeset, $response, $args){
+	$name = $args["name"];
+	$stmt = $this->db->prepare("SELECT * FROM Illnesses WHERE Name = :name ");
+	$stmt->bindValue(':name', $name, PDO::PARAM_INT);
 	try{
 				$stmt->execute();
 			}
