@@ -35,14 +35,7 @@ for illness in illnesses:
     for symptom in ill_sympt[illness]:
         stmt = "INSERT INTO behbes.SymptomIllness (SymptomID, IllnessID) VALUES ((SELECT SymptomID FROM behbes.Symptoms WHERE Description= %s ), (SELECT IllnessID FROM behbes.Illnesses WHERE Name= %s ))"
         cursor.execute(stmt,(symptom, illness,))
-        print (cursor.statement)
-        sys.stdout.flush()
 
 connection.commit()
 cursor.close()
 connection.close()
-
-
-
-# pprint.pprint(illnesses)
-# pprint.pprint(ill_sympt)
