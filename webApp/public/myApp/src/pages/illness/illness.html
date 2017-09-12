@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color='navbarSymptoms'>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -11,10 +11,11 @@
 
 
   <ion-content>
-    <div>About: {{cause.about}}</div><br>
-    <div>Natural Treatment: {{cause.naturalTreatments}}</div><br>
-    <div>Conventional Treatment: {{cause.conventionalTreatments}}</div><br>
-    <div>Reasources: {{cause.resources}}</div><br>
-
-    <button ion-button (click)="homeTapped($event)">Return Home</button><br>
+    <ion-card>
+      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">About: </span><span style="font-family: 'Roboto'; font-size: 20px; ">{{cause.about}}</span><br>
+      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">Natural Treatment: </span><span  style="font-family: 'Roboto'; font-size: 20px;">{{cause.naturalTreatments}}</span><br>
+      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">Conventional Treatment: </span><span  style="font-family: 'Roboto'; font-size: 20px;">{{cause.conventionalTreatments}}</span><br>
+      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">Reasources: </span><span  style="font-family: 'Roboto'; font-size: 20px;">{{cause.resources}}</span><br>
+      <button ion-button (click)="homeTapped($event)">Return Home</button><br>
+    </ion-card>
   </ion-content>
