@@ -17,6 +17,10 @@ import { IllnessPage } from '../pages/illness/illness';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FormService } from './services/form/form.service';
+import { LoginComponent } from '../pages/login/login.component';
+import { SignupComponent } from '../pages/signup/signup.component';
+import { SettingsComponent } from '../pages/settings/settings.component';
+import { Globals } from './services/globals/globals';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { FormService } from './services/form/form.service';
     FormPage,
     InfantHealthPage,
     MapPage,
-    IllnessPage
+    IllnessPage, 
+    LoginComponent,
+    SignupComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,12 +53,16 @@ import { FormService } from './services/form/form.service';
     FormPage,
     InfantHealthPage,
     MapPage,
-    IllnessPage
+    IllnessPage,
+    SignupComponent,
+    LoginComponent,
+    SettingsComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FormService,
+    Globals,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
