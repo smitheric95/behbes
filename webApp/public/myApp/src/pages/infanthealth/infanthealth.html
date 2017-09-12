@@ -2,11 +2,11 @@
 <html>
 
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color='navbarInfantHealth'>
     <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Infant Health Advice</ion-title>
+        <ion-title color='fontColor' >Basics of Infant Health</ion-title>
     <button ion-button menuToggle="right" end>
       <ion-icon name="contact"></ion-icon>
     </button>
@@ -22,68 +22,199 @@
     }
 </style>
 
+
 <body>
     <div class="scroll-content">
         <div id="companyname">
             <h1> Behbes </h1>
         </div>
-        <div id="pagename">
-            <h1 align="center">Basics of Infant Health</h1>
-        </div>
         <div id="Videos">
             <div id="topic 1">
-                <h2>How to swaddle a baby</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                <ion-card >
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;">How to swaddle a baby</h2>
+                        <p text-wrap>
+                            Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;" text-wrap>How to swaddle a baby: A differnt approach</h2>
+                        <p text-wrap>
+                            This is video contains a diffrent swaddling technique, 
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
             <div id="topic 2">
-                <h2> Bathing</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/WxE5vnXoyrg" frameborder="0" allowfullscreen></iframe>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Bathing</h2>
+                        <p text-wrap>
+                            This video teaches you an easy technique to bathe your baby
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/WxE5vnXoyrg" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
             <div id="topic 3">
-                <h2> Diaper Change</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/bQ_St20NHDI" frameborder="0" allowfullscreen></iframe>
+                 <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Diaper Change</h2>
+                        <p text-wrap>
+                            Easy steps on changing oyur baby's diaper'
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>  
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/bQ_St20NHDI" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>   
             </div>
             <div id="topic 4">
-                <h2> Comforting</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/j2C8MkY7Co8" frameborder="0" allowfullscreen></iframe>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Comforting</h2>
+                        <p text-wrap>
+                            Easiest way to calm crying baby
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>  
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/j2C8MkY7Co8" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
             <div id="topic 5">
-                <h2> Newborn Burping Techniques</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/m50PTFmmlxw" frameborder="0" allowfullscreen></iframe>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;">Newborn Burping Techniques</h2>
+                        <p text-wrap>
+                            Burpning made easy
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/m50PTFmmlxw" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
             <div id="topic 6">
-                <h2> Bottle Feeding</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/6sHcL1DiDfc" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/hzSrvuXRA68" frameborder="0" allowfullscreen></iframe>
+                 <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;">Bottle Feeding</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/6sHcL1DiDfc" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                 </ion-card>
+                 <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;">Bottle Feeding</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/hzSrvuXRA68" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                 </ion-card>
             </div>
             <div id="topic 7">
-                <h2> Sleep</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/FIIG6n55Ito" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Y1VYWmCjYqc" frameborder="0" allowfullscreen></iframe>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;">Sleep</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/FIIG6n55Ito" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;">Sleep</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Y1VYWmCjYqc" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
             <div id="topic 8">
-                <h2> Baby Massage</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/IS7AVfyoF_Y" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/gNrJC5CIpgk" frameborder="0" allowfullscreen></iframe>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Baby Massage</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/IS7AVfyoF_Y" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Baby Massage</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/gNrJC5CIpgk" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
             <div id="topic 9">
-                <h2> How to take your baby’s temperature</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/WlzjkHdd1IU" frameborder="0" allowfullscreen></iframe>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> How to take your baby’s temperature</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/WlzjkHdd1IU" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
             <div id="topic 10">
-                <h2> Breastfeeding</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/8kTKnZOmJXU" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/g_k50wOf564" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/FZA_64nCobA" frameborder="0" allowfullscreen></iframe>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Breastfeeding</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/8kTKnZOmJXU" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Breastfeeding</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/g_k50wOf564" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card>
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;"> Breastfeeding</h2>
+                        <p text-wrap>
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/FZA_64nCobA" frameborder="0" allowfullscreen></iframe>
+                    </ion-card-content>
+                </ion-card>
             </div>
-
         </div>
     </div>
 </body>

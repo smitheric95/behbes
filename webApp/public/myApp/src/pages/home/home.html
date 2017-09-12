@@ -1,9 +1,10 @@
+
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color='navbarColor'>
     <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <h1 style="font-family:sans-serif; font-size: 40px; padding-left: 10px; color: #81C784; font-weight: bold">Hussh</h1>
     <button ion-button menuToggle="right" end>
       <ion-icon name="contact"></ion-icon>
     </button>
@@ -11,15 +12,43 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Insert App Name Here</h3>
-
-  <ion-list>
-      <button ion-button (click)="formTapped($event)">Symptoms Evaluation</button><br>
-      <button ion-button (click)="erTapped($event)">Emergency Rooms</button><br>
-      <button ion-button (click)="alarmTapped($event)">Medicine Alarms</button><br>
-      <button ion-button (click)="basicsTapped($event)">Basics of Infant Health</button><br>
-  </ion-list>
-
+   
+<div class="container">
+  <ion-card style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; ">
+      <button ion-button 
+       style="background-color: #F06292; 
+        width: 100%; 
+        height: 150px; 
+        border-radius: 20px; 
+        font-family: 'Roboto', sans-serif;
+        font-size: 200%; 
+        color: white" (click)="formTapped($event)" text-wrap>Symptoms Evaluation</button>
+      <button ion-button  style="background-color: #FFD54F; 
+       width: 100%; 
+        height: 150px; 
+        border-radius: 25px; 
+        font-family: 'Roboto', sans-serif; 
+        font-size: 200%; 
+        color: white" (click)="erTapped($event)" text-wrap>Emergency Rooms</button>
+    
+      <button ion-button style="background-color: #4FC3F7; 
+        width: 100%; 
+        height: 150px; 
+        border-radius: 25px; 
+        font-family: 'Roboto', sans-serif; 
+        font-size: 200%; 
+        color: white" (click)="alarmTapped($event)" text-wrap>Medicine Alarms</button>
+        
+      <button ion-button style="background-color: #81C784; 
+        width: 100%; 
+        height: 150px; 
+        border-radius: 25px; 
+        font-family: 'Roboto', sans-serif; 
+        font-size: 200%; 
+        color: white"(click)="basicsTapped($event)" text-wrap>Basics of Infant Health</button>
+  </ion-card>
+    
+</div>
 
   
 </ion-content>

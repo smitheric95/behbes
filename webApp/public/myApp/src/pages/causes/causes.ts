@@ -7,7 +7,8 @@ import { IllnessPage } from '../illness/illness';
 
 @Component({
   selector: 'page-causes',
-  templateUrl: 'causes.html'
+  templateUrl: 'causes.html',
+  styleUrls: ['/pages/causes/cause.scss'],
 })
 export class CausesPage {
   
