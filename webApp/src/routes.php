@@ -117,7 +117,7 @@ $app->post('/postform',function($request,$response){
       $str = $str.(string)$i;
       $str = $str.',';
 	}
-	$stmt = $this->db->prepare("SELECT Name, COUNT(s1.SymptomID),  AS counted FROM  SymptomIllness as s1 INNER JOIN Symptoms as s2 ON s1.SymptomID=s2.SymptomID INNER JOIN Illnesses as i1 ON s1.IllnessID = i1.IllnessID WHERE s1.SymptomID IN (".$str." 0) GROUP BY s1.IllnessID ORDER BY counted DESC");
+	$stmt = $this->db->prepare("SELECT Name, COUNT(s1.SymptomID) AS counted FROM  SymptomIllness as s1 INNER JOIN Symptoms as s2 ON s1.SymptomID=s2.SymptomID INNER JOIN Illnesses as i1 ON s1.IllnessID = i1.IllnessID WHERE s1.SymptomID IN (".$str." 0) GROUP BY s1.IllnessID ORDER BY counted DESC");
 	try{
 
 				$stmt->execute();
