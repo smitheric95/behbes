@@ -7,7 +7,8 @@ import { InfantHealthPage } from '../infanthealth/infanthealth';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  styleUrls: ['/pages/home/home.css']
 })
 export class HomePage {
 

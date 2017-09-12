@@ -1,21 +1,21 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color='navbarSymptoms'>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Possible Causes</ion-title>
+    <ion-title>Symptoms Evaluation</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-    <h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>
-    <h1 style="margin:30px">Possible Causes</h1>
+<ion-content>
+<ion-card style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; ">
+    <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
+    <h1 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Possible Illneses</h1>
     <ion-list>
         <button ion-item  ion-item *ngFor = "let cause of causes; let i = index" (click)="causeTapped($event,cause.recommendation)">
-            <div item-left style="margin:30px">{{cause.matchPercentage}}</div>
+            <div item-left style="margin:30px">{{cause.matchPercentage}}</div><hr>
             {{cause.recommendation}}
-        </button>
-        
+        </button>  
     </ion-list>
+</ion-card>
 </ion-content>
 

@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color='navbarSymptoms'>
         <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -7,18 +7,20 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content >
     <div>
-        <h3>Symptoms Evaluation</h3>
-        <div *ngFor="let symptom of symptoms">
-            <label>
-            <input [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value"/>
-            {{symptom.name}}
-        </label>
-        </div>
+        <ion-card style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 10px">
+            <h3 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Symptoms</h3>
+                <ion-list *ngFor="let symptom of symptoms" text-wrap>
+                    <label style="font-family: 'Roboto'; font-size: 15px;">  
+                        <ion-checkbox [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
+                        {{symptom.name}}
+                    </label>
+                </ion-list><br>
+         <button ion-button secondary (click)="postForm()">Submit</button>
+        </ion-card>
     </div>
 
 
-    <button ion-button secondary (click)="postForm()">Submit</button>
+    
 </ion-content>
