@@ -35,7 +35,7 @@ export class AlarmsPage {
        var time;
        var strMinute;
         //this.x = new Date();
-        this.x = new Date("2011-04-20T23:59:51.01");
+        this.x = new Date("2011-04-20T15:55:51.01");
         this.hour = this.x.getHours();
         this.minute = this.x.getMinutes();
         
@@ -65,7 +65,11 @@ export class AlarmsPage {
           time = this.hour + ":" + strMinute + " AM";
         }
 
-        console.log(time);
+        if (this.times.indexOf(time) > -1)
+        {
+          console.log(time);
+          this.a.play();
+        }
 
       //}
   }
