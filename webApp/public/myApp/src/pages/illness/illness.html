@@ -11,11 +11,19 @@
 
 
   <ion-content>
-    <ion-card>
-      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">About: </span><span style="font-family: 'Roboto'; font-size: 20px; ">{{cause.about}}</span><br>
-      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">Natural Treatment: </span><span  style="font-family: 'Roboto'; font-size: 20px;">{{cause.naturalTreatments}}</span><br>
-      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">Conventional Treatment: </span><span  style="font-family: 'Roboto'; font-size: 20px;">{{cause.conventionalTreatments}}</span><br>
-      <span style="font-family: 'Roboto'; font-size: 20px; font-weight: bold; padding-left: 10px; padding-top: 20px">Reasources: </span><span  style="font-family: 'Roboto'; font-size: 20px;">{{cause.resources}}</span><br>
+    <ion-card >
+      <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+          <span style="font-weight: bold; ">About: </span><span text-wrap >{{cause.about}}</span><br>
+      </div>
+      <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+        <span style="font-weight: bold; ">Natural Treatment: </span ><span  >{{cause.naturalTreatments}}</span><br>
+      </div>
+      <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+        <span style="font-weight: bold; ">Conventional Treatment: </span><span  >{{cause.conventionalTreatments}}</span><br>
+      </div>
+      <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+        <span style="font-weight: bold; ">Resources: </span><span >{{cause.resources}}</span><br>
+      </div>
       <button ion-button (click)="homeTapped($event)">Return Home</button><br>
     </ion-card>
   </ion-content>
