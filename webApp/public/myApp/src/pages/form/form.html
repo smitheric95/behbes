@@ -10,9 +10,9 @@
 <ion-content >
     <div>
         <ion-card style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 10px">
-            <h3 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Symptoms</h3>
+            <h3 style="font-weight: bold; font-size: 3.4rem; margin: 1.4rem;">Symptoms</h3>
                 <ion-list *ngFor="let symptom of symptoms" text-wrap>
-                    <label style="font-family: 'Roboto'; font-size: 15px;">  
+                    <label>  
                         <ion-checkbox [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
                         {{symptom.name}}
                     </label>
