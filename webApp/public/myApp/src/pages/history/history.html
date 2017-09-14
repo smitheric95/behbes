@@ -15,7 +15,7 @@
       <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
       <h1 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Past Evaluations</h1>
       <ion-list>
-          <button ion-item  ion-item *ngFor = "let e of formatted; let i = index" (click)="causeTapped($event,cause.Name)">
+          <button ion-item  ion-item *ngFor = "let e of formatted; let i = index" (click)="evalTapped($event,e.symptoms)">
               <div item-left style="margin:30px">{{e.day}}/{{e.month}}</div>
               {{e.hour}}:{{e.minute}}
           </button>

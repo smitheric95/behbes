@@ -16,35 +16,35 @@ export class FormService {
     } */
 
     getIllness(name: string){
-		return this.http.get(`/illness/${name}`)
+		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/illness/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getConventional(name: string){
-		return this.http.get(`/conventionalremedies/${name}`)
+		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/conventionalremedies/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getNatural(name: string){
-		return this.http.get(`/naturalremedies/${name}`)
+		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/naturalremedies/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getResources(name: string){
-		return this.http.get(`/resources/${name}`)
+		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/resources/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getHistory(){
-		return this.http.get(`/history`)
+		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/history`)
         .toPromise().then(function(res) {
             return res.json();
         });

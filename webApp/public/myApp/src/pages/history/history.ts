@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { FormService } from '../../app/services/form/form.service';
 
-import { IllnessPage } from '../illness/illness';
+import { CausesPage } from '../causes/causes';
 
 @Component({
   selector: 'page-history',
@@ -15,6 +15,8 @@ export class HistoryPage {
   evals: any[];
 
   formatted: any[];
+
+  response: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
     /* name and count */
@@ -33,12 +35,13 @@ ngOnInit() {
 
 
   //sends the other possible causes to return to this page
-  causeTapped(event, cause_name) {
-    this.pushPage(cause_name);
+  async evalTapped(event, symptoms) {
+    Promise.all(this.response = await this.formService.postForm(symptoms))
+    .then(value => this.pushPage())
   }
 
-  pushPage(cause_name) {
-    this.navCtrl.push(IllnessPage,{Name: cause_name});
+  pushPage() {
+    this.navCtrl.push(CausesPage,{response: this.response});
   }
 
   async getHistory() {
