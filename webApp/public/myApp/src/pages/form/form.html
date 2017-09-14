@@ -11,16 +11,18 @@
 </ion-header>
 
 <ion-content style="background-color:#eee">
-    <div>
-        <ion-card style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 10px">
-            <h3 style="font-weight: bold; font-size: 3.4rem; margin: 1.4rem;">Symptoms</h3>
-                <ion-list *ngFor="let symptom of symptoms" text-wrap>
-                    <label> 
-                        <ion-checkbox [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
-                        {{symptom.name}}
-                    </label><hr>
-                </ion-list><br><br>
-         <button ion-button secondary (click)="postForm()">Submit</button>
-        </ion-card>
-    </div>
+  <div id="form">
+    <ion-card style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 10px">
+      <div id="form-header">
+        <p>Select any symptoms that apply.</p>
+      </div>
+      <ion-list *ngFor="let symptom of symptoms" text-wrap>
+          <label> 
+              <ion-checkbox [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
+              {{symptom.name}}
+          </label><hr>
+      </ion-list><br>
+      <button ion-button secondary (click)="postForm()">Submit</button>
+    </ion-card>
+  </div>
 </ion-content>
