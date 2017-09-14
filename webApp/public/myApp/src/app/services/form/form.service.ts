@@ -16,42 +16,42 @@ export class FormService {
     } */
 
     getIllness(name: string){
-		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/illness/${name}`)
+		return this.http.get(`/remedies/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getConventional(name: string){
-		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/conventionalremedies/${name}`)
+		return this.http.get(`/conventionalremedies/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getNatural(name: string){
-		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/naturalremedies/${name}`)
+		return this.http.get(`/naturalremedies/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getResources(name: string){
-		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/resources/${name}`)
+		return this.http.get(`/resources/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getHistory(){
-		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/history`)
+		return this.http.get(`/history`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     postForm(selected: any[]){
-        return this.http.post(`http://private-7be936-behbes.apiary-mock.com/postForm`,selected,{headers:this.globals.getHeaders()})
+        return this.http.post(`/postform`,selected,{headers:this.globals.getHeaders()})
         .toPromise().then(function(res) {
             return res.json();
         });

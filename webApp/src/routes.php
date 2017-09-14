@@ -177,7 +177,7 @@ $app->get('/remedies/{illnessname}', function($request, $response, $args){
 	return $this->response->withJson($reme);		
 });
 
-$app->get('/naturalremedies/{illness_name}', function($request, $response, $args){
+$app->get('/naturalremedies/{illnessname}', function($request, $response, $args){
 	$illname = $args["illnessname"];
 	$stmt = $this->db->prepare("SELECT description, Hyperlink FROM Illnesses as i1 INNER JOIN Remedies as r1 ON i1.IllnessID = r1.IllnessID WHERE i1.Name = :illnessname and r1.type = \"natural\"");
 	$stmt->bindValue(':illnessname', $illname, PDO::PARAM_STR);
@@ -191,7 +191,7 @@ $app->get('/naturalremedies/{illness_name}', function($request, $response, $args
 	return $this->response->withJson($reme);	
 	
 });
-$app->get('/conventionalremedies/{illness_name}', function($request, $response, $args){
+$app->get('/conventionalremedies/{illnessname}', function($request, $response, $args){
 	$illname = $args["illnessname"];
 	$stmt = $this->db->prepare("SELECT description, Hyperlink FROM Illnesses as i1 INNER JOIN Remedies as r1 ON i1.IllnessID = r1.IllnessID WHERE i1.Name = :illnessname and r1.type = \"conventional\"");
 	$stmt->bindValue(':illnessname', $illname, PDO::PARAM_STR);
@@ -205,7 +205,7 @@ $app->get('/conventionalremedies/{illness_name}', function($request, $response, 
 	return $this->response->withJson($reme);	
 	
 });
-$app->get('/resources/{illness_name}', function($request, $response, $args){
+$app->get('/resources/{illnessname}', function($request, $response, $args){
 	$illname = $args["illnessname"];
 	$stmt = $this->db->prepare("SELECT description, Hyperlink FROM Illnesses as i1 INNER JOIN Remedies as r1 ON i1.IllnessID = r1.IllnessID WHERE i1.Name = :illnessname");
 	$stmt->bindValue(':illnessname', $illname, PDO::PARAM_STR);
