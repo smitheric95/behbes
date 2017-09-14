@@ -21,9 +21,15 @@ export class AddPage {
                     "50","51","52","53","54","55","56","57","58","59",];
   }
 
-  closeModal(){
+  submitModal(){
       this.viewCtrl.dismiss(this.form);
   }
+
+  closeModal(){
+      this.viewCtrl.dismiss();
+  }
+
+
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad AddPage');
