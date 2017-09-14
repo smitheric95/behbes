@@ -10,20 +10,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content >
+<ion-content style="background-color:#eee">
     <div>
         <ion-card style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 10px">
-            <h3 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Symptoms</h3>
+            <h3 style="font-size: 25px; font-weight: bold; padding-bottom: 10px; margin: 1.4rem">Symptoms</h3>
                 <ion-list *ngFor="let symptom of symptoms" text-wrap>
-                    <label style="font-family: 'Roboto'; font-size: 15px;">  
+                    <label style="font-family: 'Roboto'; font-size: 20px;">  
                         <ion-checkbox [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
                         {{symptom.name}}
-                    </label>
-                </ion-list><br>
+                    </label><hr>
+                </ion-list><br><br>
          <button ion-button secondary (click)="postForm()">Submit</button>
         </ion-card>
     </div>
-
-
-    
 </ion-content>

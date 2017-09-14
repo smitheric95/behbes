@@ -6,7 +6,8 @@ import { HomePage } from '../home/home';
 
 @Component({
 	selector: 'login',
-	templateUrl: 'login.component.html'
+	templateUrl: 'login.component.html',
+	styleUrls: ['/pages/login/login.component.css']
 })
 
 export class LoginComponent implements OnInit {

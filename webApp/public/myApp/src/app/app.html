@@ -17,7 +17,7 @@
 </ion-menu>
 
 <ion-menu [content]="content" side="right" id="userMenu">
-  <ion-content>
+  <ion-content style="background-color:#eee">
     <ion-list *ngIf="this.globals.isLogged()">
       <button menuClose ion-item *ngFor="let p of loggedUserPages" (click)="openPage(p)">
         {{p.title}}

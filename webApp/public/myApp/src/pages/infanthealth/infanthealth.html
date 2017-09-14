@@ -22,38 +22,51 @@
     }
 </style>
 
-
-<body>
-    <div class="scroll-content">
+<!--<ion-header-bar >
+            <h1 class="title">Videos</h1>
+        </ion-header-bar>-->
+<body style="background-color:#eee">
+     
+    <div class="scroll-content" >
         <div id="companyname">
             <h1> Behbes </h1>
         </div>
-        <div id="Videos">
-            <div id="topic 1">
-                <ion-card >
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;">How to swaddle a baby</h2>
-                        <p text-wrap>
-                            Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                    </ion-card-content>
-                </ion-card>
-                <ion-card>
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;" text-wrap>How to swaddle a baby: A differnt approach</h2>
-                        <p text-wrap>
-                            This is video contains a diffrent swaddling technique, 
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                    </ion-card-content>
-                </ion-card>
-            </div>
-            <div id="topic 2">
+
+        <ion-list>
+            <ion-item>
+                <ion-thumbnail item-start>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                </ion-thumbnail>
+                <h2>How to feed your baby</h2>
+                <p>Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.</p>
+                <button ion-button clear item-end>View</button>
+            </ion-item>
+        </ion-list>
+
+        <!--<ion-content>
+            <ion-list>
+                List of videos by category
+                    <div id="Videos" *ngFor="let topic of topicsArray" (click)="setTopic(topic)">
+                        <ion-item>
+                        <div id="topic 1">
+                            <ion-card >
+                                <ion-card-header>
+                                    <h2 style="font-size: 25px;">{{topic.title}}</h2>
+                                    <p text-wrap>
+                                        Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.
+                                    </p>
+                                </ion-card-header>
+                                <ion-card-content>
+                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                                </ion-card-content>
+                            </ion-card>
+                        </ion-item>
+                        </div>
+            </ion-list>
+        </ion-content>-->
+                    
+            <!--<div id="topic 2">
                 <ion-card>
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> Bathing</h2>
@@ -114,15 +127,6 @@
                     </ion-card-header>
                     <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/6sHcL1DiDfc" frameborder="0" allowfullscreen></iframe>
-                    </ion-card-content>
-                 </ion-card>
-                 <ion-card>
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;">Bottle Feeding</h2>
-                        <p text-wrap>
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/hzSrvuXRA68" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                  </ion-card>
@@ -136,16 +140,8 @@
                     </ion-card-header>
                     <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/FIIG6n55Ito" frameborder="0" allowfullscreen></iframe>
-                    </ion-card-content>
-                </ion-card>
-                <ion-card>
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;">Sleep</h2>
-                        <p text-wrap>
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/Y1VYWmCjYqc" frameborder="0" allowfullscreen></iframe>
+
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -158,15 +154,6 @@
                     </ion-card-header>
                     <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/IS7AVfyoF_Y" frameborder="0" allowfullscreen></iframe>
-                    </ion-card-content>
-                </ion-card>
-                <ion-card>
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;"> Baby Massage</h2>
-                        <p text-wrap>
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/gNrJC5CIpgk" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
@@ -192,30 +179,13 @@
                     </ion-card-header>
                     <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/8kTKnZOmJXU" frameborder="0" allowfullscreen></iframe>
-                    </ion-card-content>
-                </ion-card>
-                <ion-card>
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;"> Breastfeeding</h2>
-                        <p text-wrap>
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/g_k50wOf564" frameborder="0" allowfullscreen></iframe>
-                    </ion-card-content>
-                </ion-card>
-                <ion-card>
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;"> Breastfeeding</h2>
-                        <p text-wrap>
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/FZA_64nCobA" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
-        </div>
+        </div>-->
+            
     </div>
 </body>
 

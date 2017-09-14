@@ -5,34 +5,41 @@
     </button>
     <ion-title>Sign up</ion-title>
     <button ion-button menuToggle="right" end>
-      <ion-icon name="contact"></ion-icon>
+      <ion-icon style="size: 30px" name="contact"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content style="background-color:#eee">
+  <ion-card>
     <form (ngSubmit)="signUp()">
-      <ion-item>
-        <ion-label>Username</ion-label>
-        <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>First Name</ion-label>
-        <ion-input type="text" [(ngModel)]="firstName" name="firstName"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Last Name</ion-label>
-        <ion-input type="text" [(ngModel)]="lastName" name="lastName"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Email</ion-label>
-        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
-      </ion-item>
-      <button ion-button type="submit" block>Login</button>
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+              <ion-item>
+                <ion-input type="text" placeholder="Username" name="username" [(ngModel)]="username"  required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="password" placeholder="password" name="password" [(ngModel)]="password" required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" placeholder="First Name" name="firstName" [(ngModel)]="firstName" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="lastName" name="lastName"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="email" placeholder="email" name="email" [(ngModel)]="email" ></ion-input>
+              </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+          <ion-row>
+            <ion-col >
+              <button style="border-radius: 5px" ion-button class="submit-btn" full type="submit" >Login</button>
+            </ion-col>
+          </ion-row>
     </form>
+  </ion-card>
 
 </ion-content>
