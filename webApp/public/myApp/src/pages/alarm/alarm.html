@@ -14,7 +14,7 @@
       <ion-icon name="person" style="margin:30px"></ion-icon>
     </h1>
     
-    <h1 style="margin:30px">My Alarms <ion-icon name="add-circle" style="margin:30px"></ion-icon></h1>
+    <h1 style="margin:30px">My Alarms <ion-icon name="add-circle" style="margin:30px;cursor:pointer" (click)="openModal()"></ion-icon></h1>
     <ion-list>
         
         <button ion-item  ion-item *ngFor = "let med of medicines; let i = index" (click)="playSound()">

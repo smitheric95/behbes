@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-//import { NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { AddPage } from '../add/add'
 
-//import { FormService } from '../../app/services/form/form.service';
-
-//import { IllnessPage } from '../illness/illness';
 
 @Component({
   selector: 'page-alarms',
@@ -18,9 +16,7 @@ export class AlarmsPage {
   hour:string;
   minute:string;
 
-  constructor() {
-    //this.causes = navParams.get('response');
-    //this.cause = [];
+  constructor(public modalCtrl: ModalController) {
     this.medicines = ['Alex\'s cough medicine', 'Jenny\'s advil medicine'];
     this.times = ['3:55 PM','5:15 AM'];
     this.a = new Audio();
@@ -28,6 +24,17 @@ export class AlarmsPage {
     this.a.load();
     this.checkAlarm();
     
+  }
+
+  openModal(){
+      let myModal = this.modalCtrl.create(AddPage);
+
+      myModal.present();
+      myModal.onDidDismiss(data=>{
+          this.medicines.push(data.title);
+          this.times.push(data.hour + ":" + data.minute + " " + data.type);
+      })
+
   }
   
 
@@ -68,7 +75,6 @@ export class AlarmsPage {
 
           if (this.times.indexOf(time) > -1)
           {
-            console.log(time);
             this.a.play();
           }
 

@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CausesPage } from '../pages/causes/causes';
 import { AlarmsPage } from '../pages/alarm/alarm';
+import { AddPage } from '../pages/add/add';
 import { FormPage } from '../pages/form/form';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
@@ -26,6 +27,7 @@ import { FormService } from './services/form/form.service';
     ListPage,
     CausesPage,
     AlarmsPage,
+    AddPage,
     FormPage,
     InfantHealthPage,
     MapPage,
@@ -46,6 +48,7 @@ import { FormService } from './services/form/form.service';
     ListPage,
     CausesPage,
     AlarmsPage,
+    AddPage,
     FormPage,
     InfantHealthPage,
     MapPage,
