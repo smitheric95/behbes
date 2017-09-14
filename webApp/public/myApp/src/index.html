@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Ionic App</title>
+  <title>Behbes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" contenzt="no">
@@ -26,7 +26,11 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
-  <script src="cordova.js"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="assets/img/appicon.png">
+
+  <!-- cordova.js required for cordova apps -->
+  <!-- <script src="cordova.js"></script> -->
 
   <link href="myApp/www/build/main.css" rel="stylesheet">
 
@@ -35,6 +39,8 @@
 
   <!-- Ionic's root component and where the app will load -->
   <ion-app></ion-app>
+
+  <script src="myApp/www/build/cordova.js"></script>
 
   <!-- The polyfills js is generated during the build process -->
   <script src="myApp/www/build/polyfills.js"></script>
@@ -46,5 +52,7 @@
   <!-- The main bundle js is generated during the build process -->
   <script src="myApp/www/build/main.js"></script>
 
+  <script async defer src="https://maps.googleapis.com/maps/api/js"></script>
 </body>
+
 </html>

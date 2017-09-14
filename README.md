@@ -7,4 +7,3 @@
 4. Navigate to webApp/public/myApp
 5. Run "ionic serve" - install node dependecies if prompted
 5. open "http://localhost:8100" in browser
-

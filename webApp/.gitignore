@@ -1,3 +1,6 @@
 /vendor/
 /logs/*
+/public/myApp/www/build/*
+./public/myApp/www/build/*
+/public/myApp/node_modules/*
 !/logs/README.md

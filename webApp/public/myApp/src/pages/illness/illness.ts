@@ -12,7 +12,10 @@ import { HomePage } from '../home/home';
 export class IllnessPage {
 
   cause: Array<{about: string, 
-    naturalTreatments: string, conventionalTreatments: string, resources: string }>;
+                naturalTreatments: string, 
+                conventionalTreatments: string, 
+                resources: string }>;
+
   cause_name: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {

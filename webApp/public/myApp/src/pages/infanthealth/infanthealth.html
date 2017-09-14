@@ -2,36 +2,70 @@
 <html>
 
 <ion-header>
-    <ion-navbar color='navbarInfantHealth'>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-            <ion-title color='fontColor' >Basics of Infant Health</ion-title>
-    </ion-navbar>
+  <ion-navbar color='navbarInfantHealth'>
+    <button ion-button menuToggle="left" start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title color='fontColor' >Basics of Infant Health</ion-title>
+    <button ion-button menuToggle="right" end>
+      <ion-icon name="contact"></ion-icon>
+    </button>
+  </ion-navbar>
 </ion-header>
+<head>
+    <title>Basics of Infant Health</title>
+</head>
+<style>
+    #pagename {
+        background-color: #38BD57;
+        border-radius: 25px;
+    }
+</style>
 
-<body>
-    <div class="scroll-content">
+<!--<ion-header-bar >
+            <h1 class="title">Videos</h1>
+        </ion-header-bar>-->
+<body style="background-color:#eee">
+     
+    <div class="scroll-content" >
         <div id="companyname">
             <h1> Behbes </h1>
         </div>
-        <div id="Videos">
-            <div id="topic 1">
-                <ion-card >
-                    <ion-card-header>
-                        <h2 style="font-size: 25px;">How to swaddle a baby</h2>
-                        <p text-wrap>
-                            Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.
-                        </p>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+        <ion-list>
+            <ion-item>
+                <ion-thumbnail item-start>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                </ion-thumbnail>
+                <h2>How to feed your baby</h2>
+                <p>Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.</p>
+                <button ion-button clear item-end>View</button>
+            </ion-item>
+        </ion-list>
 
-                    </ion-card-content>
-                </ion-card>
-            </div>
-            <div id="topic 2">
+        <!--<ion-content>
+            <ion-list>
+                List of videos by category
+                    <div id="Videos" *ngFor="let topic of topicsArray" (click)="setTopic(topic)">
+                        <ion-item>
+                        <div id="topic 1">
+                            <ion-card >
+                                <ion-card-header>
+                                    <h2 style="font-size: 25px;">{{topic.title}}</h2>
+                                    <p text-wrap>
+                                        Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.
+                                    </p>
+                                </ion-card-header>
+                                <ion-card-content>
+                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                                </ion-card-content>
+                            </ion-card>
+                        </ion-item>
+                        </div>
+            </ion-list>
+        </ion-content>-->
+                    
+            <!--<div id="topic 2">
                 <ion-card>
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> Bathing</h2>
@@ -106,6 +140,7 @@
                     <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/FIIG6n55Ito" frameborder="0" allowfullscreen></iframe>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/Y1VYWmCjYqc" frameborder="0" allowfullscreen></iframe>
+
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -148,7 +183,8 @@
                     </ion-card-content>
                 </ion-card>
             </div>
-        </div>
+        </div>-->
+            
     </div>
 </body>
 
