@@ -14,7 +14,6 @@ $validateSession= (function($request,$response,$next) {
         foreach($validateSessionQuery as $row){
             $returnArray[0]=$row['UserID'];
         }
-        unset($validateSessionQuery);
         $request=$request->withAttribute('UserID', $returnArray[0]);
         $request=$request->withAttribute('Token', $token);
     }
@@ -22,6 +21,8 @@ $validateSession= (function($request,$response,$next) {
         $request=$request->withAttribute('UserID', 'None');
         $request=$request->withAttribute('Token', 'None');
     }
+    
+    unset($validateSessionQuery);
     $response=$next($request,$response);
     return $response;
 });
