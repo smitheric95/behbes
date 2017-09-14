@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AgmCoreModule } from '@agm/core'; 
+import { Geolocation } from '@ionic-native/geolocation'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -31,7 +32,7 @@ import { Globals } from './services/globals/globals';
     FormPage,
     InfantHealthPage,
     MapPage,
-    IllnessPage, 
+    IllnessPage,
     LoginComponent,
     SignupComponent,
     SettingsComponent
@@ -40,9 +41,11 @@ import { Globals } from './services/globals/globals';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC9qCv3Iw6nxUrFjWfFQLMNCA5wQbe82WQ'
-    })
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyC9qCv3Iw6nxUrFjWfFQLMNCA5wQbe82WQ',
+    //   libraries: ["places"]
+    // }),
+    ReactiveFormsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,6 +66,7 @@ import { Globals } from './services/globals/globals';
     SplashScreen,
     FormService,
     Globals,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
