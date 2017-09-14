@@ -34,7 +34,7 @@ $app->post('/signin',function($request,$response){
 			$get_salt->execute();
 		}
 		catch(PDOException $e){
-			return $this->response->withStatus(400);
+			return $this->response->withStatus(401);
 		}
 		$salt = $get_salt->fetchAll()[0]["Salt"];
 		unset($get_salt);
@@ -43,8 +43,18 @@ $app->post('/signin',function($request,$response){
 		$stmt = $this->db->prepare("CALL ValidateUser(:Username,:Password)");
 		$stmt->bindValue(':Username',$input["Username"],PDO::PARAM_STR);
 		$stmt->bindValue(':Password',$pass,PDO::PARAM_STR);
-		$stmt->execute();
-		$userInfo = $stmt->fetchAll()[0];
+		try {
+			$stmt->execute();
+		}
+		catch(PDOException $e){
+			return $this->response->withStatus(401);
+		}
+		if($stmt->rowCount()==1){
+			$userInfo = $stmt->fetchAll()[0];
+		}
+		else{
+			return $this->response->withStatus(401);
+		}
 		return $this->response->withJson($userInfo);
 	
 });
@@ -85,6 +95,7 @@ $app->post('/postform',function($request,$response){
 				$stmt->execute();
 			}
 			catch(PDOException $e){
+					$this->response=$this->response->withJson($e);
 					return $this->response->withStatus(400);
 			}
 		$idinfo = $stmt->fetchAll();
@@ -93,21 +104,25 @@ $app->post('/postform',function($request,$response){
 
 	//Add history if user is logged in
  	if($request->getAttribute('UserID')!='None'){
-		 //getBabyID by ParentID and namespace
-		 $stmt = $this->db->prepare('SELECT BabyID FROM Baby WHERE ParentID= :ParentID ');// AND Name= :Name ');
-		 $stmt->bindValue(':ParentID', $request->getAttribute('UserID'), PDO::PARAM_INT);
+		 print("Found user + " + $request->getAttribute('UserID'));
+		 //add history record
+		 $stmt = $this->db->prepare('CALL AddHistory(:UserID)');// AND Name= :Name ');
+		 $stmt->bindValue(':UserID', $request->getAttribute('UserID'), PDO::PARAM_INT);
 		 //need to figure out how to bind baby name 
 		 try{
 			 $stmt->execute();
 		 }
 		 catch(PDOException $e){
-			return $this->response->withStatus(400);
+			return $this->response->withStatus(401);
 		 }
-		 $babyID = $stmt->fetchAll()[0]["BabyID"];
-		 $createHistoryQuery = $this->db->prepare('INSERT INTO History(BabyID, Date) VALUES (?, NOW())');
-		 $createHistoryQuery->execute(array($babyID));
-
-		 //get ID of that History and add all symptoms in a loop 
+		 $HistoryID = $stmt->fetchAll()[0]["HistoryID"];
+		 unset($stmt);
+		 foreach($parsed_array as $symptomID){
+			$createHistoryQuery = $this->db->prepare('INSERT INTO SymptomHistory(HistoryID, SymptomID) VALUES (:HistoryID, :SymptomID)');
+			$createHistoryQuery->bindValue(':HistoryID', $HistoryID, PDO::PARAM_INT);
+			$createHistoryQuery->bindValue(':SymptomID', $symptomID, PDO::PARAM_INT);
+			$createHistoryQuery->execute();
+		 }
 
 
 	}
