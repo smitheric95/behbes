@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-
 import 'rxjs/add/operator/toPromise';
+import { Globals } from '../globals/globals';
 
 @Injectable()
 export class FormService {
 
-    constructor(private http: Http) {}
+    constructor(private http: Http, private globals:Globals) {}
 
     getForm(){
 		return this.http.get(`/getData`)
@@ -24,7 +24,7 @@ export class FormService {
 
 
     postForm(selected: any[]){
-        return this.http.post(`http://private-7be936-behbes.apiary-mock.com/postForm`,selected)
+        return this.http.post(`http://private-7be936-behbes.apiary-mock.com/postForm`,selected,{headers:this.globals.getHeaders()})
         .toPromise().then(function(res) {
             return res.json();
         });
