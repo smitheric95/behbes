@@ -29,5 +29,5 @@
       </ion-item>
       <button ion-button type="submit" block>Reset Password</button>
     </form>
-    <button ion-button block (click)='forgottenPass=false'>Go Back</button>
+    <button *ngIf='forgottenPass' ion-button block (click)='forgottenPass=false'>Go Back</button>
 </ion-content>

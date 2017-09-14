@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 		});
 		alert.present();
 	}
-	forgotPassword(){
+	forgotPass(){
 		this.http.put("http://localhost:8100/forgotPass", JSON.stringify({"Username":this.username}))
 			.subscribe( data => {
 				this.showPassReset(true);

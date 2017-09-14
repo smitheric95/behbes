@@ -16,7 +16,7 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
         "db" => [
-	    "host" => "behbes.club",
+	    "host" => "hussh.site",
 	    "dbname" => "behbes",
 	    "user" => "behbes_api",
 	    "pass" => "behbes"
