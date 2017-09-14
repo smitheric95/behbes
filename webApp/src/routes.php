@@ -159,8 +159,73 @@ $app->get('/illness/{name}', function($requeset, $response, $args){
 	return $this->response->withJson($Info);
 	
 });
-$app->get('/reference', function($requeset,$response){
+$app->get('/reference', function($request,$response){
 	
 	return $this->response->WithStatus(200);
 });
 
+
+$app->get('/userInfo', function($request,$response){
+	$userID = $request->getAttribute('UserID');
+	$stmt = $this->db->prepare("SELECT Username, FirstName, LastName, Email FROM Users WHERE UserID=:UserID");
+	$stmt->bindValue(':UserID', $userID, PDO::PARAM_INT);
+	try{
+		$stmt->execute();
+	}
+	catch(PDOException $e){
+		return $this->response->withStatus(401);
+	}
+	$userInfo= $stmt->fetchAll()[0];
+	return $this->response->withJson($userInfo);
+})->add($validateSession);
+
+$app->put('/userInfo', function($request,$response){
+	$userID = $request->getAttribute('UserID');
+	$getSaltFromUserID = $this->db->prepare("SELECT Username,Salt FROM Users WHERE UserID=:UserID");
+	$getSaltFromUserID->bindValue(':UserID', $userID, PDO::PARAM_INT);
+	try{
+		$getSaltFromUserID->execute();
+	}
+	catch(PDOException $e){
+		return $this->response->withStatus(401);
+	}
+	$info =  $getSaltFromUserID->fetchAll()[0];
+	$salt = $info['Salt'];
+	$username = $info['Username'];
+	unset($getSaltFromUserID);
+	//verify password
+	$input = $request->getBody();
+	$input = json_decode($input,true);
+	$oldPass = $input['OldPass'];
+	$newPass = $input['NewPass'];
+	$email = $input['Email'];
+
+	$verifyPass = $this->db->prepare("CALL ValidateUser(:Username, :Password)");
+	$verifyPass->bindValue(':Username', $username, PDO::PARAM_STR);
+	$verifyPass->bindValue(':Password', hash('sha256',$oldPass.$salt), PDO::PARAM_STR);
+
+	try {
+		$verifyPass->execute();
+	}
+	catch(PDOException $e){
+		return $this->response->withStatus(401);
+	}
+	if($verifyPass->rowCount()==1){
+		unset($verifyPass);
+		$updatePassAndEmail = $this->db->prepare("UPDATE Users SET Password=:Password, Email=:Email WHERE UserID=:UserID");
+		$updatePassAndEmail->bindValue(':Password', hash('sha256',$newPass.$salt));
+		$updatePassAndEmail->bindValue(':Email', $email);
+		$updatePassAndEmail->bindValue(':UserID',$userID);
+		try {
+			$updatePassAndEmail->execute();
+			return $this->response->withStatus(200);
+		}
+		catch(PDOException $e){
+			return $this->response->withStatus(401);
+		}
+
+	}
+	else{
+		return $this->response->withStatus(401);
+	}
+})->add($validateSession);

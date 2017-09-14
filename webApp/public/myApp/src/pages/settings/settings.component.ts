@@ -26,7 +26,7 @@ export class SettingsComponent implements OnInit {
 			});
 	}
 	editInfo(){
-		this.http.put('http://localhost:8100/userInfo', {headers: this.globals.getHeaders()})
+		this.http.put('http://localhost:8100/userInfo',JSON.stringify({"OldPass": this.oldPass, "NewPass":this.newPass, "Email":this.email}) ,{headers: this.globals.getHeaders()})
 			.subscribe( data => {
 				this.showAlert(true);
 				this.nav.setRoot(HomePage);
