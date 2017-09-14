@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-navbar color='navbarMap'>
-    <button ion-button menuToggle="left" start>
+    <ion-navbar color='navbarMap'>
+        <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Emergency Rooms</ion-title>
-    <button ion-button menuToggle="right" end>
+        <ion-title>Emergency Rooms</ion-title>
+        <button ion-button menuToggle="right" end>
       <ion-icon name="contact"></ion-icon>
     </button>
-  </ion-navbar>
+    </ion-navbar>
 
 </ion-header>
-
 <ion-content padding>
-    <h1>In Development</h1>
-    <div>
-        <agm-map [latitude]="latitude" [longitude]="longitude"></agm-map>
+    <div #map id="map">
+
     </div>
+
+
 </ion-content>
