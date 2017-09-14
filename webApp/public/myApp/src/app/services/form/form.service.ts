@@ -8,20 +8,47 @@ export class FormService {
 
     constructor(private http: Http, private globals:Globals) {}
 
-    getForm(){
+/*     getForm(){
 		return this.http.get(`/getData`)
         .toPromise().then(function(res) {
             return JSON.stringify(res.json());
         });
-    }
+    } */
 
     getIllness(name: string){
-		return this.http.get(`http://private-7be936-behbes.apiary-mock.com/illness/${name}`)
+		return this.http.get(`/illness/${name}`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
+    getConventional(name: string){
+		return this.http.get(`/conventionalremedies/${name}`)
+        .toPromise().then(function(res) {
+            return res.json();
+        });
+    }
+
+    getNatural(name: string){
+		return this.http.get(`/naturalremedies/${name}`)
+        .toPromise().then(function(res) {
+            return res.json();
+        });
+    }
+
+    getResources(name: string){
+		return this.http.get(`/resources/${name}`)
+        .toPromise().then(function(res) {
+            return res.json();
+        });
+    }
+
+    getHistory(){
+		return this.http.get(`/history`)
+        .toPromise().then(function(res) {
+            return res.json();
+        });
+    }
 
     postForm(selected: any[]){
         return this.http.post(`http://private-7be936-behbes.apiary-mock.com/postForm`,selected,{headers:this.globals.getHeaders()})
@@ -30,12 +57,12 @@ export class FormService {
         });
     }
 
-    getSymptoms() {
+/*     getSymptoms() {
         return this.http.get(`http://private-7be936-behbes.apiary-mock.com/getSymptoms`)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
-
+ */
 
 }
