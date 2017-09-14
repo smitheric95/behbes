@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CausesPage } from '../pages/causes/causes';
 import { FormPage } from '../pages/form/form';
+import { HistoryPage } from '../pages/history/history';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
 import { IllnessPage } from '../pages/illness/illness';
@@ -32,6 +33,7 @@ import { Globals } from './services/globals/globals';
     FormPage,
     InfantHealthPage,
     MapPage,
+    HistoryPage,
     IllnessPage,
     LoginComponent,
     SignupComponent,
@@ -57,6 +59,7 @@ import { Globals } from './services/globals/globals';
     InfantHealthPage,
     MapPage,
     IllnessPage,
+    HistoryPage,
     SignupComponent,
     LoginComponent,
     SettingsComponent
