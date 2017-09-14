@@ -2,6 +2,12 @@
   background-color: blue;
 }
 
+@media only screen and (max-width: 500px) {
+    .scroll-content {
+        background-color: #F00 !important;
+    }
+}
+
 // .contianer {
 //   display: flex;
 //   justify-content: center;
