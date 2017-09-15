@@ -47,7 +47,7 @@ export class FormPage {
   }
 
   ngOnInit() {
-    this.getSymptoms();
+     this.getSymptoms();
   }
 
   async postForm() {
@@ -68,15 +68,16 @@ export class FormPage {
     });
   } 
 
-  async getSymptoms() {
-    this.symptomsList = await this.formService.getSymptoms();
+   async getSymptoms() {
+    /*this.symptomsList = await this.formService.getSymptoms();*/
     this.createSymptomsObj();
   }
-
+ 
 
   createSymptomsObj() {
+    var order: 0
     for (let symptom of this.symptomsList) {
-      this.symptoms.push({name: symptom, value: false});
+      this.symptoms.push({name: symptom, value: false,id: order});
     }
   }
 

@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color='navbarSymptoms'>
+      <button ion-button menuToggle="left" start>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>History</ion-title>
+      <button ion-button menuToggle="right" end>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+  <ion-card style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; ">
+      <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
+      <h1 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Past Evaluations</h1>
+      <ion-list>
+          <button ion-item  ion-item *ngFor = "let e of formatted; let i = index" (click)="evalTapped($event,e.symptoms)">
+              <div item-left style="margin:30px">{{e.day}}/{{e.month}}</div>
+              {{e.hour}}:{{e.minute}}
+          </button>
+          
+      </ion-list>
+  </ion-card>
+  </ion-content>
+  
+  
