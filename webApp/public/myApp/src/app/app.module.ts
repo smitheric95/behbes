@@ -10,6 +10,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CausesPage } from '../pages/causes/causes';
+import { AlarmsPage } from '../pages/alarm/alarm';
+import { AddPage } from '../pages/add/add';
 import { FormPage } from '../pages/form/form';
 import { HistoryPage } from '../pages/history/history';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
@@ -30,6 +32,8 @@ import { Globals } from './services/globals/globals';
     HomePage,
     ListPage,
     CausesPage,
+    AlarmsPage,
+    AddPage,
     FormPage,
     InfantHealthPage,
     MapPage,
@@ -55,6 +59,8 @@ import { Globals } from './services/globals/globals';
     HomePage,
     ListPage,
     CausesPage,
+    AlarmsPage,
+    AddPage,
     FormPage,
     InfantHealthPage,
     MapPage,

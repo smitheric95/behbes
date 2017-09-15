@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Medicine Alarms</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+    <h1>
+      <ion-icon name="list-box" item-left style="margin:30px"></ion-icon>Behbes
+      <ion-icon name="person" style="margin:30px"></ion-icon>
+    </h1>
+    
+    <h1 style="margin:30px">My Alarms <ion-icon name="add-circle" style="margin:30px;cursor:pointer" (click)="openModal()"></ion-icon></h1>
+    <ion-list>
+        
+        <button ion-item  ion-item *ngFor = "let med of medicines; let i = index" (click)="playSound()">
+            <div item-left style="margin:30px">{{times[i]}}</div>
+            {{med}}
+        </button>
+        
+    </ion-list>
+</ion-content>
+
