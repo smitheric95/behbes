@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { FormService } from '../../app/services/form/form.service';
 
+import { HomePage } from '../home/home';
+
 @Component({
   selector: 'page-illness',
   templateUrl: 'illness.html'
@@ -10,22 +12,23 @@ import { FormService } from '../../app/services/form/form.service';
 export class IllnessPage {
 
   Name: string;
-  about: {About: string};
+  about: any;
   naturals: any[];
   conventionals: any[];
   resources: any[];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
-    this.Name = navParams.get('Name');
-    this.about = {About: "Boop"};
-    this.naturals = [{description: "NaturalBoop",Hyperlink: "#"}];
-    this.conventionals = [{description: "ConventionalBoop",Hyperlink: "#"}];
-    this.resources = [{description: "ResourcesBoop",Hyperlink: "#"}];
+    this.Name = "";
+    this.about = "";
+    this.naturals = [{description: "",Hyperlink: "#"}];
+    this.conventionals = [{description: "",Hyperlink: "#"}];
+    this.resources = [{description: "",Hyperlink: "#"}];
   
   }
 
   ngOnInit() {
+    this.Name = this.navParams.get('Name');
     this.getAbout();
     this.getConventional();
     this.getNatural();
@@ -33,6 +36,7 @@ export class IllnessPage {
   }
 
   homeTapped(event) {
+    this.navCtrl.setRoot(HomePage);
     this.navCtrl.popToRoot();
   }
 
