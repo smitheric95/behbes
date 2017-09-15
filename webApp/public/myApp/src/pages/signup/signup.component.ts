@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Globals } from '../../app/services/globals/globals';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 @Component({
@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
 	firstName:string;
 	lastName: string;
 	email:string;
-	constructor(public http:Http, public globals:Globals, public nav:NavController){
+	constructor(public http:Http, public globals:Globals, public nav:NavController, public alertControl:AlertController){
 		this.username="";
 		this.password="";
 		this.firstName="";
@@ -27,7 +27,11 @@ export class SignupComponent implements OnInit {
 		this.http.post('http://localhost:8100/signup', JSON.stringify({"Username":this.username, "Password":this.password, "FirstName":this.firstName, "LastName":this.lastName, "Email":this.email}))
 			.subscribe(
 				data=> this.login(),
-				err=> console.log(err)
+				err=> {
+					this.showAlert();
+					this.username="";
+					this.password="";
+				}
 			);
 	}
 	login(){
@@ -37,6 +41,14 @@ export class SignupComponent implements OnInit {
 				this.nav.setRoot(HomePage);
 			},
 			err=> console.log(err));
+	}
+	showAlert(){
+		let alert = this.alertControl.create({
+			title:'Registration Failed',
+			subTitle: 'Username is taken. Please use a different one',
+			buttons: ['OK']
+		});
+		alert.present();
 	}
 	ngOnInit() { }
 }

@@ -61,6 +61,7 @@ export class MyApp {
   }
   logout(){
     this.globals.setAuthToken("");
+    this.nav.setRoot(HomePage);
   }
 
 }
