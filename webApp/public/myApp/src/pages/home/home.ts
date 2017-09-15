@@ -8,7 +8,8 @@ import { AlarmsPage } from '../alarm/alarm';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  styleUrls: ['/pages/home/home.css']
 })
 export class HomePage {
 

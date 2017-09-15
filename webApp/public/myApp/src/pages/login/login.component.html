@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle="left" start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+    <button ion-button menuToggle="right" end>
+      <ion-icon name="contact"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <form *ngIf='!forgottenPass' (ngSubmit)="login()">
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Login</button>
+    </form>
+    <a *ngIf='!forgottenPass' (click)='forgottenPass=true'>Forgot password ?</a>
+    <form *ngIf='forgottenPass'(ngSubmit)='forgotPass()'>
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Reset Password</button>
+    </form>
+    <button *ngIf='forgottenPass' ion-button block (click)='forgottenPass=false'>Go Back</button>
+</ion-content>

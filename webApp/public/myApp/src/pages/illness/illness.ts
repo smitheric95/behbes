@@ -3,25 +3,52 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { FormService } from '../../app/services/form/form.service';
 
-import { HomePage } from '../home/home';
-
 @Component({
   selector: 'page-illness',
   templateUrl: 'illness.html'
 })
 export class IllnessPage {
 
-  cause: Array<{about: string, 
-    naturalTreatments: string, conventionalTreatments: string, resources: string }>;
-  cause_name: string;
+  Name: string;
+  about: {About: string};
+  naturals: any[];
+  conventionals: any[];
+  resources: any[];
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
-    this.cause = navParams.get('cause');
-    this.cause_name = navParams.get('cause_name');
+    this.Name = navParams.get('Name');
+    this.about = {About: "Boop"};
+    this.naturals = [{description: "NaturalBoop",Hyperlink: "#"}];
+    this.conventionals = [{description: "ConventionalBoop",Hyperlink: "#"}];
+    this.resources = [{description: "ResourcesBoop",Hyperlink: "#"}];
+  
+  }
+
+  ngOnInit() {
+    this.getAbout();
+    this.getConventional();
+    this.getNatural();
+    this.getResources();
   }
 
   homeTapped(event) {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.popToRoot();
   }
+
+  async getAbout() {
+    Promise.all(this.about = await this.formService.getIllness(this.Name));
+  }
+  async getConventional() {
+    Promise.all(this.conventionals = await this.formService.getConventional(this.Name));
+  }
+  async getNatural() {
+    Promise.all(this.naturals = await this.formService.getNatural(this.Name));
+
+  }
+  async getResources() {
+    Promise.all(this.resources = await this.formService.getResources(this.Name));
+  }
+
 
 }
