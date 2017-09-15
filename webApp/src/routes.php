@@ -1,5 +1,7 @@
 <?php
 // Routes
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 $app->get('/', function ($request, $response, $args) {
     // Sample log message
@@ -229,3 +231,64 @@ $app->put('/userInfo', function($request,$response){
 		return $this->response->withStatus(401);
 	}
 })->add($validateSession);
+
+
+$app->put('/forgotPass', function($request,$response){
+
+	$input = $request->getBody();
+	$input = json_decode($input,true);
+	$username = $input['Username'];
+
+	$newPass = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
+	$newSalt = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
+	
+	$getEmail = $this->db->prepare("SELECT Email FROM Users WHERE Username =:Username");
+	$getEmail->bindValue(':Username', $username, PDO::PARAM_STR);
+	try{
+		$getEmail->execute();
+	}
+	catch(PDOException $e){
+		return $response->withStatus(401);
+	}
+	$email = $getEmail->fetchAll()[0]['Email'];
+	unset($getEmail);
+	try{
+		
+		$mail= new PHPMailer;
+		$mail->isSMTP();
+		$mail->Host = 'ssl://smtp.gmail.com:465';
+		$mail->SMTPAuth = true;
+		$mail->Username = 'husshbehbes@gmail.com';
+		$mail->Password = 'behbes_mail';
+
+		$mail->setFrom('husshbehbes@gmail.com');
+		$mail->addAddress($email);
+		$mail->addReplyTo('noreply@hussh.site', 'No-REPLY');
+		$mail->isHTML(true);
+		$mail->Subject= "Your new Hussh password";
+		$mail->Body = "You're receiving this e-mail because you requested a password reset for your user account at Hussh. <br/></br/> Your new password is : <br/><br/>    <b>".$newPass."</b><br/><br/> Use it to log in to your account. <br/><br/><br/><br/> The Hussh development team";
+		
+		$mail->send();
+		echo("Sent");
+
+	}
+	catch (Exception $e){
+		$response = $response->withStatus(401);
+		echo($e);
+		echo($mail);
+		return $response->withJson($e);
+	}
+
+	$updatePassQuery= $this->db->prepare("UPDATE Users SET Password = :Password, Salt= :Salt WHERE Username=:Username");
+	$updatePassQuery->bindValue(':Password', hash('sha256', $newPass.$newSalt), PDO::PARAM_STR);
+	$updatePassQuery->bindValue(':Salt', $newSalt, PDO::PARAM_STR);
+	$updatePassQuery->bindValue(':Username', $username, PDO::PARAM_STR);
+	try{
+		$updatePassQuery->execute();
+	}
+	catch (PDOException $e){
+		return $response->withStatus(401);
+	}
+	unset($updatePassQuery);
+	return $response->withStatus(200);
+});
