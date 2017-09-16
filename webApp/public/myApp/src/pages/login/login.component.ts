@@ -10,11 +10,7 @@ import { FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from
 @Component({
 	selector: 'login',
 	templateUrl: 'login.component.html',
-<<<<<<< HEAD
-	styleUrls: ['/pages/login/login.component.css']
-=======
 	styleUrls: ['login.compoenent.css']
->>>>>>> 1dfc25aab8a3a4c459f622c64ef685672f56565e
 })
 
 export class LoginComponent implements OnInit {

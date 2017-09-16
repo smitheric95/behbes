@@ -12,20 +12,11 @@ import { HomePage } from '../home/home';
 })
 export class IllnessPage {
 
-<<<<<<< HEAD
-  cause: Array<{about: string, 
-                naturalTreatments: string, 
-                conventionalTreatments: string, 
-                resources: string }>;
-
-  cause_name: string;
-=======
   Name: string;
   about: any;
   naturals: any[];
   conventionals: any[];
   resources: any[];
->>>>>>> 1dfc25aab8a3a4c459f622c64ef685672f56565e
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
