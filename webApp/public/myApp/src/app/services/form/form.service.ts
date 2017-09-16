@@ -16,28 +16,28 @@ export class FormService {
     } */
 
     getIllness(name: string){
-		return this.http.get(`/remedies/${name}`)
+        return this.http.post(`/remedies`,name)
         .toPromise().then(function(res) {
-            return res.json();
+            return res.json()[0];
         });
     }
 
     getConventional(name: string){
-		return this.http.get(`/conventionalremedies/${name}`)
+		return this.http.post(`/conventionalremedies`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getNatural(name: string){
-		return this.http.get(`/naturalremedies/${name}`)
+		return this.http.post(`/naturalremedies`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getResources(name: string){
-		return this.http.get(`/resources/${name}`)
+		return this.http.post(`/resources`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
