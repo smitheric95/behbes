@@ -21,21 +21,22 @@ export class HistoryPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
     /* name and count */
     this.evals = [
-        {symptoms: ["Fever, Sneezing, Coughing"], date: '9999-12-31 23:59:59'},
-        {symptoms: ["Coughing, Sneezing"], date: '2012-06-14 12:06:30'}
+        {symptoms: ["Fever", "Sneezing", "Coughing"], date: '2016-09-16 23:59:59'},
+        {symptoms: ["Coughing", "Sneezing"], date: '2016-09-15 12:06:30'}
     ]
 
     this.formatted = [];
   }
 
 ngOnInit() {
-    //this.getHistory().then(this.formatDateTime);
+    //this.getHistory().then(this.formatDateTime).then(value => this.formatDateTime());
     this.formatDateTime();
 }
 
 
   //sends the other possible causes to return to this page
   async evalTapped(event, symptoms) {
+    console.log(symptoms);
     Promise.all(this.response = await this.formService.postForm(symptoms))
     .then(value => this.pushPage())
   }
@@ -52,8 +53,11 @@ ngOnInit() {
     var date;
 
       for (let e of this.evals) {
-        date = new Date(e.date*1000);
-        this.formatted.push({hour: date.getHours(), minutes: date.getMinutes(), day: date.getDay(), months: date.getMonth()})
+        date = new Date(e.date);
+        //console.log(date);
+        console.log(date.getDate());
+        console.log(date.getMonth());
+        this.formatted.push({hour: date.getHours(), minute: date.getMinutes(), day: date.getDate(), month: date.getMonth(), symptoms: e.symptoms})
       }
   }
 }

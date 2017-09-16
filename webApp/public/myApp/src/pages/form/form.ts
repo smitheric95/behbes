@@ -41,8 +41,6 @@ export class FormPage {
       "Yellow/orange looking skin"
     ]
 
-    //Removed "Irritability" and "Not Peed..."
-
     this.symptoms = [];
     this.selected = [];
     this.response = [];
