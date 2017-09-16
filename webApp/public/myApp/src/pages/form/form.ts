@@ -25,6 +25,8 @@ export class FormPage {
       "Dry Flaky Scalp",
       "Excess Tearing",
       "Fever",
+      "Irritability",
+      "Not Peed for >6 Hours",
       "Not Pooping",
       "Nasal Congestion",
       "Pulling on Ears",

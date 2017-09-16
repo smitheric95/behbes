@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { FormService } from '../../app/services/form/form.service';
 
@@ -18,7 +19,8 @@ export class IllnessPage {
   resources: any[];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+     private formService: FormService, private san: DomSanitizer) {
     this.Name = "";
     this.about = "";
     this.naturals = [{description: "",Hyperlink: "#"}];
@@ -44,15 +46,22 @@ export class IllnessPage {
     Promise.all(this.about = await this.formService.getIllness(this.Name));
   }
   async getConventional() {
+    var count = 0;
     Promise.all(this.conventionals = await this.formService.getConventional(this.Name));
   }
   async getNatural() {
+    var count = 0;
     Promise.all(this.naturals = await this.formService.getNatural(this.Name));
 
   }
   async getResources() {
+    var count = 0;
     Promise.all(this.resources = await this.formService.getResources(this.Name));
   }
 
+  sanitize(url){
+      return this.san.bypassSecurityTrustResourceUrl(url);
 
+
+  }
 }
