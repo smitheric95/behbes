@@ -25,8 +25,8 @@ export class FormPage {
       "Dry Flaky Scalp",
       "Excess Tearing",
       "Fever",
-      "Irritibility",
-      "Not Peed for > 6 Hours",
+      "Irritability",
+      "Not Peed for >6 Hours",
       "Not Pooping",
       "Nasal Congestion",
       "Pulling on Ears",
@@ -40,6 +40,8 @@ export class FormPage {
       "White patches on lips, tongue, inside cheeks",
       "Yellow/orange looking skin"
     ]
+
+    //Removed "Irritability" and "Not Peed..."
 
     this.symptoms = [];
     this.selected = [];

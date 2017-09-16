@@ -19,7 +19,6 @@ export class CausesPage {
     this.causes = navParams.get('response');
   }
 
-
   //sends the other possible causes to return to this page
   causeTapped(event, cause_name) {
     this.pushPage(cause_name);
