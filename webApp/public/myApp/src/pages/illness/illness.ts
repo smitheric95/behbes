@@ -46,16 +46,13 @@ export class IllnessPage {
     Promise.all(this.about = await this.formService.getIllness(this.Name));
   }
   async getConventional() {
-    var count = 0;
     Promise.all(this.conventionals = await this.formService.getConventional(this.Name));
   }
   async getNatural() {
-    var count = 0;
     Promise.all(this.naturals = await this.formService.getNatural(this.Name));
 
   }
   async getResources() {
-    var count = 0;
     Promise.all(this.resources = await this.formService.getResources(this.Name));
   }
 
