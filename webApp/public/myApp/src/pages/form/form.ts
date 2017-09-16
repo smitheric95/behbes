@@ -8,6 +8,7 @@ import { CausesPage } from '../causes/causes';
 @Component({
   selector: 'page-form',
   templateUrl: 'form.html',
+  styleUrls: ['/pages/form/form.scss'],
 })
 export class FormPage {
 

@@ -5,12 +5,13 @@
     </button>
     <ion-title>Sign up</ion-title>
     <button ion-button menuToggle="right" end>
-      <ion-icon name="contact"></ion-icon>
+      <ion-icon style="size: 30px" name="contact"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
     <form (ngSubmit)="signUp(signUpForm)" [formGroup]="signUpForm">
         <ion-item>
             <ion-label floating>Username</ion-label>
@@ -79,5 +80,6 @@
       <br />
       <button style="width:98%; margin-left:14px;" type="submit" ion-button [disabled]="signUpForm.invalid">Sign Up!</button>
     </form>
+  </ion-card>
 
 </ion-content>

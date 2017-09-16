@@ -3,12 +3,37 @@
     <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Login</ion-title>
+    <ion-title style="font-family: 'Roboto'">Login</ion-title>
     <button ion-button menuToggle="right" end>
-      <ion-icon name="contact"></ion-icon>
+      <ion-icon style="size: 30px" name="contact"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
+<<<<<<< HEAD
+
+<ion-content style="background-color:#eee">
+  <ion-card>
+    <form (ngSubmit)="login()">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-input  type="text" placeholder="Username" name="username" [(ngModel)]="username"  required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" placeholder="password" name="password" [(ngModel)]="password" required></ion-input>
+            </ion-item>
+             </ion-list>
+        </ion-col>
+      </ion-row>
+       <ion-row>
+        <ion-col >
+          <button style="border-radius: 5px" ion-button class="submit-btn" full type="submit" >Login</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card>
+=======
 <ion-content padding>
     <form novalidate *ngIf ='!forgottenPass' (ngSubmit)="login(loginForm)" [formGroup]="loginForm">
         <ion-item>
@@ -47,6 +72,7 @@
         <button style="width:98%; margin-left:14px;" type="submit" id="login" ion-button [disabled]="forgotPasswordForm.invalid">Reset Password</button>
     </form>
     <button *ngIf='forgottenPass' style="width:98%; margin-left:14px;" ion-button (click)='forgottenPass=false'>Go Back</button> 
+>>>>>>> 1dfc25aab8a3a4c459f622c64ef685672f56565e
 
     
 </ion-content>

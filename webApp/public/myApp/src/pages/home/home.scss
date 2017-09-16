@@ -2,6 +2,73 @@
   background-color: blue;
 }
 
+ion-card {
+  width: 100%;
+  padding: 10px;
+}
+
+.main-button {
+  border-radius: 1em; 
+  font-family: 'Roboto', sans-serif; 
+  font-size: 200%; 
+  color: white;
+  width: 310px;
+  height: 300px;
+  display: inline-block;
+  margin: 0.3em;
+}
+
+.button-inner {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.button-container {
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+}
+
+#form-button {
+  background-color: #F06292;
+}
+
+#er-button {
+  background-color: #FFD54F;
+  border-radius: 100%;
+  border-width: 0px;
+}
+
+#basics-button {
+  background-color: #81C784;
+}
+
+#alarms-button {
+  background-color: #4FC3F7;
+  border-radius: 100%;
+  border-width: 0px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#wordmark {
+  height: 40px;
+  display: inherit;
+  width: initial;
+  margin: 10px auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .button-container {
+      width: inherit;
+    }
+    .main-button {
+      width: inherit; 
+      height: 100px !important;
+    }
+}
+
 // .contianer {
 //   display: flex;
 //   justify-content: center;
