@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { Geolocation } from '@ionic-native/geolocation'
@@ -52,6 +52,7 @@ import { Globals } from './services/globals/globals';
     //   libraries: ["places"]
     // }),
     ReactiveFormsModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
