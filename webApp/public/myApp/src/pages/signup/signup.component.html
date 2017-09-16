@@ -10,38 +10,8 @@
   </ion-navbar>
 </ion-header>
 
-<<<<<<< HEAD
-<ion-content style="background-color:#eee">
-  <ion-card>
-    <form (ngSubmit)="signUp()">
-      <ion-row>
-        <ion-col>
-          <ion-list inset>
-              <ion-item>
-                <ion-input type="text" placeholder="Username" name="username" [(ngModel)]="username"  required></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="password" placeholder="password" name="password" [(ngModel)]="password" required></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="text" placeholder="First Name" name="firstName" [(ngModel)]="firstName" ></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="lastName" name="lastName"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="email" placeholder="email" name="email" [(ngModel)]="email" ></ion-input>
-              </ion-item>
-          </ion-list>
-        </ion-col>
-      </ion-row>
-          <ion-row>
-            <ion-col >
-              <button style="border-radius: 5px" ion-button class="submit-btn" full type="submit" >Login</button>
-            </ion-col>
-          </ion-row>
-=======
 <ion-content padding>
+  <ion-card>
     <form (ngSubmit)="signUp(signUpForm)" [formGroup]="signUpForm">
         <ion-item>
             <ion-label floating>Username</ion-label>
@@ -109,7 +79,6 @@
         
       <br />
       <button style="width:98%; margin-left:14px;" type="submit" ion-button [disabled]="signUpForm.invalid">Sign Up!</button>
->>>>>>> 1dfc25aab8a3a4c459f622c64ef685672f56565e
     </form>
   </ion-card>
 
