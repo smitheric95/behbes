@@ -4,31 +4,48 @@ import { Globals } from '../../app/services/globals/globals';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AlertController } from 'ionic-angular';
+import { FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+
+
 @Component({
 	selector: 'login',
-	templateUrl: 'login.component.html'
+	templateUrl: 'login.component.html',
+	styleUrls: ['login.compoenent.css']
 })
 
 export class LoginComponent implements OnInit {
-	username:string;
-	password: string;
 	forgottenPass:boolean;
+	username: AbstractControl;
+	password: AbstractControl;
+	loginForm: FormGroup;
+
+	name: AbstractControl;
+	forgotPasswordForm: FormGroup;
+
 	constructor(public http:Http, public globals:Globals, public nav:NavController, public alertControl: AlertController){
-		this.username="";
-		this.password="";
 		this.forgottenPass=false;
+
+		this.loginForm = new FormGroup({
+			// name: new FormControl('', [Validators.required, Validators.minLength(4)]),
+			username: new FormControl('', [Validators.required]),
+			// email: new FormControl('', [Validators.required,Validators.email])
+			password: new FormControl('', [Validators.required])
+		});
+
+		this.forgotPasswordForm = new FormGroup({
+			name: new FormControl('', [Validators.required])
+		});
 	}
 
-	login(){
-		this.http.post("http://localhost:8100/signin", JSON.stringify({"Username": this.username, "Password":this.password}))
+	login(form){
+		this.http.post("http://localhost:8100/signin", JSON.stringify({"Username": form._value.username, "Password": form._value.password}))
 			.subscribe( data => {
 				this.globals.setAuthToken(data.json()['Token']);
 				this.nav.setRoot(HomePage);
 			},
 			err=> {
 				this.showAlert();
-				this.username="";
-				this.password="";
+				this.loginForm.reset();
 			});
 	}
 	ngOnInit() { }
@@ -40,17 +57,15 @@ export class LoginComponent implements OnInit {
 		});
 		alert.present();
 	}
-	forgotPass(){
-		this.http.put("http://localhost:8100/forgotPass", JSON.stringify({"Username":this.username}))
+	forgotPass(form){
+		this.http.put("http://localhost:8100/forgotPass", JSON.stringify({"Username":form._value.username}))
 			.subscribe( data => {
 				this.showPassReset(true);
-				this.username="";
-				this.password="";
+				this.forgotPasswordForm.reset();
 			},
 			err=>{
 				this.showPassReset(false);
-				this.username="";
-				this.password="";
+				this.forgotPasswordForm.reset();
 			})
 	}
 	showPassReset(success:boolean){
@@ -70,6 +85,6 @@ export class LoginComponent implements OnInit {
 			});
 			alert.present();
 		}
-		
+
 	}
 }
