@@ -106,7 +106,6 @@ $app->post('/postform',function($request,$response){
 
 	//Add history if user is logged in
  	if($request->getAttribute('UserID')!='None'){
-		 print("Found user + " + $request->getAttribute('UserID'));
 		 //add history record
 		 $stmt = $this->db->prepare('CALL AddHistory(:UserID)');// AND Name= :Name ');
 		 $stmt->bindValue(':UserID', $request->getAttribute('UserID'), PDO::PARAM_INT);
