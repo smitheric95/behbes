@@ -2,20 +2,68 @@
   background-color: blue;
 }
 
+ion-card {
+  width: 100%;
+  padding: 10px;
+}
+
+.main-button {
+  border-radius: 1em; 
+  font-family: 'Roboto', sans-serif; 
+  font-size: 200%; 
+  color: white;
+  width: 310px;
+  height: 300px;
+  display: inline-block;
+  margin: 0.3em;
+}
+
+.button-inner {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.button-container {
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+}
+
+#form-button {
+  background-color: #F06292;
+}
+
+#er-button {
+  background-color: #FFD54F;
+
+}
+
+#basics-button {
+  background-color: #81C784;
+  border-radius: 100%;
+}
+
+#alarms-button {
+  background-color: #4FC3F7;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
 
 #wordmark {
   height: 40px;
-  margin: 10px 20px;
+  display: inherit;
+  width: initial;
+  margin: 10px auto;
 }
 
 @media only screen and (max-width: 700px) {
-    #wordmark {
-      display: inherit;
-      width: initial;
-      margin: 10px auto;
+    .button-container {
+      width: inherit;
+    }
+    .main-button {
+      width: inherit; 
+      height: 100px !important;
     }
 }
 

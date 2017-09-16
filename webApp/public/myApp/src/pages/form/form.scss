@@ -1,18 +1,20 @@
 .list {
     font-size: 2.4rem;
-    margin: 1rem 2.4rem !important;
+    margin: 1rem 2rem;
 }
 
 label {
+    border-bottom: 1px solid #AAA;
     line-height: 5rem;
+    padding: 0.5rem;
 }
 
 .checkbox {
-    margin: 0 1rem;
+  margin-right: 5px;
 }
 
 #form #form-header * {
-  margin: 1rem 2.4rem !important;
+  margin: 1rem 2.4rem;
 }
 
 #form p {
@@ -41,4 +43,28 @@ label {
     width: 7em;
     margin: 10px auto !important;
   }
+  .items {
+    display: block !important;
+  }
+}
+
+#warning {
+  background-color: #FFD54F;
+  padding: 1em;
+  width: 20em;
+  text-align: center;
+  border-radius: 1em;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+  margin: 0 auto 1em !important;
+  display: block;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items .item {
+  flex: 1 0 42%;
 }

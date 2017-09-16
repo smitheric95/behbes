@@ -14,14 +14,17 @@
   <div id="form">
     <ion-card style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 10px">
       <div id="form-header">
+        <p id="warning">If you are experiencing a serious medical issue, please consult a professional.</p>
         <p>Select any symptoms that apply.</p>
       </div>
-      <ion-list *ngFor="let symptom of symptoms" text-wrap>
+      <div class="items">
+        <ion-list *ngFor="let symptom of symptoms" text-wrap class="item">
           <label> 
-              <ion-checkbox [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
+              <ion-checkbox [name]="symptom.name" type="checkbox" [(ngModel)]="symptom.value"></ion-checkbox>
               {{symptom.name}}
-          </label><hr>
-      </ion-list><br>
+          </label>
+        </ion-list><br>
+      </div>
       <button ion-button secondary (click)="postForm()">Submit</button>
     </ion-card>
   </div>
