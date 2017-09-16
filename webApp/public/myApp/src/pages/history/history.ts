@@ -54,10 +54,8 @@ ngOnInit() {
 
       for (let e of this.evals) {
         date = new Date(e.date);
-        //console.log(date);
-        console.log(date.getDate());
-        console.log(date.getMonth());
-        this.formatted.push({hour: date.getHours(), minute: date.getMinutes(), day: date.getDate(), month: date.getMonth(), symptoms: e.symptoms})
+        this.formatted.push({hour: date.getHours(), minute: date.getMinutes(),
+           day: date.getDate(), month: date.getMonth(), symptoms: e.symptoms})
       }
   }
 }
