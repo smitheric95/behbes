@@ -3,7 +3,7 @@
     <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{cause_name}}</ion-title>
+    <ion-title>{{Name}}</ion-title>
     <button ion-button menuToggle="right" end>
       <ion-icon name="contact"></ion-icon>
     </button>
@@ -11,6 +11,7 @@
 </ion-header>
 
 
+<<<<<<< HEAD
   <ion-content style="background-color:#eee">
     <ion-card >
       <div style="font-family: 'Roboto'; font-weight: bold; font-size: 20px; padding-left: 10px; padding-top: 10px;text-align: center;">About
@@ -32,3 +33,31 @@
       <button ion-button (click)="homeTapped($event)">Return Home</button><br>
     </ion-card>
   </ion-content>
+=======
+<ion-content>
+  <ion-card>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+      <span style="font-weight: bold; ">About: </span><span text-wrap>{{about.About}}</span><br>
+    </div>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+      <span style="font-weight: bold; ">Natural Treatment: </span >
+          <span *ngFor="let natural of naturals" text-wrap >
+            <a [href]="sanitize(natural.Hyperlink)"> {{natural.description}}</a>
+          </span><br>
+    </div>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+      <span style="font-weight: bold; ">Conventional Treatment: </span>
+        <span *ngFor="let conventional of conventionals" text-wrap>
+          <a [href]="sanitize(conventional.Hyperlink)"> {{conventional.description}}</a>
+        </span><br>
+    </div>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
+      <span style="font-weight: bold; ">Resources: </span>
+        <span *ngFor="let r of resources" text-wrap>
+          <a [href]="sanitize(r.Hyperlink)"> {{r.description}}</a>
+        </span><br>
+    </div>
+    <button ion-button (click)="homeTapped($event)">Return Home</button><br>
+  </ion-card>
+</ion-content>
+>>>>>>> 1dfc25aab8a3a4c459f622c64ef685672f56565e

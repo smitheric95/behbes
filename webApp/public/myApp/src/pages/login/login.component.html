@@ -9,6 +9,7 @@
     </button>
   </ion-navbar>
 </ion-header>
+<<<<<<< HEAD
 
 <ion-content style="background-color:#eee">
   <ion-card>
@@ -32,5 +33,46 @@
       </ion-row>
     </form>
   </ion-card>
+=======
+<ion-content padding>
+    <form novalidate *ngIf ='!forgottenPass' (ngSubmit)="login(loginForm)" [formGroup]="loginForm">
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" value="" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( loginForm.get('username').hasError('minlength') || loginForm.get('username').hasError('required') ) && loginForm.get('username').touched">
+            <div class="error" *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">
+                Username is required
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" value="" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( loginForm.get('password').hasError('required') || loginForm.get('password').hasError('password') ) && loginForm.get('password').touched">
+            <div class="error" *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+                Password is required
+            </div>
+        </ion-item>
+        <br />
+        <button style="width:98%; margin-left:14px;" type="submit" id="login" ion-button [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <a style="margin-left:14px; margin-top: 14px;" *ngIf='!forgottenPass' (click)='forgottenPass=true'>Forgot password ?</a>
 
+    <form *ngIf='forgottenPass' (ngSubmit)='forgotPass(forgotPasswordForm)' [formGroup]="forgotPasswordForm">
+      <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" value="" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( forgotPasswordForm.get('name').hasError('minlength') || forgotPasswordForm.get('name').hasError('required') ) && forgotPasswordForm.get('name').touched">
+            <div class="error" *ngIf="forgotPasswordForm.get('name').hasError('required') && forgotPasswordForm.get('name').touched">
+                Username is required
+            </div>
+        </ion-item>
+        <button style="width:98%; margin-left:14px;" type="submit" id="login" ion-button [disabled]="forgotPasswordForm.invalid">Reset Password</button>
+    </form>
+    <button *ngIf='forgottenPass' style="width:98%; margin-left:14px;" ion-button (click)='forgottenPass=false'>Go Back</button> 
+>>>>>>> 1dfc25aab8a3a4c459f622c64ef685672f56565e
+
+    
 </ion-content>

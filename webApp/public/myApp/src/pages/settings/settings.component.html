@@ -9,3 +9,58 @@
     </button>
   </ion-navbar>
 </ion-header>
+
+<ion-content padding>
+    <ion-item> 
+      <ion-label>Username</ion-label>
+      <ion-label>{{username}}</ion-label>
+    </ion-item>
+    <form (ngSubmit)="editInfo(settingsForm)" [formGroup]="settingsForm">
+
+      <ion-item>
+            <ion-label floating>Old Password</ion-label>
+            <ion-input type="password" value="" formControlName="oldPass"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="settingsForm.get('oldPass').hasError('required') && settingsForm.get('newPass').touched">
+            <div class="error" *ngIf="settingsForm.get('oldPass').hasError('required') && settingsForm.get('oldPass').touched">
+                Old password is required
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>New Password</ion-label>
+            <ion-input type="password" value="" formControlName="newPass"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( settingsForm.get('newPass').hasError('required') || settingsForm.get('newPass').hasError('pattern') || settingsForm.get('newPass').hasError('minlength')) && settingsForm.get('newPass').touched">
+            <div class="error" *ngIf="settingsForm.get('newPass').hasError('required') && settingsForm.get('newPass').touched">
+                New password is required
+            </div>
+            <div class="error" *ngIf="(settingsForm.get('newPass').hasError('minlength') || settingsForm.get('newPass').hasError('pattern')) && settingsForm.get('newPass').touched">
+              <ul style="margin:0;">
+                <li>Minimum 6 characters</li>
+                <li>1 number</li>
+                <li>1 lowercase letter</li>
+                <li>1 uppercase letter</li>
+              </ul>
+            </div>
+        </ion-item>
+
+
+      <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" value="" formControlName="email" [(ngModel)]="emailString" ></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( settingsForm.get('email').hasError('required') || settingsForm.get('email').hasError('email') ) && settingsForm.get('email').touched">
+            <div class="error" *ngIf="settingsForm.get('email').hasError('required') && settingsForm.get('email').touched">
+                Email is required
+            </div>
+            <div class="error" *ngIf="settingsForm.get('email').hasError('email') && settingsForm.get('email').touched">
+                Please enter valid email
+            </div>
+        </ion-item>
+
+
+      <button style="width:98%; margin-left:14px;" type="submit" ion-button>Update Info</button>
+    </form>
+
+</ion-content>

@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { Geolocation } from '@ionic-native/geolocation'
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CausesPage } from '../pages/causes/causes';
+import { AlarmsPage } from '../pages/alarm/alarm';
+import { AddPage } from '../pages/add/add';
 import { FormPage } from '../pages/form/form';
+import { HistoryPage } from '../pages/history/history';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
 import { IllnessPage } from '../pages/illness/illness';
@@ -29,9 +32,12 @@ import { Globals } from './services/globals/globals';
     HomePage,
     ListPage,
     CausesPage,
+    AlarmsPage,
+    AddPage,
     FormPage,
     InfantHealthPage,
     MapPage,
+    HistoryPage,
     IllnessPage,
     LoginComponent,
     SignupComponent,
@@ -46,6 +52,7 @@ import { Globals } from './services/globals/globals';
     //   libraries: ["places"]
     // }),
     ReactiveFormsModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,10 +60,13 @@ import { Globals } from './services/globals/globals';
     HomePage,
     ListPage,
     CausesPage,
+    AlarmsPage,
+    AddPage,
     FormPage,
     InfantHealthPage,
     MapPage,
     IllnessPage,
+    HistoryPage,
     SignupComponent,
     LoginComponent,
     SettingsComponent

@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { FormPage } from '../pages/form/form';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
+import { HistoryPage } from '../pages/history/history';
 import { SettingsComponent } from '../pages/settings/settings.component';
 import { LoginComponent } from '../pages/login/login.component';
 import { SignupComponent } from '../pages/signup/signup.component';
@@ -31,7 +32,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Symptoms Evaluation', component: FormPage },
       { title: 'Infant Health', component: InfantHealthPage },
-      { title: 'ER Locations Near You', component: MapPage }
+      { title: 'ER Locations Near You', component: MapPage },
+      { title: 'History', component: HistoryPage }
     ];
     this.loggedUserPages= [
       { title: 'Settings', component: SettingsComponent }
@@ -59,6 +61,7 @@ export class MyApp {
   }
   logout(){
     this.globals.setAuthToken("");
+    this.nav.setRoot(HomePage);
   }
 
 }

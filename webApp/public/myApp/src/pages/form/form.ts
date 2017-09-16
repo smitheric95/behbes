@@ -26,8 +26,8 @@ export class FormPage {
       "Dry Flaky Scalp",
       "Excess Tearing",
       "Fever",
-      "Irritibility",
-      "Not Peed for > 6 Hours",
+      "Irritability",
+      "Not Peed for >6 Hours",
       "Not Pooping",
       "Nasal Congestion",
       "Pulling on Ears",
@@ -48,7 +48,7 @@ export class FormPage {
   }
 
   ngOnInit() {
-    this.getSymptoms();
+     this.getSymptoms();
   }
 
   async postForm() {
@@ -69,15 +69,16 @@ export class FormPage {
     });
   } 
 
-  async getSymptoms() {
-    this.symptomsList = await this.formService.getSymptoms();
+   async getSymptoms() {
+    /*this.symptomsList = await this.formService.getSymptoms();*/
     this.createSymptomsObj();
   }
-
+ 
 
   createSymptomsObj() {
+    var order: 0
     for (let symptom of this.symptomsList) {
-      this.symptoms.push({name: symptom, value: false});
+      this.symptoms.push({name: symptom, value: false,id: order});
     }
   }
 

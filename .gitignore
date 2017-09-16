@@ -1,4 +1,4 @@
-.vagrant/*
+.vagrant    
 .DS_Store
-/webApp/public/myApp/www/build/*
-/webApp/public/myApp/node_modules/*
+build
+node_modules

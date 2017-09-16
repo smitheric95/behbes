@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color='navbarSymptoms'>
+  <ion-navbar hideBackButton="true" color='navbarSymptoms'>
     <button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -15,10 +15,11 @@
     <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
     <h1 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Possible Illneses</h1>
     <ion-list>
-        <button ion-item  ion-item *ngFor = "let cause of causes; let i = index" (click)="causeTapped($event,cause.recommendation)">
-            <div item-left style="margin:30px">{{cause.matchPercentage}}</div><hr>
-            {{cause.recommendation}}
-        </button>  
+        <button ion-item  ion-item *ngFor = "let cause of causes; let i = index" (click)="causeTapped($event,cause.Name)">
+            <div item-left style="margin:30px">{{cause.counted}}</div>
+            {{cause.Name}}
+        </button>
+        
     </ion-list>
 </ion-card>
 </ion-content>

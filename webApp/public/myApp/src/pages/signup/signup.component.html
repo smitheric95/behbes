@@ -10,6 +10,7 @@
   </ion-navbar>
 </ion-header>
 
+<<<<<<< HEAD
 <ion-content style="background-color:#eee">
   <ion-card>
     <form (ngSubmit)="signUp()">
@@ -39,6 +40,76 @@
               <button style="border-radius: 5px" ion-button class="submit-btn" full type="submit" >Login</button>
             </ion-col>
           </ion-row>
+=======
+<ion-content padding>
+    <form (ngSubmit)="signUp(signUpForm)" [formGroup]="signUpForm">
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" value="" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( signUpForm.get('username').hasError('minlength') || signUpForm.get('username').hasError('required') ) && signUpForm.get('username').touched">
+            <div class="error" *ngIf="signUpForm.get('username').hasError('required') && signUpForm.get('username').touched">
+                Username is required
+            </div>
+            <div class="error" *ngIf="signUpForm.get('username').hasError('minlength') && signUpForm.get('username').touched">
+                Minimum of 4 characters
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" value="" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( signUpForm.get('password').hasError('required') || signUpForm.get('password').hasError('pattern') || signUpForm.get('password').hasError('minlength')) && signUpForm.get('password').touched">
+            <div class="error" *ngIf="signUpForm.get('password').hasError('required') && signUpForm.get('password').touched">
+                Password is required
+            </div>
+            <div class="error" *ngIf="(signUpForm.get('password').hasError('minlength') || signUpForm.get('password').hasError('pattern')) && signUpForm.get('password').touched">
+              <ul style="margin:0;">
+                <li>Minimum 6 characters</li>
+                <li>1 number</li>
+                <li>1 lowercase letter</li>
+                <li>1 uppercase letter</li>
+              </ul>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>First Name</ion-label>
+            <ion-input type="fname" value="" formControlName="fname"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( signUpForm.get('fname').hasError('required') || signUpForm.get('fname').hasError('fname') ) && signUpForm.get('fname').touched">
+            <div class="error" *ngIf="signUpForm.get('fname').hasError('required') && signUpForm.get('fname').touched">
+                First name is required
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input type="lname" value="" formControlName="lname"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( signUpForm.get('lname').hasError('required') || signUpForm.get('lname').hasError('lname') ) && signUpForm.get('lname').touched">
+            <div class="error" *ngIf="signUpForm.get('lname').hasError('required') && signUpForm.get('lname').touched">
+                Last name is required
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" value="" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( signUpForm.get('email').hasError('required') || signUpForm.get('email').hasError('email') ) && signUpForm.get('email').touched">
+            <div class="error" *ngIf="signUpForm.get('email').hasError('required') && signUpForm.get('email').touched">
+                Email is required
+            </div>
+            <div class="error" *ngIf="signUpForm.get('email').hasError('email') && signUpForm.get('email').touched">
+                Please enter valid email
+            </div>
+        </ion-item>
+        
+      <br />
+      <button style="width:98%; margin-left:14px;" type="submit" ion-button [disabled]="signUpForm.invalid">Sign Up!</button>
+>>>>>>> 1dfc25aab8a3a4c459f622c64ef685672f56565e
     </form>
   </ion-card>
 
