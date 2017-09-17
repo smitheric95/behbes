@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 	password: AbstractControl;
 	loginForm: FormGroup;
 
-	name: AbstractControl;
+	email: AbstractControl;
 	forgotPasswordForm: FormGroup;
 
 	constructor(public http:Http, public globals:Globals, public nav:NavController, public alertControl: AlertController){
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 		});
 
 		this.forgotPasswordForm = new FormGroup({
-			name: new FormControl('', [Validators.required])
+			email: new FormControl('', [Validators.required])
 		});
 	}
 
