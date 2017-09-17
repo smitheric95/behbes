@@ -46,6 +46,7 @@ export class FormService {
     getHistory(){
 		return this.http.get(`/history`,{headers:this.globals.getHeaders()})
         .toPromise().then(function(res) {
+            console.log(res)
             return res.json();
         });
     }
