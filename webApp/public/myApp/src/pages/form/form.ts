@@ -129,11 +129,18 @@ export class FormPage {
       [this.symptomsList[5].list.filter(val => val.value)]
     ]
 
+    console.log(filteredLists);
+
     for (let sublist of filteredLists) {
-      for (let symptom of sublist) {
-        this.selected.push(symptom.name);
+      console.log(sublist);
+      for (let symptoms of sublist) {
+        for(let symptom of symptoms) {
+          this.selected.push(symptom.name);
+        }
       }
     }
+
+    console.log(this.selected);
 
     Promise.all(this.response = await this.formService.postForm(this.selected))
       .then(value => this.pushPage())
