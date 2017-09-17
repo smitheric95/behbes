@@ -37,12 +37,12 @@
 
     <form *ngIf='forgottenPass' (ngSubmit)='forgotPass(forgotPasswordForm)' [formGroup]="forgotPasswordForm">
       <ion-item>
-            <ion-label floating>Username</ion-label>
-            <ion-input type="text" value="" formControlName="name"></ion-input>
+            <ion-label floating>E-mail</ion-label>
+            <ion-input type="text" value="" formControlName="email"></ion-input>
         </ion-item>
         <ion-item no-lines *ngIf="( forgotPasswordForm.get('name').hasError('minlength') || forgotPasswordForm.get('name').hasError('required') ) && forgotPasswordForm.get('name').touched">
             <div class="error" *ngIf="forgotPasswordForm.get('name').hasError('required') && forgotPasswordForm.get('name').touched">
-                Username is required
+                E-mail is required
             </div>
         </ion-item>
         <button style="width:98%; margin-left:14px;" type="submit" id="login" ion-button [disabled]="forgotPasswordForm.invalid">Reset Password</button>

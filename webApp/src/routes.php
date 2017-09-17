@@ -254,21 +254,23 @@ $app->put('/forgotPass', function($request,$response){
 
 	$input = $request->getBody();
 	$input = json_decode($input,true);
-	$username = $input['Username'];
-
+	$email = $input['Email'];
 	$newPass = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
 	$newSalt = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
 	
-	$getEmail = $this->db->prepare("SELECT Email FROM Users WHERE Username =:Username");
-	$getEmail->bindValue(':Username', $username, PDO::PARAM_STR);
+	$getEmail = $this->db->prepare("SELECT Username FROM Users WHERE Email =:Email");
+	$getEmail->bindValue(':Email', $email, PDO::PARAM_STR);
 	try{
 		$getEmail->execute();
 	}
 	catch(PDOException $e){
 		return $response->withStatus(401);
 	}
-	$email = $getEmail->fetchAll()[0]['Email'];
+	$username = $getEmail->fetchAll()[0]['Username'];
 	unset($getEmail);
+	if (empty($username)){
+		return $response->withStatus(404);
+	}
 	try{
 		
 		$mail= new PHPMailer;
@@ -287,7 +289,6 @@ $app->put('/forgotPass', function($request,$response){
 		
 		
 		$mail->send();
-
 	}
 	catch (Exception $e){
 		$response = $response->withStatus(401);
