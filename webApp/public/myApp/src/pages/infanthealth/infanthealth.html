@@ -2,75 +2,43 @@
 <html>
 
 <ion-header>
-  <ion-navbar color='navbarInfantHealth'>
-    <button ion-button menuToggle="left" start>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-        <ion-title color='fontColor' >Basics of Infant Health</ion-title>
-    <button ion-button menuToggle="right" end>
-      <ion-icon name="contact"></ion-icon>
-    </button>
-  </ion-navbar>
+    <ion-navbar color='navbarInfantHealth'>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+            <ion-title color='fontColor' >Basics of Infant Health</ion-title>
+    </ion-navbar>
 </ion-header>
-<head>
-    <title>Basics of Infant Health</title>
-</head>
-<style>
-    #pagename {
-        background-color: #38BD57;
-        border-radius: 25px;
-    }
-</style>
 
-<!--<ion-header-bar >
-            <h1 class="title">Videos</h1>
-        </ion-header-bar>-->
-<body style="background-color:#eee">
-     
-    <div class="scroll-content" >
-        <div id="companyname">
-            <h1> Behbes </h1>
-        </div>
-        <ion-list>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                </ion-thumbnail>
-                <h2>How to feed your baby</h2>
-                <p>Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.</p>
-                <button ion-button clear item-end>View</button>
-            </ion-item>
-        </ion-list>
-
-        <!--<ion-content>
-            <ion-list>
-                List of videos by category
-                    <div id="Videos" *ngFor="let topic of topicsArray" (click)="setTopic(topic)">
-                        <ion-item>
-                        <div id="topic 1">
-                            <ion-card >
-                                <ion-card-header>
-                                    <h2 style="font-size: 25px;">{{topic.title}}</h2>
-                                    <p text-wrap>
-                                        Learn proper techniques on how to swaddle a baby.  Swaddling helps make your baby feel warm and calm.
-                                    </p>
-                                </ion-card-header>
-                                <ion-card-content>
-                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                                </ion-card-content>
-                            </ion-card>
-                        </ion-item>
-                        </div>
-            </ion-list>
-        </ion-content>-->
-                    
-            <!--<div id="topic 2">
+<ion-content style="background-color:#eee">
+    <div class="scroll-content">
+       
+        <div id="Videos">
+           <ion-card>
+               <ion-card-header>
+                    <h1 style="font-size: 25px;" text-wrap>Learn the essentials of baby care from trained medical professionals</h1>
+               </ion-card-header>
+           </ion-card>  
+            <div id="topic 1">
+                <ion-card >
+                    <ion-card-header>
+                        <h2 style="font-size: 25px;">How to swaddle a baby</h2>
+                        <p text-wrap>
+                            Swaddling your infant is a technique to make them feel warm and secure. Here are a few tactics to help get you on your way to snuggling your baby in their favorite blanket
+                        </p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+            <div id="topic 2">
                 <ion-card>
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> Bathing</h2>
                         <p text-wrap>
-                            This video teaches you an easy technique to bathe your baby
+                            Bathing your newborn can sooth them, keep them clean, and help their skin. But over bathing them can lead to problems. Learn the perfect balance from these videos
                         </p>
                     </ion-card-header>
                     <ion-card-content>
@@ -83,7 +51,7 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> Diaper Change</h2>
                         <p text-wrap>
-                            Easy steps on changing oyur baby's diaper'
+                            It may seem like a simple thing but learning an easier way to change your babies diaper can make your life, as a parent, much easier and cleaner
                         </p>
                     </ion-card-header>
                     <ion-card-content>  
@@ -96,7 +64,7 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> Comforting</h2>
                         <p text-wrap>
-                            Easiest way to calm crying baby
+                            When you child is sick or upset it is important to know how to comfort them
                         </p>
                     </ion-card-header>
                     <ion-card-content>  
@@ -109,7 +77,7 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;">Newborn Burping Techniques</h2>
                         <p text-wrap>
-                            Burpning made easy
+                            After your infant had eaten, gas bubbles get stuck in their stomach and can make them unhappy. Learning to burp will get rid of these bubble for them
                         </p>
                     </ion-card-header>
                     <ion-card-content>
@@ -122,6 +90,7 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;">Bottle Feeding</h2>
                         <p text-wrap>
+                            Bottle feeding can be a good alternative when you are pumping, you can't breast feed or if your child refuses to breastfeed. Here are some of these nurses favorite techniques
                         </p>
                     </ion-card-header>
                     <ion-card-content>
@@ -135,12 +104,12 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;">Sleep</h2>
                         <p text-wrap>
+                            Establishing good sleep habits early on can help fix sleep problems in your child further down the road. Here are some tips and tricks to help you start out on the right track
                         </p>
                     </ion-card-header>
                     <ion-card-content>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/FIIG6n55Ito" frameborder="0" allowfullscreen></iframe>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/Y1VYWmCjYqc" frameborder="0" allowfullscreen></iframe>
-
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -149,6 +118,7 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> Baby Massage</h2>
                         <p text-wrap>
+                            Massaging you newborn can help calm them down, it is also a good way of building a connect between you and your child
                         </p>
                     </ion-card-header>
                     <ion-card-content>
@@ -162,6 +132,7 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> How to take your baby’s temperature</h2>
                         <p text-wrap>
+                            A high temperature in your child can help you identify if your child is sick. Here is a good technique to help learn how to take your child's temperature
                         </p>
                     </ion-card-header>
                     <ion-card-content>
@@ -174,6 +145,7 @@
                     <ion-card-header>
                         <h2 style="font-size: 25px;"> Breastfeeding</h2>
                         <p text-wrap>
+                            Breastfeeding is a good way to feed your infant and it builds a great bond between you and your child
                         </p>
                     </ion-card-header>
                     <ion-card-content>
@@ -183,9 +155,8 @@
                     </ion-card-content>
                 </ion-card>
             </div>
-        </div>-->
-            
+        </div>
     </div>
-</body>
+</ion-content>
 
 </html>
