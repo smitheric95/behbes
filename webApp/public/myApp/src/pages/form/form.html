@@ -18,11 +18,14 @@
         <p>Select any symptoms that apply.</p>
       </div>
       <div class="items">
-        <ion-list *ngFor="let symptom of symptoms" text-wrap class="item">
-          <label> 
-              <ion-checkbox [name]="symptom.name" type="checkbox" [(ngModel)]="symptom.value"></ion-checkbox>
-              {{symptom.name}}
-          </label>
+        <ion-list *ngFor="let sublist of symptomsList" text-wrap class="item">
+            <h3>{{sublist.name}}</h3>
+            <ion-list *ngFor="let symptom of sublist.list" text-wrap class="item">
+                <label> 
+                    <ion-checkbox [name]="symptom.name" type="checkbox" [(ngModel)]="symptom.value"></ion-checkbox>
+                    {{symptom.name}}
+                </label>
+              </ion-list><br>
         </ion-list><br>
       </div>
       <button ion-button secondary (click)="postForm()">Submit</button>
