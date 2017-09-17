@@ -13,6 +13,7 @@ import { FormPage } from '../pages/form/form';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
 import { IllnessPage } from '../pages/illness/illness';
+import { SampleModalPage } from './../pages/sample-modal/sample-modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,7 +35,8 @@ import { Globals } from './services/globals/globals';
     IllnessPage, 
     LoginComponent,
     SignupComponent,
-    SettingsComponent
+    SettingsComponent,
+    SampleModalPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { Globals } from './services/globals/globals';
     IllnessPage,
     SignupComponent,
     LoginComponent,
-    SettingsComponent
+    SettingsComponent,
+    SampleModalPage
   ],
   providers: [
     StatusBar,

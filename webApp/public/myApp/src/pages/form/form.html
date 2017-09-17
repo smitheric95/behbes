@@ -12,12 +12,16 @@
 
 <ion-content style="background-color:#eee">
     <div>
+        
         <ion-card style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; padding-top: 10px">
             <h3 style="font-size: 25px; font-weight: bold; padding-bottom: 10px; margin: 1.4rem">Symptoms</h3>
-                <ion-list *ngFor="let symptom of symptoms" text-wrap>
+                <ion-list  *ngFor="let category of categoryList" > {{category}}
+                    <!--<ion-checkbox [name]="categoryList[i]"  type="checkbox" [(ngModel)]="category.value">{{category}}</ion-checkbox>-->
                     <label style="font-family: 'Roboto'; font-size: 20px;">  
-                        <ion-checkbox [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
-                        {{symptom.name}}
+                        <ion-list  *ngFor="let symptom of symptoms" text-wrap>
+                            <ion-checkbox *ngIf="symtpom?.category !== category" [name]="symptom.name"type="checkbox" [(ngModel)]="symptom.value" ></ion-checkbox>
+                            {{symptom.name}}
+                        </ion-list>
                     </label><hr>
                 </ion-list><br><br>
          <button ion-button secondary (click)="postForm()">Submit</button>
