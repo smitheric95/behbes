@@ -18,18 +18,22 @@ export class HistoryPage {
 
   response: any[];
 
+  loginMes: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private formService: FormService) {
     /* name and count */
-    this.evals = [
-        {symptoms: ["Fever", "Sneezing", "Coughing"], date: '2016-09-16 23:59:59'},
-        {symptoms: ["Coughing", "Sneezing"], date: '2016-09-15 12:06:30'}
-    ]
+    this.evals = []
 
     this.formatted = [];
+
+    this.loginMes = ""
   }
 
 ngOnInit() {
     this.getHistory().then(value => this.formatDateTime());
+    if(this.formatted == []) {
+      this.loginMes = "You need to be logged in to view this page!";
+    }
 }
 
 
@@ -53,13 +57,28 @@ ngOnInit() {
 
       for (let e of this.evals) {
         date = new Date(e.Date);
-        console.log(e.Date)
-        console.log(date)
-        this.formatted.push({hour: date.getHours(), minute: date.getMinutes(),
+        this.formatted.push({hour: this.pHours(date.getHours()), minute: this.padding(date.getMinutes()),
            day: date.getDate(), month: date.getMonth(), symptoms: e.Symptoms})
       }
 
     this.formatted = this.formatted.reverse()
   }
+
+  padding(value) {
+    if(value < 10) {
+        return '0' + value;
+    } else {
+        return value;
+    }
+  }
+
+    pHours(value) {
+      value = value % 13;
+      if(value < 10) {
+          return '0' + value;
+      } else {
+          return value;
+      }
+    }
 
 }

@@ -139,7 +139,7 @@ $app->post('/postform',function($request,$response){
 				$stmt->execute();
 			}
 			catch(PDOException $e){
-				print($e.message);
+				//print($e.message);
 					return $this->response->withStatus(400);
 	}
 	$Info = $stmt->fetchAll();
@@ -165,7 +165,7 @@ $app->get('/reference', function($request,$response){
 	return $this->response->WithStatus(200);
 });
 $app->post('/remedies', function($request, $response){
-	
+  
 	$input = $request->getBody();
 	$input = json_decode($input, true);
 	$illname = $input['Illness']; 
