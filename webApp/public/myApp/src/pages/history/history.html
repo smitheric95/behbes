@@ -18,7 +18,7 @@
       <ion-list>
           <button ion-item  ion-item *ngFor = "let e of formatted; let i = index" (click)="evalTapped($event,e.symptoms)">
               <div item-left style="margin:30px">{{e.month}}/{{e.day}}</div>
-              {{e.hour}}:{{e.minute}} - {{e.symptoms}}
+              {{e.hour}}:{{e.minute}} {{e.amPM}} - {{e.symptoms}}
           </button>
           
       </ion-list>

@@ -57,8 +57,9 @@ ngOnInit() {
 
       for (let e of this.evals) {
         date = new Date(e.Date);
-        this.formatted.push({hour: this.pHours(date.getHours()), minute: this.padding(date.getMinutes()),
-           day: date.getDate(), month: date.getMonth(), symptoms: e.Symptoms})
+        this.formatted.push({hour: this.pHours(date.getHours()-5), minute: this.padding(date.getMinutes()),
+           day: date.getDate(), month: date.getMonth(), amPM: this.getAMPM(date.getHours()-5),
+            symptoms: e.Symptoms})
       }
 
     this.formatted = this.formatted.reverse()
@@ -73,12 +74,80 @@ ngOnInit() {
   }
 
     pHours(value) {
-      value = value % 13;
+      switch (value) {
+        case 0: {
+          value = 24
+          break;
+        }
+        case -1: {
+          value = 23
+          break;
+        }
+        case -2: {
+          value = 22
+          break;
+        }
+        case -3: {
+          value = 21
+          break;
+        }
+        case -4: {
+          value = 20
+          break;
+        }
+        case -5: {
+          value = 19
+          break;
+        }
+        default: {
+          value = value
+        }
+      }
+      if(value > 12) {
+        value = value - 12;
+      }
       if(value < 10) {
           return '0' + value;
       } else {
           return value;
       }
     }
+
+  getAMPM(value) {
+    switch (value) {
+      case 0: {
+        value = 24
+        break;
+      }
+      case -1: {
+        value = 23
+        break;
+      }
+      case -2: {
+        value = 22
+        break;
+      }
+      case -3: {
+        value = 21
+        break;
+      }
+      case -4: {
+        value = 20
+        break;
+      }
+      case -5: {
+        value = 19
+        break;
+      }
+      default: {
+        value = value
+      }
+    }
+    if(value > 12) {
+        return "PM";
+    } else {
+        return "AM";
+    }
+  }
 
 }
