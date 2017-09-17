@@ -3,8 +3,11 @@
 }
 
 ion-card {
-  width: 100%;
+  width: fit-content !important;
   padding: 10px;
+  margin: 1rem auto !important;
+  max-width: 75% !important;
+  min-width: 700px !important;
 }
 
 .main-button {
@@ -67,6 +70,12 @@ body {
       width: inherit; 
       height: 100px !important;
       border-radius: 1em !important; 
+    }
+    ion-card {
+      width: calc(100% - 20px) !important;
+      margin: 10px !important;
+      max-width: 100% !important;
+      min-width: 0% !important;
     }
 }
 

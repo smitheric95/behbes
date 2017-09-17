@@ -1,3 +1,23 @@
 page-alarms {
-    
+    background-color: #eee;
+}
+
+page-alarms .alarm-header {
+  display: inline;
+}
+
+page-alarms .smaller-icons ion-icon {
+  font-size: 2.2em;
+}
+
+page-alarms #alarm-header {
+  border-bottom: 2px solid #eee
+}
+
+page-alarms .toolbar-background {
+  background-color: #4FC3F7;
+}
+
+page-alarms .toolbar-title, page-alarms .back-button-icon {
+  color: white;
 }
