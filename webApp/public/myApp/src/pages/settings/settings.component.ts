@@ -24,7 +24,7 @@ export class SettingsComponent implements OnInit {
 	settingsForm: FormGroup;
 
 	constructor(public http:Http, public globals:Globals, public alertControl:AlertController, public nav: NavController){
-		this.http.get('http://localhost:8100/userInfo', {headers: this.globals.getHeaders()})
+		this.http.get('/userInfo', {headers: this.globals.getHeaders()})
 			.subscribe( data => {
 				this.username = data.json()['Username'];
 				this.firstName = data.json()['FirstName'];
@@ -39,7 +39,7 @@ export class SettingsComponent implements OnInit {
 		});
 	}
 	editInfo(form){
-		this.http.put('http://localhost:8100/userInfo',JSON.stringify({"OldPass": form._value.oldPass, "NewPass":form._value.newPass, "Email":form._value.email}) ,{headers: this.globals.getHeaders()})
+		this.http.put('/userInfo',JSON.stringify({"OldPass": form._value.oldPass, "NewPass":form._value.newPass, "Email":form._value.email}) ,{headers: this.globals.getHeaders()})
 			.subscribe( data => {
 				this.showAlert(true);
 				this.nav.setRoot(HomePage);
