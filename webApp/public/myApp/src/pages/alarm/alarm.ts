@@ -22,7 +22,7 @@ export class AlarmsPage {
     this.a = new Audio();
     this.a.src = 'http://jplayer.org/audio/m4a/Miaow-07-Bubble.m4a';
     this.a.load();
-    this.checkAlarm();
+    // this.checkAlarm();
     
   }
 

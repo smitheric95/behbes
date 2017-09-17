@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	login(form){
-		this.http.post("http://localhost:8100/signin", JSON.stringify({"Username": form._value.username, "Password": form._value.password}))
+		this.http.post("/signin", JSON.stringify({"Username": form._value.username, "Password": form._value.password}))
 			.subscribe( data => {
 				this.globals.setAuthToken(data.json()['Token']);
 				this.nav.setRoot(HomePage);
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
 		alert.present();
 	}
 	forgotPass(form){
-		this.http.put("http://localhost:8100/forgotPass", JSON.stringify({"Username":form._value.username}))
+		this.http.put("/forgotPass", JSON.stringify({"Username":form._value.username}))
 			.subscribe( data => {
 				this.showPassReset(true);
 				this.forgotPasswordForm.reset();

@@ -29,8 +29,7 @@ export class HistoryPage {
   }
 
 ngOnInit() {
-    //this.getHistory().then(this.formatDateTime).then(value => this.formatDateTime());
-    this.formatDateTime();
+    this.getHistory().then(value => this.formatDateTime());
 }
 
 
@@ -53,11 +52,14 @@ ngOnInit() {
     var date;
 
       for (let e of this.evals) {
-        date = new Date(e.date);
-        //console.log(date);
-        console.log(date.getDate());
-        console.log(date.getMonth());
-        this.formatted.push({hour: date.getHours(), minute: date.getMinutes(), day: date.getDate(), month: date.getMonth(), symptoms: e.symptoms})
+        date = new Date(e.Date);
+        console.log(e.Date)
+        console.log(date)
+        this.formatted.push({hour: date.getHours(), minute: date.getMinutes(),
+           day: date.getDate(), month: date.getMonth(), symptoms: e.Symptoms})
       }
+
+    this.formatted = this.formatted.reverse()
   }
+
 }

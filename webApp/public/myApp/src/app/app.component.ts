@@ -33,10 +33,10 @@ export class MyApp {
       { title: 'Symptoms Evaluation', component: FormPage },
       { title: 'Infant Health', component: InfantHealthPage },
       { title: 'ER Locations Near You', component: MapPage },
-      { title: 'History', component: HistoryPage }
     ];
     this.loggedUserPages= [
-      { title: 'Settings', component: SettingsComponent }
+      { title: 'Settings', component: SettingsComponent },
+      { title: 'History', component: HistoryPage }
     ];
     this.notLoggedUserPages = [
       { title: 'Login', component: LoginComponent },

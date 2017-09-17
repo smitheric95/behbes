@@ -106,7 +106,6 @@ $app->post('/postform',function($request,$response){
 
 	//Add history if user is logged in
  	if($request->getAttribute('UserID')!='None'){
-		 print("Found user + " + $request->getAttribute('UserID'));
 		 //add history record
 		 $stmt = $this->db->prepare('CALL AddHistory(:UserID)');// AND Name= :Name ');
 		 $stmt->bindValue(':UserID', $request->getAttribute('UserID'), PDO::PARAM_INT);
@@ -348,3 +347,41 @@ $app->post('/resources', function($request, $response){
 	return $this->response->withJson($reme);	
 	
 });
+
+$app->get('/history', function($request, $response){
+	$userID = $request->getAttribute('UserID');
+
+	$getHistoryDate = $this->db->prepare("SELECT Date FROM Users natural join History where UserID= :UserID");
+	$getHistoryDate->bindValue(':UserID', $userID,PDO::PARAM_INT);
+	try {
+		$getHistoryDate->execute();
+	}
+	catch(PDOException $e){
+			return $this->response->withStatus(401);
+	}
+	$data = $getHistoryDate->fetchAll();
+	$formattedData =[];
+	unset($getHistoryDate);
+	foreach($data as $date){
+		$getHistoryForDate = $this->db->prepare("SELECT Description FROM History NATURAL JOIN SymptomHistory NATURAL JOIN Symptoms NATURAL JOIN Users WHERE UserID=:UserID AND Date=:Date");
+		$getHistoryForDate->bindValue(':UserID', $userID, PDO::PARAM_INT);
+		$getHistoryForDate->bindValue(':Date', $date['Date'], PDO::PARAM_STR);	
+		try{
+			$getHistoryForDate->execute();
+		}
+		catch(PDOException $e){
+			return $this->response->withStatus(401);
+		}
+		$symptoms = $getHistoryForDate->fetchAll();
+		$date['Symptoms'] =[];
+		foreach($symptoms as $symptom){
+			array_push($date['Symptoms'], $symptom['Description']);
+			//echo($date['Symptoms'][0]);
+		}
+		unset($getHistoryForDate);
+		array_push($formattedData, $date);
+	}
+	array_multisort($formattedData);
+	return $response->withJson($formattedData);
+
+})->add($validateSession);
