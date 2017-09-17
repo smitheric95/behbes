@@ -73,10 +73,11 @@ ngOnInit() {
   }
 
     pHours(value) {
+      value = value % 13;
       if(value < 10) {
           return '0' + value;
       } else {
-          return value % 13;
+          return value;
       }
     }
 
