@@ -18,7 +18,7 @@ ion-card {
   margin: 0.3em;
 }
 
-.button-inner {
+.main-button .button-inner {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
@@ -66,6 +66,7 @@ body {
     .main-button {
       width: inherit; 
       height: 100px !important;
+      border-radius: 1em !important; 
     }
 }
 
