@@ -61,12 +61,14 @@ export class FormPage {
     
     Promise.all(this.response = await this.formService.postForm(this.selected))
       .then(value => this.pushPage())
+    filteredS = []
   }
 
   pushPage() {
     this.navCtrl.push(CausesPage, {
       response: this.response
     });
+    this.selected = []
   } 
 
    async getSymptoms() {

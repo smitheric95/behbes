@@ -58,5 +58,8 @@ ngOnInit() {
         this.formatted.push({hour: date.getHours(), minute: date.getMinutes(),
            day: date.getDate(), month: date.getMonth(), symptoms: e.Symptoms})
       }
+
+    this.formatted = this.formatted.reverse()
   }
+
 }
