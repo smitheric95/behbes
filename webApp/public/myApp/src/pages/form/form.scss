@@ -46,6 +46,15 @@ label {
   .items {
     display: block !important;
   }
+  #form button {
+    margin: inherit !important;
+  }
+}
+
+#form button {
+  width: 60%;
+  display: block;
+  margin: 0 auto !important;
 }
 
 #warning {
