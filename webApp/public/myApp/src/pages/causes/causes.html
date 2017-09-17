@@ -11,15 +11,16 @@
 </ion-header>
 
 <ion-content style="background-color:#eee">
-<ion-card style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; ">
+<ion-card id="causes">
     <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
-    <h1 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Possible Illneses</h1>
+    <h1 id="causes-header">Possible Illnesses</h1>
     <ion-list>
+      <div class="cause-container">
         <button ion-item  ion-item *ngFor = "let cause of causes; let i = index" (click)="causeTapped($event,cause.Name)">
-            <div item-left style="margin:30px">{{cause.counted}}</div>
+            <div item-left>{{cause.counted}}</div>
             {{cause.Name}}
         </button>
-        
+      </div>
     </ion-list>
 </ion-card>
 </ion-content>

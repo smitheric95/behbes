@@ -10,15 +10,15 @@
 <ion-content padding>
     
     <h1>
-      <ion-icon name="list-box" item-left style="margin:30px"></ion-icon>Behbes
-      <ion-icon name="person" style="margin:30px"></ion-icon>
+      <ion-icon name="list-box" item-left style="margin-left: 30px"></ion-icon>
+      <ion-icon name="person" style="margin-left:30px"></ion-icon>
     </h1>
     
-    <h1 style="margin:30px">My Alarms <ion-icon name="add-circle" style="margin:30px;cursor:pointer" (click)="openModal()"></ion-icon></h1>
+    <h1 style="margin-left:1rem">My Alarms <ion-icon name="add-circle" style="margin: 1rem;cursor:pointer" (click)="openModal()"></ion-icon></h1>
     <ion-list>
         
         <button ion-item  ion-item *ngFor = "let med of medicines; let i = index" (click)="playSound()">
-            <div item-left style="margin:30px">{{times[i]}}</div>
+            <div item-left style="margin:1rem">{{times[i]}}</div>
             {{med}}
         </button>
         
