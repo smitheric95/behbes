@@ -25,6 +25,7 @@ import { LoginComponent } from '../pages/login/login.component';
 import { SignupComponent } from '../pages/signup/signup.component';
 import { SettingsComponent } from '../pages/settings/settings.component';
 import { Globals } from './services/globals/globals';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { Globals } from './services/globals/globals';
     SplashScreen,
     FormService,
     Globals,
+    LocalNotifcations,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

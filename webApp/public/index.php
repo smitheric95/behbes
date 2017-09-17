@@ -3,7 +3,7 @@ date_default_timezone_set('America/Chicago');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 header('Access-Control-Allow-Credentials: true');
-header("Access-Control-Allow-Origin: $http_origin");
+//header("Access-Control-Allow-Origin: $http_origin");
 
 if (PHP_SAPI == 'cli-server') {
     // To help the built-in PHP dev server, check if the request was actually for
