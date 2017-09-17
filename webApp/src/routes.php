@@ -376,7 +376,7 @@ $app->get('/history', function($request, $response){
 		$date['Symptoms'] =[];
 		foreach($symptoms as $symptom){
 			array_push($date['Symptoms'], $symptom['Description']);
-			echo($date['Symptoms'][0]);
+			//echo($date['Symptoms'][0]);
 		}
 		unset($getHistoryForDate);
 		array_push($formattedData, $date);

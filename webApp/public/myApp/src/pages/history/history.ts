@@ -29,7 +29,7 @@ export class HistoryPage {
   }
 
 ngOnInit() {
-    this.getHistory().then(this.formatDateTime).then(value => this.formatDateTime());
+    this.getHistory().then(value => this.formatDateTime());
 }
 
 
