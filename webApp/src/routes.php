@@ -139,7 +139,7 @@ $app->post('/postform',function($request,$response){
 				$stmt->execute();
 			}
 			catch(PDOException $e){
-				print($e.message);
+				//print($e.message);
 					return $this->response->withStatus(400);
 	}
 	$Info = $stmt->fetchAll();
@@ -165,17 +165,21 @@ $app->get('/reference', function($request,$response){
 	return $this->response->WithStatus(200);
 });
 $app->post('/remedies', function($request, $response){
-	$illname = $request->getBody();
-	$stmt = $this->db->prepare("SELECT About FROM Illnesses WHERE Name = :illnessname");
-	$stmt->bindValue(':illnessname', $illname, PDO::PARAM_STR);
-	try{
-				$stmt->execute();
-			}
-			catch(PDOException $e){
-					return $this->response->withStatus(400);
-			}
-	$reme = $stmt->fetchAll();
-	return $this->response->withJson($reme);		
+    
+    $input = $request->getBody();
+    $input = json_decode($input, true);
+    $illname = $input['Illness']; 
+    $stmt = $this->db->prepare("SELECT About FROM Illnesses WHERE Name = :illnessname");
+    $stmt->bindValue(':illnessname', $illname, PDO::PARAM_STR);
+    try{
+                $stmt->execute();
+            }
+            catch(PDOException $e){
+                    return $this->response->withStatus(400);
+            }
+    $reme = $stmt->fetchAll()[0];
+    $reme['About'] = utf8_encode($reme['About']);
+    return $this->response->withJson($reme);        
 });
 
 
@@ -282,7 +286,6 @@ $app->put('/forgotPass', function($request,$response){
 		$mail->Body = "You're receiving this e-mail because you requested a password reset for your user account at Hussh. <br/></br/> Your new password is : <br/><br/>    <b>".$newPass."</b><br/><br/> Use it to log in to your account. <br/><br/><br/><br/> The Hussh development team";
 		
 		$mail->send();
-		echo("Sent");
 
 	}
 	catch (Exception $e){

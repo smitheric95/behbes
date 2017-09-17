@@ -15,10 +15,10 @@ export class FormService {
         });
     } */
 
-    getIllness(name: string){
+    getIllness(name: any){
         return this.http.post(`/remedies`,name)
         .toPromise().then(function(res) {
-            return res.json()[0];
+            return res.json().About;
         });
     }
 
