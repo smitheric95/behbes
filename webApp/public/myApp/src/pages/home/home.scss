@@ -6,6 +6,82 @@ login .toolbar-background-md, settings .toolbar-background, signup .toolbar-back
   background-color: #4FC3F7 !important;
 }
 
+page-illness a {
+  color: #222 !important;
+}
+
+#causes {
+  padding: 10px !important;
+}
+
+.illness-link {
+  line-height: 2em !important;
+}
+
+#illness-about {
+  margin-top: 10px;
+}
+
+page-illness .button {
+  background-color: #4FC3F7 !important;
+  border-radius: 2rem !important;
+  width: fit-content !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+#causes .item-left {
+  background-color: #4FC3F7 !important;
+  border-radius: 2.5rem !important;
+  margin-right: 2rem !important;
+  width: fit-content !important;
+  height: auto !important;
+  text-align: center !important;
+  font-size: 2rem;
+  color: white !important;
+  display: inline-block !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold !important;
+}
+
+page-illness ion-card {
+  max-width: 900px !important;
+}
+
+.illness-header {
+  font-size: 2rem;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+  color: #444 !important;
+}
+
+#causes ion-list {
+  margin: 0;
+}
+
+#causes .item-inner {
+  position: relative !important;
+  top: 0.5rem !important;
+  font-size: 2rem !important;
+  display: inline-block !important;
+}
+
+.illness-card {
+  border-radius: 2px !important;
+  background-color: #bbe !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+#causes button.item {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+  display: inline-block !important;
+  width: fit-content !important;
+  padding: 10px !important;
+  margin: 0 1rem 1rem 0 !important;
+  background-color: #f4f4f4 !important;
+}
+
 login .toolbar-title, settings .toolbar-title, signup .toolbar-title {
   color: white !important;
 }
@@ -90,6 +166,15 @@ body {
       margin: 10px !important;
       max-width: 100% !important;
       min-width: 0% !important;
+    }
+    #causes {
+      padding: 0 !important;
+    }
+    #illness-header {
+      margin: 1rem auto !important;
+    }
+    #illness-about {
+      padding: 0 3% !important;
     }
 }
 

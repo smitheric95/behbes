@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle="left" start>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu" style="color: white;"></ion-icon>
     </button>
     <ion-title>Sign up</ion-title>
     <button ion-button menuToggle="right" end>
@@ -10,7 +10,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding  style="background-color: #eee !important;
+  background-image: url(myApp/src/assets/background/bg.png) !important;">
   <ion-card>
     <form (ngSubmit)="signUp(signUpForm)" [formGroup]="signUpForm">
         <ion-item>
@@ -78,7 +79,10 @@
         </ion-item>
         
       <br />
-      <button style="width:98%; margin-left:14px;" type="submit" ion-button [disabled]="signUpForm.invalid">Sign Up!</button>
+      <button style="width:98%; margin-left:14px;  background-color: #4FC3F7 !important;
+  border-radius: 2rem !important; font-size: 1.2em;
+  display: block !important;
+  margin: 0 auto !important;" type="submit" ion-button [disabled]="signUpForm.invalid">Sign Up!</button>
     </form>
   </ion-card>
 
