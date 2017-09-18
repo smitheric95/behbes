@@ -11,29 +11,35 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content style="background-color: #eee !important;
+  background-image: url(myApp/src/assets/background/bg.png) !important;">
   <ion-card>
-    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
-      <span style="font-weight: bold; ">About: </span><span text-wrap>{{about}}</span><br>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding: 0 30px;">
+      <div class="illness-header" id="illness-header" style="font-weight: bold; width: fit-content; display: block; margin: 0 auto;">About</div><div id="illness-about" text-wrap>{{about.About}}</div><br>
     </div>
-    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
-      <span style="font-weight: bold; ">Natural Treatment: </span >
-          <span *ngFor="let natural of naturals" text-wrap >
-            <a [href]="sanitize(natural.Hyperlink)"> {{natural.description}}</a>
-          </span><br>
-    </div>
-    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
-      <span style="font-weight: bold; ">Conventional Treatment: </span>
-        <span *ngFor="let conventional of conventionals" text-wrap>
+    <hr>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding: 0 30px" class="illness-card">
+      <span class="illness-header" id="illness-header" style="font-weight: bold;">Conventional Treatment</span>
+        <span class="illness-link" *ngFor="let conventional of conventionals" text-wrap>
           <a [href]="sanitize(conventional.Hyperlink)"> {{conventional.description}}</a>
         </span><br>
     </div>
-    <div style="font-family: 'Roboto'; font-size: 20px; padding-left: 10px; padding-top: 10px">
-      <span style="font-weight: bold; ">Resources: </span>
-        <span *ngFor="let r of resources" text-wrap>
+    <hr>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding: 0 30px" class="illness-card">
+      <span class="illness-header" id="illness-header" style="font-weight: bold;">Natural Treatment</span >
+          <span class="illness-link" *ngFor="let natural of naturals" text-wrap >
+            <a [href]="sanitize(natural.Hyperlink)"> {{natural.description}}</a>
+          </span><br>
+    </div>
+    <hr>
+    <div style="font-family: 'Roboto'; font-size: 20px; padding: 0 30px" class="illness-card">
+      <span class="illness-header" id="illness-header" style="font-weight: bold;">Resources</span>
+        <span class="illness-link" *ngFor="let r of resources" text-wrap>
           <a [href]="sanitize(r.Hyperlink)"> {{r.description}}</a>
         </span><br>
     </div>
+    <hr>
+    <br>
     <button ion-button (click)="homeTapped($event)">Return Home</button><br>
   </ion-card>
 </ion-content>
