@@ -23,7 +23,24 @@ type topicsArray = Array<{id:number, title:string}>;
 
 
 export class InfantHealthPage {
-
+  vidoes: any[] = [
+    'https://www.youtube.com/embed/LlobmLI0WLw',
+    'https://www.youtube.com/embed/lQWWxWMLt-M',
+    'https://www.youtube.com/embed/WxE5vnXoyrg',
+    'https://www.youtube.com/embed/bQ_St20NHDI',
+    'https://www.youtube.com/embed/j2C8MkY7Co8',
+    'https://www.youtube.com/embed/m50PTFmmlxw',
+    'https://www.youtube.com/embed/6sHcL1DiDfc',
+    'https://www.youtube.com/embed/hzSrvuXRA68',
+    'https://www.youtube.com/embed/FIIG6n55Ito',
+    'https://www.youtube.com/embed/Y1VYWmCjYqc',
+    'https://www.youtube.com/embed/IS7AVfyoF_Y',
+    'https://www.youtube.com/embed/gNrJC5CIpgk',
+    'https://www.youtube.com/embed/WlzjkHdd1IU',
+    'https://www.youtube.com/embed/8kTKnZOmJXU',
+    'https://www.youtube.com/embed/g_k50wOf564',
+    'https://www.youtube.com/embed/FZA_64nCobA'
+  ]
 
   constructor(public navCtrl: NavController) {
 

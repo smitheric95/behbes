@@ -53,6 +53,7 @@ export class MapPage {
             console.log("error : " + err.message);
             ;
         })
+        this.addMap(32.841218, -96.784517);	
     }
 
     addMap(lat, long) {
