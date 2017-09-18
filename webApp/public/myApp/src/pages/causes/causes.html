@@ -17,8 +17,8 @@
     <h1 id="causes-header">Possible Illnesses</h1>
     <ion-list>
       <div class="cause-container">
-        <button ion-item  ion-item *ngFor = "let cause of causes; let i = index" (click)="causeTapped($event,cause.Name)">
-            <div item-left class="item-left">{{cause.counted}} symptom(s)<br>matched</div>
+        <button class="cause-button" style="max-height: 120px;overflow: hidden;width:100% !important" ion-item *ngFor = "let cause of causes; let i = index" (click)="causeTapped($event,cause.Name)">
+            <div item-left class="item-left" style="margin-right: 1rem !important; display: block !important; position: relative; top: 0.4em;">{{cause.counted}} symptom(s)<br>matched</div>
             {{cause.Name}}
         </button>
       </div>

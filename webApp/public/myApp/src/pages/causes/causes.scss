@@ -16,8 +16,13 @@
 #causes .cause-container {
   padding-left: 0;
   width: fit-content;
-  display: block;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cause-button {
+  flex: 1 0 42% !important;
 }
 
 #causes-header {
@@ -26,10 +31,4 @@
   width: fit-content;
   display: block;
   margin: 1rem auto;
-}
-
-@media only screen and (max-width: 700px) {
-  #causes .cause-container, #causes-header {
-    margin: 1rem;
-  }
 }
