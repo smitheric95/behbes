@@ -1,28 +1,27 @@
 <ion-header>
-    <ion-navbar color='navbarSymptoms'>
-      <button ion-button menuToggle="left" start>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>History</ion-title>
-      <button ion-button menuToggle="right" end>
-        <ion-icon name="contact"></ion-icon>
-      </button>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar color='navbarSymptoms'>
+    <button ion-button menuToggle="left" start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>History</ion-title>
+    <button ion-button menuToggle="right" end>
+      <ion-icon name="contact"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
   
-  <ion-content>
+<ion-content style="background-color: #eee !important;
+background-image: url(myApp/src/assets/background/bg.png) !important;">
   <ion-card style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; ">
-      <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
-      <h1 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Past Evaluations</h1>
-      <div style="font-size: 15px; font-weight: bold; padding-bottom: 10px">{{loginMes}}</div>
-      <ion-list>
-          <button ion-item  ion-item *ngFor = "let e of formatted; let i = index" (click)="evalTapped($event,e.symptoms)">
-              <div item-left style="margin:30px">{{e.month}}/{{e.day}}</div>
-              {{e.hour}}:{{e.minute}} {{e.amPM}} - {{e.symptoms}}
-          </button>
-          
-      </ion-list>
+    <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
+    <h1 style="width: fit-content; display: block; margin: 1em auto; font-weight: bold;">Past Evaluations</h1>
+    <div style="font-size: 1.3em; text-align: center;">{{loginMes}}</div>
+    <ion-list style="margin-left: 0 !important; margin-right: 0 !important">
+        <button ion-item style="width: 100% !important;max-height: 120px;overflow: hidden;" ion-item *ngFor = "let e of formatted; let i = index" (click)="evalTapped($event,e.symptoms)">
+            <span class="item-left" style="background-color: #81C784 !important; margin-right: 1rem !important; display: block !important">{{e.month}}/{{e.day}}<br>{{e.hour}}:{{e.minute}} {{e.amPM}}</span>
+            <span style="position: relative; top: -0.6em; transform: translateY(-60%); margin: -15px 0 0 13.5rem; display: block; white-space: pre-wrap;">{{e.symptoms}}</span>
+        </button>
+        
+    </ion-list>
   </ion-card>
-  </ion-content>
-  
-  
+</ion-content>
