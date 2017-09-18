@@ -30,7 +30,7 @@ page-illness .button {
   margin: 0 auto !important;
 }
 
-#causes .item-left {
+#causes .item-left, page-history .item-left {
   background-color: #4FC3F7 !important;
   border-radius: 2.5rem !important;
   margin-right: 2rem !important;
@@ -61,6 +61,16 @@ page-illness ion-card {
 }
 
 #causes .item-inner {
+  position: relative;
+  top: -0.6em;
+  transform: translateY(-60%);
+  margin: -15px 0 0 17rem;
+  display: block;
+  white-space: pre-wrap;
+  font-size: 1.1em;
+}
+
+page-history .item-inner {
   position: relative !important;
   top: 0.5rem !important;
   font-size: 2rem !important;
@@ -73,7 +83,7 @@ page-illness ion-card {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
-#causes button.item {
+#causes button.item, page-history button.item {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
   display: inline-block !important;
   width: fit-content !important;
@@ -107,6 +117,13 @@ ion-card {
   height: 300px;
   display: inline-block;
   margin: 0.3em;
+}
+
+page-history .label {
+  margin-bottom: 0 !important;
+  padding-bottom: 13px !important;
+  padding-top: 13px !important;
+  margin-top: 0 !important;
 }
 
 .main-button .button-inner {
@@ -152,7 +169,23 @@ body {
   left: 17px;
 }
 
+@media only screen and (max-width: 450px) {
+  body {
+    zoom: 90% !important;
+  }
+}
+
+page-history button .item-inner {
+  max-height: 100px;
+}
+
 @media only screen and (max-width: 700px) {
+    #causes .cause-container, #causes-header {
+      margin: 1rem;
+    }
+    .cause-button {
+      width: 100% !important;
+    }
     .button-container {
       width: inherit;
     }
@@ -169,6 +202,9 @@ body {
     }
     #causes {
       padding: 0 !important;
+    }
+    .cause-container {
+      display: block !important;
     }
     #illness-header {
       margin: 1rem auto !important;
