@@ -321,6 +321,9 @@ $app->post('/naturalremedies', function($request, $response){
 					return $this->response->withStatus(400);
 			}
 	$reme = $stmt->fetchAll();
+	foreach($reme as $link) {
+		$link['description'] = utf8_encode($link['description']);
+	}
 	return $this->response->withJson($reme);	
 	
 });
@@ -335,6 +338,9 @@ $app->post('/conventionalremedies', function($request, $response){
 					return $this->response->withStatus(400);
 			}
 	$reme = $stmt->fetchAll();
+	foreach($reme as $link) {
+		$link['description'] = utf8_encode($link['description']);
+	}
 	return $this->response->withJson($reme);	
 	
 });
@@ -349,6 +355,9 @@ $app->post('/resources', function($request, $response){
 					return $this->response->withStatus(400);
 			}
 	$reme = $stmt->fetchAll();
+	foreach($reme as $link) {
+		$link['description'] = utf8_encode($link['description']);
+	}
 	return $this->response->withJson($reme);	
 	
 });

@@ -22,21 +22,21 @@ export class FormService {
         });
     }
 
-    getConventional(name: string){
+    getConventional(name: any){
 		return this.http.post(`/conventionalremedies`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
-    getNatural(name: string){
+    getNatural(name: any){
 		return this.http.post(`/naturalremedies`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
-    getResources(name: string){
+    getResources(name: any){
 		return this.http.post(`/resources`,name)
         .toPromise().then(function(res) {
             return res.json();

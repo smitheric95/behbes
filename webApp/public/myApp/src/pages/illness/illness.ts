@@ -43,13 +43,7 @@ export class IllnessPage {
   }
 
   async getAbout() {
-    var temp = ""
-    Promise.all(temp = await this.formService.getIllness({Illness: this.Name}))
-    .then(function() {
-      temp.replace("\u0097", '-');
-      temp.replace("\u0092", '\'');
-    });
-    this.about = temp;
+    Promise.all(this.about = await this.formService.getIllness({Illness: this.Name}));
   }
   async getConventional() {
     Promise.all(this.conventionals = await this.formService.getConventional(this.Name));
