@@ -60,7 +60,17 @@ page-illness ion-card {
   margin: 0;
 }
 
-#causes .item-inner, page-history .item-inner {
+#causes .item-inner {
+  position: relative;
+  top: -0.6em;
+  transform: translateY(-60%);
+  margin: -15px 0 0 17rem;
+  display: block;
+  white-space: pre-wrap;
+  font-size: 1.1em;
+}
+
+page-history .item-inner {
   position: relative !important;
   top: 0.5rem !important;
   font-size: 2rem !important;
@@ -170,6 +180,12 @@ page-history button .item-inner {
 }
 
 @media only screen and (max-width: 700px) {
+    #causes .cause-container, #causes-header {
+      margin: 1rem;
+    }
+    .cause-button {
+      width: 100% !important;
+    }
     .button-container {
       width: inherit;
     }
@@ -186,6 +202,9 @@ page-history button .item-inner {
     }
     #causes {
       padding: 0 !important;
+    }
+    .cause-container {
+      display: block !important;
     }
     #illness-header {
       margin: 1rem auto !important;
