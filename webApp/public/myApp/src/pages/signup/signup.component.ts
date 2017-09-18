@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from
 @Component({
 	selector: 'signup',
 	templateUrl: 'signup.component.html',
-	styleUrls: ['signup.component.css']
+	styleUrls: ['/src/pages/signup/signup.component.css']
 })
 
 export class SignupComponent implements OnInit {
