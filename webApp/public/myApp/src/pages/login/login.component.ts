@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 	password: AbstractControl;
 	loginForm: FormGroup;
 
-	name: AbstractControl;
+	email: AbstractControl;
 	forgotPasswordForm: FormGroup;
 
 	constructor(public http:Http, public globals:Globals, public nav:NavController, public alertControl: AlertController){
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 		});
 
 		this.forgotPasswordForm = new FormGroup({
-			name: new FormControl('', [Validators.required])
+			email: new FormControl('', [Validators.required])
 		});
 	}
 
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
 		alert.present();
 	}
 	forgotPass(form){
-		this.http.put("/forgotPass", JSON.stringify({"Username":form._value.username}))
+		this.http.put("/forgotPass", JSON.stringify({"Email":form._value.email}))
 			.subscribe( data => {
 				this.showPassReset(true);
 				this.forgotPasswordForm.reset();
@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
 		else{
 			let alert = this.alertControl.create({
 				title:'Failure',
-				subTitle:'Your username information was not found in our database',
+				subTitle:'Account information for given email was not found in our database',
 				buttons: ['OK']
 			});
 			alert.present();

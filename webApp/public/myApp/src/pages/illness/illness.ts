@@ -13,7 +13,7 @@ import { HomePage } from '../home/home';
 export class IllnessPage {
 
   Name: string;
-  about: any;
+  about: string;
   naturals: any[];
   conventionals: any[];
   resources: any[];
@@ -43,7 +43,13 @@ export class IllnessPage {
   }
 
   async getAbout() {
-    Promise.all(this.about = await this.formService.getIllness(this.Name));
+    var temp = ""
+    Promise.all(temp = await this.formService.getIllness({Illness: this.Name}))
+    .then(function() {
+      temp.replace("\u0097", '-');
+      temp.replace("\u0092", '\'');
+    });
+    this.about = temp;
   }
   async getConventional() {
     Promise.all(this.conventionals = await this.formService.getConventional(this.Name));

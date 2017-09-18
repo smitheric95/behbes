@@ -49,7 +49,7 @@ export class FormPage {
         list:
         [
           { name: "Twitching", value: false },
-          { name: "Exsessive Crying", value: false },
+          { name: "Excessive Crying", value: false },
           { name: "Irritability", value: false },
           { name: "Pulling on Ears", value: false }
         ],
@@ -129,18 +129,14 @@ export class FormPage {
       [this.symptomsList[5].list.filter(val => val.value)]
     ]
 
-    console.log(filteredLists);
 
     for (let sublist of filteredLists) {
-      console.log(sublist);
       for (let symptoms of sublist) {
         for(let symptom of symptoms) {
           this.selected.push(symptom.name);
         }
       }
     }
-
-    console.log(this.selected);
 
     Promise.all(this.response = await this.formService.postForm(this.selected))
       .then(value => this.pushPage())

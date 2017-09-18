@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-navbar id="login-nav">
+  <ion-navbar>
     <button ion-button menuToggle="left" start>
       <ion-icon name="menu" style="color: white;"></ion-icon>
     </button>
-    <ion-title style="font-family: 'Roboto'; color: white;">Login</ion-title>
+    <ion-title style="font-family: 'Roboto'">Login</ion-title>
     <button ion-button menuToggle="right" end>
-      <ion-icon style="size: 30px" name="contact" style="color: white;"></ion-icon>
+      <ion-icon style="size: 30px" name="contact"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
@@ -41,12 +41,12 @@
 
     <form *ngIf='forgottenPass' (ngSubmit)='forgotPass(forgotPasswordForm)' [formGroup]="forgotPasswordForm">
       <ion-item>
-            <ion-label floating>Username</ion-label>
-            <ion-input type="text" value="" formControlName="name"></ion-input>
+            <ion-label floating>E-mail</ion-label>
+            <ion-input type="text" value="" formControlName="email"></ion-input>
         </ion-item>
-        <ion-item no-lines *ngIf="( forgotPasswordForm.get('name').hasError('minlength') || forgotPasswordForm.get('name').hasError('required') ) && forgotPasswordForm.get('name').touched">
-            <div class="error" *ngIf="forgotPasswordForm.get('name').hasError('required') && forgotPasswordForm.get('name').touched">
-                Username is required
+        <ion-item no-lines *ngIf="( forgotPasswordForm.get('email').hasError('minlength') || forgotPasswordForm.get('email').hasError('required') ) && forgotPasswordForm.get('email').touched">
+            <div class="error" *ngIf="forgotPasswordForm.get('email').hasError('required') && forgotPasswordForm.get('email').touched">
+                E-mail is required
             </div>
         </ion-item>
         <button style="width:98%; margin-left:14px;" type="submit" id="login" ion-button [disabled]="forgotPasswordForm.invalid">Reset Password</button>
