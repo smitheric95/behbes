@@ -38,7 +38,7 @@
     <name>Behbes</name>
     <description>A baby app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.2.5:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -50,6 +50,7 @@
     <allow-navigation href="tel:*" />
     <allow-navigation href="mailto:*" />
     <allow-navigation href="http://10.8.126.55:8100" />
+    <allow-navigation href="http://192.168.2.5:8100" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />
