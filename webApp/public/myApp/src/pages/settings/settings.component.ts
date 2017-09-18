@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from
 @Component({
 	selector: 'settings',
 	templateUrl: 'settings.component.html',
-	styleUrls: [ 'settings.component.css' ]
+	styleUrls: [ '/src/pages/settings/settings.component.css' ]
 })
 
 export class SettingsComponent implements OnInit {
