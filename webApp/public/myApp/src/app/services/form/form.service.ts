@@ -16,42 +16,42 @@ export class FormService {
     } */
 
     getIllness(name: any){
-        return this.http.post(`/remedies`,name)
+        return this.http.post(`http://hussh.site/remedies`,name)
         .toPromise().then(function(res) {
             return res.json().About;
         });
     }
 
     getConventional(name: any){
-		return this.http.post(`/conventionalremedies`,name)
+		return this.http.post(`http://hussh.site/conventionalremedies`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getNatural(name: any){
-		return this.http.post(`/naturalremedies`,name)
+		return this.http.post(`http://hussh.site/naturalremedies`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getResources(name: any){
-		return this.http.post(`/resources`,name)
+		return this.http.post(`http://hussh.site/resources`,name)
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     getHistory(){
-		return this.http.get(`/history`,{headers:this.globals.getHeaders()})
+		return this.http.get(`http://hussh.site/history`,{headers:this.globals.getHeaders()})
         .toPromise().then(function(res) {
             return res.json();
         });
     }
 
     postForm(selected: any[]){
-        return this.http.post(`/postform`,selected,{headers:this.globals.getHeaders()})
+        return this.http.post(`http://hussh.site/postform`,selected,{headers:this.globals.getHeaders()})
         .toPromise().then(function(res) {
             return res.json();
         });

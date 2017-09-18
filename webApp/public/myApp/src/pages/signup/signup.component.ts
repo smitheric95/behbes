@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
 		
 	}
 	signUp(form){
-		this.http.post('/signup', JSON.stringify({"Username":form._value.username, "Password":form._value.password, "FirstName":form._value.fname, "LastName":form._value.lname, "Email":form._value.email}))
+		this.http.post('http://hussh.site/signup', JSON.stringify({"Username":form._value.username, "Password":form._value.password, "FirstName":form._value.fname, "LastName":form._value.lname, "Email":form._value.email}))
 			.subscribe(
 				data=> this.login(form),
 				err=> {
@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
 			);
 	}
 	login(form){
-		this.http.post("/signin", JSON.stringify({"Username": form._value.username, "Password":form._value.password}))
+		this.http.post("http://hussh.site/signin", JSON.stringify({"Username": form._value.username, "Password":form._value.password}))
 			.subscribe( data => {
 				this.globals.setAuthToken(data.json()['Token']);
 				this.nav.setRoot(HomePage);
