@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { YoutubePipe } from '../pipes/youtube/youtube'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -41,7 +42,8 @@ import { Globals } from './services/globals/globals';
     IllnessPage,
     LoginComponent,
     SignupComponent,
-    SettingsComponent
+    SettingsComponent,
+    YoutubePipe
   ],
   imports: [
     BrowserModule,

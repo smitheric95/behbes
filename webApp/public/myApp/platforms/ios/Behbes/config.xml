@@ -51,6 +51,7 @@
     <allow-navigation href="mailto:*" />
     <allow-navigation href="http://10.8.126.55:8100" />
     <allow-navigation href="http://192.168.2.5:8100" />
+    <allow-navigation href="*://*.youtube.com/*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />
