@@ -14,7 +14,7 @@
   <ion-card style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; ">
       <!--<h1><ion-icon name="document" item-left style="margin:30px"></ion-icon>Behbes</h1>-->
       <h1 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">Past Evaluations</h1>
-      <h3 style="font-size: 20px; font-weight: bold; padding-bottom: 10px">{{loginMes}}</h3>
+      <div style="font-size: 15px; font-weight: bold; padding-bottom: 10px">{{loginMes}}</div>
       <ion-list>
           <button ion-item  ion-item *ngFor = "let e of formatted; let i = index" (click)="evalTapped($event,e.symptoms)">
               <div item-left style="margin:30px">{{e.month}}/{{e.day}}</div>

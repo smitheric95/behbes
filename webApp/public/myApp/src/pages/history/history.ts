@@ -31,15 +31,11 @@ export class HistoryPage {
 
 ngOnInit() {
     this.getHistory().then(value => this.formatDateTime());
-    if(this.formatted == []) {
-      this.loginMes = "You need to be logged in to view this page!";
-    }
 }
 
 
   //sends the other possible causes to return to this page
   async evalTapped(event, symptoms) {
-    console.log(symptoms);
     Promise.all(this.response = await this.formService.postForm(symptoms))
     .then(value => this.pushPage())
   }
@@ -63,6 +59,9 @@ ngOnInit() {
       }
 
     this.formatted = this.formatted.reverse()
+    if(this.formatted.length == 0) {
+      this.loginMes = "You need to be logged in and have completed one Symptom Evaluation to view this page";
+    }
   }
 
   padding(value) {
