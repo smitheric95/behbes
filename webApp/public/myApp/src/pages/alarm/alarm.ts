@@ -1,6 +1,7 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { ModalController } from 'ionic-angular';
-import { AddPage } from '../add/add'
+import { ModalController, NavController } from 'ionic-angular';
+import { AddPage } from '../add/add';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class AlarmsPage {
   hour:string;
   minute:string;
 
-  constructor(public modalCtrl: ModalController) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController) {
     this.medicines = ['Alex\'s cough medicine', 'Jenny\'s advil medicine'];
     this.times = ['3:55 PM','5:15 AM'];
     this.a = new Audio();
@@ -24,6 +25,11 @@ export class AlarmsPage {
     this.a.load();
     // this.checkAlarm();
     
+  }
+
+  homeTapped() {
+    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.popToRoot();
   }
 
   openModal(){

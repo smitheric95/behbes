@@ -8,10 +8,14 @@ import { FormPage } from '../pages/form/form';
 import { InfantHealthPage } from '../pages/infanthealth/infanthealth';
 import { MapPage } from '../pages/map/map';
 import { HistoryPage } from '../pages/history/history';
+import { AlarmsPage } from './../pages/alarm/alarm';
+
 import { SettingsComponent } from '../pages/settings/settings.component';
 import { LoginComponent } from '../pages/login/login.component';
 import { SignupComponent } from '../pages/signup/signup.component';
 import { Globals } from './services/globals/globals';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -36,7 +40,8 @@ export class MyApp {
     ];
     this.loggedUserPages= [
       { title: 'Settings', component: SettingsComponent },
-      { title: 'History', component: HistoryPage }
+      { title: 'History', component: HistoryPage },
+      //{ title: 'Alarms', component: AlarmsPage }
     ];
     this.notLoggedUserPages = [
       { title: 'Login', component: LoginComponent },

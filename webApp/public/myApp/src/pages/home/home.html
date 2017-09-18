@@ -2,6 +2,9 @@
 <ion-header > 
   <ion-navbar color='navbarColor' >
     <img src="myApp/src/assets/wordmark/wordmark.png" alt="hussh wordmark" id="wordmark">
+    <!--<button  ion-button (click)="alarmTapped($event)" end>
+      <ion-icon style="size: 60px; background: transparent"  name="alarm"></ion-icon>
+    </button>-->
     <button ion-button menuToggle="right" end>
       <ion-icon style="size: 30px" name="contact"></ion-icon>
     </button>
@@ -18,7 +21,7 @@
       <button ion-button class="main-button" id="er-button" (click)="erTapped($event)" text-wrap>Emergency Rooms</button>
     </div>
     <div class="button-container">
-      <button ion-button class="main-button" id="alarms-button" (click)="alarmTapped($event)" text-wrap>Medicine Alarms</button>
+      <button ion-button class="main-button" id="alarms-button" (click)="historyTapped($event)" text-wrap>History</button>
         
       <button ion-button class="main-button" id="basics-button" (click)="basicsTapped($event)" text-wrap>Basics of Infant Health</button>
     </div>
