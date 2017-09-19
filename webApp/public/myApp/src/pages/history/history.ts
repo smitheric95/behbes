@@ -50,11 +50,20 @@ ngOnInit() {
 
   formatDateTime() {
     var date;
+    var month;
+    var day;
+    var hours;
+    var minutes;
 
       for (let e of this.evals) {
-        date = new Date(e.Date);
-        this.formatted.push({hour: this.pHours(date.getHours()-5), minute: this.padding(date.getMinutes()),
-           day: date.getDate(), month: date.getMonth(), amPM: this.getAMPM(date.getHours()-5),
+        date = e.Date;
+        month = +date.substring(5,7);
+        day = +date.substring(8,10);
+        hours = +date.substring(11,13);
+        minutes = +date.substring(14,16);
+
+        this.formatted.push({hour: this.pHours(hours-5), minute: this.padding(minutes),
+           day: day, month: month, amPM: this.getAMPM(hours-5),
             symptoms: e.Symptoms})
       }
 
