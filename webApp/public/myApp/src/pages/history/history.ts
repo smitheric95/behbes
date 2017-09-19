@@ -62,8 +62,8 @@ ngOnInit() {
         hours = +date.substring(11,13);
         minutes = +date.substring(14,16);
 
-        this.formatted.push({hour: this.pHours(hours-5), minute: this.padding(minutes),
-           day: day, month: month, amPM: this.getAMPM(hours-5),
+        this.formatted.push({hour: this.pHours(hours-5,day), minute: this.padding(minutes),
+           day: this.changeDay(hours-5,day), month: month, amPM: this.getAMPM(hours-5),
             symptoms: e.Symptoms})
       }
 
@@ -71,6 +71,46 @@ ngOnInit() {
     if(this.formatted.length == 0) {
       this.loginMes = "You need to be logged in and have completed one Symptom Evaluation to view this page";
     }
+  }
+
+  changeDay(value,day) {
+    switch (value) {
+      case 0: {
+        value = 24
+        day = day - 1
+        break;
+      }
+      case -1: {
+        value = 23
+        day = day - 1
+        break;
+      }
+      case -2: {
+        value = 22
+        day = day - 1
+        break;
+      }
+      case -3: {
+        value = 21
+        day = day - 1
+        break;
+      }
+      case -4: {
+        value = 20
+        day = day - 1
+        break;
+      }
+      case -5: {
+        value = 19
+        day = day - 1
+        break;
+      }
+      default: {
+        value = value
+      }
+    }
+
+    return day
   }
 
   padding(value) {
@@ -81,7 +121,7 @@ ngOnInit() {
     }
   }
 
-    pHours(value) {
+    pHours(value,day) {
       switch (value) {
         case 0: {
           value = 24
