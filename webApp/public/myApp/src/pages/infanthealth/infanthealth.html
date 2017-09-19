@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content  style="background-color: #eee !important;
-  background-image: url(myApp/src/assets/background/bg.png) !important;">
+  background-image: url(assets/background/bg.png) !important;">
     <div class="scroll-content">
        
         <div id="Videos">
@@ -29,8 +29,8 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LlobmLI0WLw" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/lQWWxWMLt-M" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[0] | youtube" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[1] | youtube" frameborder="0" allowfullscreen alt="How to swaddle a baby"></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -43,7 +43,7 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/WxE5vnXoyrg" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[2] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -56,7 +56,7 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>  
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/bQ_St20NHDI" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[3] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>   
             </div>
@@ -69,7 +69,7 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>  
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/j2C8MkY7Co8" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[4] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -82,7 +82,7 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/m50PTFmmlxw" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[5] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -95,8 +95,8 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/6sHcL1DiDfc" frameborder="0" allowfullscreen></iframe>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/hzSrvuXRA68" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[6] | youtube" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[7] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                  </ion-card>
             </div>
@@ -109,8 +109,8 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/FIIG6n55Ito" frameborder="0" allowfullscreen></iframe>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Y1VYWmCjYqc" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[8] | youtube" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[9] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -123,8 +123,8 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/IS7AVfyoF_Y" frameborder="0" allowfullscreen></iframe>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/gNrJC5CIpgk" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[10] | youtube" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[11] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -137,7 +137,7 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/WlzjkHdd1IU" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[12] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>
@@ -150,9 +150,9 @@
                         </p>
                     </ion-card-header>
                     <ion-card-content>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/8kTKnZOmJXU" frameborder="0" allowfullscreen></iframe>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/g_k50wOf564" frameborder="0" allowfullscreen></iframe>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/FZA_64nCobA" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[13] | youtube" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[14] | youtube" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" [src]="vidoes[15] | youtube" frameborder="0" allowfullscreen></iframe>
                     </ion-card-content>
                 </ion-card>
             </div>

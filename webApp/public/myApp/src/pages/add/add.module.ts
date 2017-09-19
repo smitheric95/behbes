@@ -3,9 +3,6 @@ import { IonicPageModule } from 'ionic-angular';
 import { AddPage } from './add';
 
 @NgModule({
-  declarations: [
-    AddPage,
-  ],
   imports: [
     IonicPageModule.forChild(AddPage),
   ],
